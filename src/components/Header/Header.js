@@ -12,7 +12,7 @@ const Header = () => {
         <div className='max-w-7xl mx-auto px-4 sm:px-6'>
           <div className='flex justify-between items-center border-gray-100 py-6 md:justify-start md:space-x-10'>
             <div className='flex justify-start lg:w-0 lg:flex-1'>
-              <a href='#'>
+              <a href='/'>
                 <span className='sr-only'>Workflow</span>
                 <img
                   className='h-10 w-auto sm:h-16'
@@ -54,7 +54,10 @@ const Header = () => {
                   className="
                    group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium  hover:text-[#ea580c] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ea580c] pb-8'
                   "
-                  onClick={() => (setFlyer(!flyer), setFlyerTwo(false))}
+                  onClick={() => {
+                    setFlyer(!flyer);
+                    setFlyerTwo(false);
+                  }}
                 >
                   <span>Rooms</span>
                   {/*
@@ -102,7 +105,7 @@ const Header = () => {
                   <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                     <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
                       <a
-                        href='#'
+                        href='/'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/chart-bar */}
@@ -132,7 +135,7 @@ const Header = () => {
                         </div>
                       </a>
                       <a
-                        href='#'
+                        href='/'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/cursor-click */}
@@ -162,7 +165,7 @@ const Header = () => {
                         </div>
                       </a>
                       <a
-                        href='#'
+                        href='/'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/shield-check */}
@@ -191,7 +194,7 @@ const Header = () => {
                         </div>
                       </a>
                       <a
-                        href='#'
+                        href='/'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/view-grid */}
@@ -221,7 +224,7 @@ const Header = () => {
                         </div>
                       </a>
                       <a
-                        href='#'
+                        href='/'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/refresh */}
@@ -254,7 +257,7 @@ const Header = () => {
                     <div className='px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8'>
                       <div className='flow-root'>
                         <a
-                          href='#'
+                          href='/'
                           className='-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100'
                         >
                           {/* Heroicon name: outline/play */}
@@ -284,7 +287,7 @@ const Header = () => {
                       </div>
                       <div className='flow-root'>
                         <a
-                          href='#'
+                          href='/'
                           className='-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100'
                         >
                           {/* Heroicon name: outline/phone */}
@@ -312,13 +315,13 @@ const Header = () => {
               </div>
 
               <a
-                href='#'
+                href='/'
                 className='text-base font-medium text-gray-500 hover:text-[#ea580c]'
               >
                 Ice n' Spice
               </a>
               <a
-                href='#'
+                href='/'
                 className='text-base font-medium text-gray-500 hover:text-[#ea580c]'
               >
                 Gallery
@@ -328,7 +331,10 @@ const Header = () => {
                 <button
                   type='button'
                   className='group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-[#ea580c] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ea580c]'
-                  onClick={() => (setFlyerTwo(!flyerTwo), setFlyer(false))}
+                  onClick={() => {
+                    setFlyerTwo(!flyerTwo);
+                    setFlyer(false);
+                  }}
                 >
                   <span>More</span>
                   {/*
@@ -375,7 +381,7 @@ const Header = () => {
                   <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                     <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
                       <a
-                        href='#'
+                        href='/'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/support */}
@@ -405,7 +411,7 @@ const Header = () => {
                         </div>
                       </a>
                       <a
-                        href='#'
+                        href='/'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/bookmark-alt */}
@@ -435,7 +441,7 @@ const Header = () => {
                         </div>
                       </a>
                       <a
-                        href='#'
+                        href='/'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/calendar */}
@@ -465,7 +471,7 @@ const Header = () => {
                         </div>
                       </a>
                       <a
-                        href='#'
+                        href='/'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/shield-check */}
@@ -502,7 +508,7 @@ const Header = () => {
                         <ul className='mt-4 space-y-4'>
                           <li className='text-base truncate'>
                             <a
-                              href='#'
+                              href='/'
                               className='font-medium text-gray-900 hover:text-gray-700'
                             >
                               Boost your conversion rate
@@ -510,7 +516,7 @@ const Header = () => {
                           </li>
                           <li className='text-base truncate'>
                             <a
-                              href='#'
+                              href='/'
                               className='font-medium text-gray-900 hover:text-gray-700'
                             >
                               How to use search engine optimization to drive
@@ -519,7 +525,7 @@ const Header = () => {
                           </li>
                           <li className='text-base truncate'>
                             <a
-                              href='#'
+                              href='/'
                               className='font-medium text-gray-900 hover:text-gray-700'
                             >
                               Improve your customer experience
@@ -529,7 +535,7 @@ const Header = () => {
                       </div>
                       <div className='mt-5 text-sm'>
                         <a
-                          href='#'
+                          href='/'
                           className='font-medium text-[#ea580c] hover:text-[#ea580c]'
                         >
                           {' '}
@@ -543,7 +549,7 @@ const Header = () => {
             </nav>
             <div className='hidden md:flex items-center justify-end md:flex-1 lg:w-0'>
               <a
-                href='#'
+                href='/'
                 className='ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-black rounded-3xl shadow-sm text-base font-medium text-black bg-white hover:bg-[#ea580c] hover:border-[#ea580c] hover:text-white'
               >
                 BOOK NOW
@@ -608,7 +614,7 @@ const Header = () => {
               <div className='mt-6'>
                 <nav className='grid gap-y-8'>
                   <a
-                    href='#'
+                    href='/'
                     className='-m-3 p-3 flex items-center rounded-md hover:bg-gray-50'
                   >
                     {/* Heroicon name: outline/chart-bar */}
@@ -632,7 +638,7 @@ const Header = () => {
                     </span>
                   </a>
                   <a
-                    href='#'
+                    href='/'
                     className='-m-3 p-3 flex items-center rounded-md hover:bg-gray-50'
                   >
                     {/* Heroicon name: outline/cursor-click */}
@@ -656,7 +662,7 @@ const Header = () => {
                     </span>
                   </a>
                   <a
-                    href='#'
+                    href='/'
                     className='-m-3 p-3 flex items-center rounded-md hover:bg-gray-50'
                   >
                     {/* Heroicon name: outline/shield-check */}
@@ -680,7 +686,7 @@ const Header = () => {
                     </span>
                   </a>
                   <a
-                    href='#'
+                    href='/'
                     className='-m-3 p-3 flex items-center rounded-md hover:bg-gray-50'
                   >
                     {/* Heroicon name: outline/view-grid */}
@@ -704,7 +710,7 @@ const Header = () => {
                     </span>
                   </a>
                   <a
-                    href='#'
+                    href='/'
                     className='-m-3 p-3 flex items-center rounded-md hover:bg-gray-50'
                   >
                     {/* Heroicon name: outline/refresh */}
@@ -733,49 +739,49 @@ const Header = () => {
             <div className='py-6 px-5 space-y-6'>
               <div className='grid grid-cols-2 gap-y-4 gap-x-8'>
                 <a
-                  href='#'
+                  href='/'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
                   Pricing
                 </a>
                 <a
-                  href='#'
+                  href='/'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
                   Docs
                 </a>
                 <a
-                  href='#'
+                  href='/'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
                   Enterprise
                 </a>
                 <a
-                  href='#'
+                  href='/'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
                   Blog
                 </a>
                 <a
-                  href='#'
+                  href='/'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
                   Help Center
                 </a>
                 <a
-                  href='#'
+                  href='/'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
                   Guides
                 </a>
                 <a
-                  href='#'
+                  href='/'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
                   Security
                 </a>
                 <a
-                  href='#'
+                  href='/'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
                   Events
@@ -783,14 +789,14 @@ const Header = () => {
               </div>
               <div>
                 <a
-                  href='#'
+                  href='/'
                   className='w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#ea580c] hover:bg-[#ea580c]'
                 >
                   Sign up
                 </a>
                 <p className='mt-6 text-center text-base font-medium text-gray-500'>
                   Existing customer?
-                  <a href='#' className='text-[#ea580c] hover:text-[#ea580c]'>
+                  <a href='/' className='text-[#ea580c] hover:text-[#ea580c]'>
                     Sign in
                   </a>
                 </p>
