@@ -549,7 +549,7 @@ const Header = () => {
             </nav>
             <div className='hidden md:flex items-center justify-end md:flex-1 lg:w-0'>
               <a
-                href='/'
+                href='https://hotelinnercircle.bookingjini.com/'
                 className='ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-black rounded-3xl shadow-sm text-base font-medium text-black bg-white hover:bg-[#ea580c] hover:border-[#ea580c] hover:text-white'
               >
                 BOOK NOW
