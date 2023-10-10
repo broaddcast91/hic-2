@@ -21,8 +21,8 @@ const Footer = () => {
               </div>
 
               <p class='mt-6 max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left'>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Incidunt consequuntur amet culpa cum itaque neque.
+                Discover Luxury and Comfort at Hotel Inner Circle – Where Every
+                Stay is a Memorable Experience.
               </p>
 
               <ul class='mt-8 flex justify-center gap-6 sm:justify-start md:gap-8'>
@@ -149,7 +149,7 @@ const Footer = () => {
                       class='text-gray-700 transition hover:text-gray-700/75'
                       href='/'
                     >
-                      Company History
+                      Ice and spice
                     </a>
                   </li>
 
@@ -272,7 +272,9 @@ const Footer = () => {
                         />
                       </svg>
 
-                      <span class='flex-1 text-gray-700'>john@doe.com</span>
+                      <span class='flex-1 text-gray-700'>
+                        info@hotelinnercircle.in
+                      </span>
                     </a>
                   </li>
 
@@ -296,7 +298,7 @@ const Footer = () => {
                         />
                       </svg>
 
-                      <span class='flex-1 text-gray-700'>0123456789</span>
+                      <span class='flex-1 text-gray-700'>+91 9951699516</span>
                     </a>
                   </li>
 
@@ -322,7 +324,8 @@ const Footer = () => {
                     </svg>
 
                     <address class='-mt-0.5 flex-1 not-italic text-gray-700'>
-                      213 Lane, London, United Kingdom
+                      Namita Rd, Saboo Heights, 6-3-905, Raj Bhavan Rd, Matha
+                      Nagar, Somajiguda, Hyderabad, Telangana 500082
                     </address>
                   </li>
                 </ul>

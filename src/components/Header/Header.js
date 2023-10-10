@@ -126,7 +126,7 @@ const Header = () => {
                         </svg>
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
-                            Analytics
+                            Standard Room
                           </p>
                           <p className='mt-1 text-sm text-gray-500'>
                             Get a better understanding of where your traffic is
@@ -156,7 +156,7 @@ const Header = () => {
                         </svg>
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
-                            Engagement
+                            Executive Room
                           </p>
                           <p className='mt-1 text-sm text-gray-500'>
                             Speak directly to your customers in a more
@@ -186,7 +186,7 @@ const Header = () => {
                         </svg>
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
-                            Security
+                            Delux Room
                           </p>
                           <p className='mt-1 text-sm text-gray-500'>
                             Your customers' data will be safe and secure.
@@ -215,7 +215,7 @@ const Header = () => {
                         </svg>
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
-                            Integrations
+                            Deluxe Suite
                           </p>
                           <p className='mt-1 text-sm text-gray-500'>
                             Connect with third-party tools that you're already
@@ -245,7 +245,7 @@ const Header = () => {
                         </svg>
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
-                            Automations
+                            Privacy Policy
                           </p>
                           <p className='mt-1 text-sm text-gray-500'>
                             Build strategic funnels that will drive your
@@ -634,7 +634,7 @@ const Header = () => {
                       />
                     </svg>
                     <span className='ml-3 text-base font-medium text-gray-900'>
-                      Analytics
+                      Standard Room
                     </span>
                   </a>
                   <a
@@ -658,7 +658,7 @@ const Header = () => {
                       />
                     </svg>
                     <span className='ml-3 text-base font-medium text-gray-900'>
-                      Engagement
+                      Executive Room
                     </span>
                   </a>
                   <a
@@ -682,7 +682,7 @@ const Header = () => {
                       />
                     </svg>
                     <span className='ml-3 text-base font-medium text-gray-900'>
-                      Security
+                      Delux Room
                     </span>
                   </a>
                   <a
@@ -706,7 +706,7 @@ const Header = () => {
                       />
                     </svg>
                     <span className='ml-3 text-base font-medium text-gray-900'>
-                      Integrations
+                      Delux Suite
                     </span>
                   </a>
                   <a
