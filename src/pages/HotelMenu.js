@@ -4,6 +4,11 @@ const HotelMenu = () => {
   return (
     <>
       <h1>hi there</h1>
+      <h1>hi there</h1>
+      <h1>hi there</h1>
+      <h1>hi there</h1>
+      <h1>hi there</h1>
+      <h1>hi there</h1>
     </>
   );
 };
