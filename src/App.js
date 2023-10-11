@@ -7,9 +7,19 @@ import Hero from './components/Hero/Hero';
 import { Helmet } from 'react-helmet';
 import Testimonials from './components/Testimonials/Testimonials';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HotelMenu from './pages/HotelMenu';
+
 function App() {
   return (
     <>
+      <BrowserRouter>
+        <Routes>
+          {/* Other routes */}
+          <Route path='/hotelmenu' component={HotelMenu} />
+        </Routes>
+      </BrowserRouter>
+
       <Helmet>
         <title>Hotel Inner Circle || Luxury Business Hotel in Hyderabad</title>
       </Helmet>

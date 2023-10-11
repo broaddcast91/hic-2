@@ -315,7 +315,7 @@ const Header = () => {
               </div>
 
               <a
-                href='/'
+                href='/hotelmenu'
                 className='text-base font-medium text-gray-500 hover:text-[#ea580c]'
               >
                 Ice n' Spice
