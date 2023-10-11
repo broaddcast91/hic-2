@@ -1,6 +1,9 @@
 import './App.css';
+import Contact from './pages/Contact/Contact';
+import ImageGallery from './pages/Gallery/ImageGallery';
 import Home from './pages/Home';
 import HotelMenu from './pages/HotelMenu';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -10,6 +13,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/iceandspice' element={<HotelMenu />} />
+          <Route path='/gallery' element={<ImageGallery />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -8,7 +8,7 @@ const HotelMenu = () => {
     <>
       <Header />
 
-      <section class='background-radial-gradient mb-32 text-center lg:text-left'>
+      <section class='background-radial-gradient mb-20 text-center lg:text-left'>
         <div class="relative overflow-hidden bg-cover bg-no-repeat bg-[50%] bg-[url('https://media.istockphoto.com/id/1147561466/photo/dark-culinary-background-with-fresh-produce.jpg?s=1024x1024&w=is&k=20&c=OFs8DU1IAAb19blJ1UtgddOlpBTsL5we-WSz9GPP7IM=')] h-[500px]">
           <div class='absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed'>
             <div class='flex h-full items-center justify-center'>
@@ -33,7 +33,7 @@ const HotelMenu = () => {
 
 const PageFlip = () => {
   return (
-    <div className='flex justify-center items-center h-100 mx-auto'>
+    <div className='flex justify-center items-center mx-auto'>
       <div className='container'>
         <HTMLFlipBook
           width={550}

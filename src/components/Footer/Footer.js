@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       <footer class='bg-white'>
-        <div class='mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24'>
+        <div class='mx-auto max-w-screen-xl px-4 pb-6 pt-10 sm:px-6 lg:px-8 lg:pt-18'>
           <div class='grid grid-cols-1 gap-8 lg:grid-cols-3'>
             <div>
               <div class='flex justify-center text-[#EA580C] sm:justify-start'>

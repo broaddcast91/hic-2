@@ -2,13 +2,13 @@ import React from 'react';
 
 const AboutUsSection = () => {
   return (
-    <div className='bg-white rounded-lg  p-4 md:p-8 flex flex-col md:flex-row'>
+    <div className='bg-white rounded-lg p-4 md:p-8 flex flex-col md:flex-row'>
       {/* About Us Section (Left) */}
       <div className='md:w-1/2 p-4'>
         <h2 className='text-xl md:text-3xl font-semibold mb-2 md:mb-4'>
           About Us
         </h2>
-        <p className='text-gray-600 text-sm md:text-base'>
+        <p className='text-gray-600 text-sm md:text-base fadeInLeft'>
           Nestled in the heart of Hyderabad,{' '}
           <span className='text-[#EA580C]'>Hotel Inner Circle</span> beckons you
           with a blend of contemporary sophistication and warm hospitality. Our
