@@ -33,7 +33,7 @@ const HotelMenu = () => {
 
 const PageFlip = () => {
   return (
-    <div className='flex justify-center items-center h-screen mx-auto'>
+    <div className='flex justify-center items-center h-100 mx-auto'>
       <div className='container'>
         <HTMLFlipBook
           width={550}
@@ -42,7 +42,7 @@ const PageFlip = () => {
           minWidth={315}
           maxWidth={1000}
           minHeight={400}
-          maxHeight={1533}
+          maxHeight={1000}
           maxShadowOpacity={0.5}
           showCover={true}
           mobileScrollSupport={true}
