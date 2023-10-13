@@ -8,6 +8,7 @@ const Header = () => {
   return (
     <>
       {/* This example requires Tailwind CSS v2.0+ */}
+
       <div className='sticky top-0 bg-white shadow-md z-10'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6'>
           <div className='flex justify-between items-center border-gray-100 py-6 md:justify-start md:space-x-10'>
@@ -402,7 +403,7 @@ const Header = () => {
                         </svg>
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
-                            Help Center
+                            Contact Us
                           </p>
                           <p className='mt-1 text-sm text-gray-500'>
                             Get all of your questions answered in our forums or
@@ -441,7 +442,7 @@ const Header = () => {
                         </div>
                       </a>
                       <a
-                        href='/'
+                        href='/events'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/calendar */}
@@ -766,7 +767,7 @@ const Header = () => {
                   href='/contact'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
-                  Help Center
+                  Contact Us
                 </a>
                 <a
                   href='/'
@@ -781,7 +782,7 @@ const Header = () => {
                   Security
                 </a>
                 <a
-                  href='/'
+                  href='/events'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
                   Events
