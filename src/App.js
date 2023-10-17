@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import HotelMenu from './pages/HotelMenu';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Rooms from './pages/Rooms/Rooms';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/gallery' element={<ImageGallery />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/events' element={<Events />} />
+          <Route path='/rooms' element={<Rooms />} />
         </Routes>
       </BrowserRouter>
     </>

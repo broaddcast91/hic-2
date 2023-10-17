@@ -106,24 +106,17 @@ const Header = () => {
                   <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                     <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
                       <a
-                        href='/'
+                        href='/rooms'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/chart-bar */}
                         <svg
-                          className='flex-shrink-0 h-6 w-6 text-[#ea580c]'
+                          className='flex-shrink-0 h-6 w-6 fill-[#ea580c]'
+                          viewBox='0 0 576 512'
                           xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          stroke='currentColor'
-                          aria-hidden='true'
                         >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'
-                          />
+                          {/*! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
+                          <path d='M32 32c17.7 0 32 14.3 32 32V320H288V160c0-17.7 14.3-32 32-32H544c53 0 96 43 96 96V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V416H352 320 64v32c0 17.7-14.3 32-32 32s-32-14.3-32-32V64C0 46.3 14.3 32 32 32zm144 96a80 80 0 1 1 0 160 80 80 0 1 1 0-160z'></path>
                         </svg>
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
@@ -136,7 +129,7 @@ const Header = () => {
                         </div>
                       </a>
                       <a
-                        href='/'
+                        href='/rooms'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/cursor-click */}
@@ -166,7 +159,7 @@ const Header = () => {
                         </div>
                       </a>
                       <a
-                        href='/'
+                        href='/rooms'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/shield-check */}
@@ -195,7 +188,7 @@ const Header = () => {
                         </div>
                       </a>
                       <a
-                        href='/'
+                        href='/rooms'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/view-grid */}
@@ -225,7 +218,7 @@ const Header = () => {
                         </div>
                       </a>
                       <a
-                        href='/'
+                        href='/rooms'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/refresh */}
@@ -258,7 +251,7 @@ const Header = () => {
                     <div className='px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8'>
                       <div className='flow-root'>
                         <a
-                          href='/'
+                          href='/rooms'
                           className='-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100'
                         >
                           {/* Heroicon name: outline/play */}
@@ -288,7 +281,7 @@ const Header = () => {
                       </div>
                       <div className='flow-root'>
                         <a
-                          href='/'
+                          href='/rooms'
                           className='-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100'
                         >
                           {/* Heroicon name: outline/phone */}
@@ -307,7 +300,7 @@ const Header = () => {
                               d='M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z'
                             />
                           </svg>
-                          <span className='ml-3'>Contact Sales</span>
+                          <span className='ml-3'>Contact Us</span>
                         </a>
                       </div>
                     </div>
@@ -411,36 +404,7 @@ const Header = () => {
                           </p>
                         </div>
                       </a>
-                      <a
-                        href='/'
-                        className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
-                      >
-                        {/* Heroicon name: outline/bookmark-alt */}
-                        <svg
-                          className='flex-shrink-0 h-6 w-6 text-[#ea580c]'
-                          xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          stroke='currentColor'
-                          aria-hidden='true'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z'
-                          />
-                        </svg>
-                        <div className='ml-4'>
-                          <p className='text-base font-medium text-gray-900'>
-                            Guides
-                          </p>
-                          <p className='mt-1 text-sm text-gray-500'>
-                            Learn how to maximize our platform to get the most
-                            out of it.
-                          </p>
-                        </div>
-                      </a>
+
                       <a
                         href='/events'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
@@ -769,12 +733,7 @@ const Header = () => {
                 >
                   Contact Us
                 </a>
-                <a
-                  href='/'
-                  className='text-base font-medium text-gray-900 hover:text-gray-700'
-                >
-                  Guides
-                </a>
+
                 <a
                   href='/'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
