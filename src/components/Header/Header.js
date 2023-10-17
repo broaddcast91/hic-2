@@ -1,4 +1,11 @@
 import React from 'react';
+import { LuBedSingle } from 'react-icons/lu';
+import { LuBedDouble } from 'react-icons/lu';
+import { IoBed } from 'react-icons/io5';
+import { IoBedSharp } from 'react-icons/io5';
+import { MdPrivacyTip } from 'react-icons/md';
+import { PiPhoneBold } from 'react-icons/pi';
+import { MdSecurity } from 'react-icons/md';
 
 const Header = () => {
   const [open, setOpen] = React.useState(false);
@@ -110,14 +117,7 @@ const Header = () => {
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
                         {/* Heroicon name: outline/chart-bar */}
-                        <svg
-                          className='flex-shrink-0 h-6 w-6 fill-[#ea580c]'
-                          viewBox='0 0 576 512'
-                          xmlns='http://www.w3.org/2000/svg'
-                        >
-                          {/*! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
-                          <path d='M32 32c17.7 0 32 14.3 32 32V320H288V160c0-17.7 14.3-32 32-32H544c53 0 96 43 96 96V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V416H352 320 64v32c0 17.7-14.3 32-32 32s-32-14.3-32-32V64C0 46.3 14.3 32 32 32zm144 96a80 80 0 1 1 0 160 80 80 0 1 1 0-160z'></path>
-                        </svg>
+                        <LuBedSingle class='h-6 w-6 text-[#EA580C]' />
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
                             Standard Room
@@ -132,22 +132,7 @@ const Header = () => {
                         href='/rooms'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
-                        {/* Heroicon name: outline/cursor-click */}
-                        <svg
-                          className='flex-shrink-0 h-6 w-6 text-[#ea580c]'
-                          xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          stroke='currentColor'
-                          aria-hidden='true'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122'
-                          />
-                        </svg>
+                        <LuBedDouble class='h-6 w-6 text-[#EA580C]' />
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
                             Executive Room
@@ -162,22 +147,7 @@ const Header = () => {
                         href='/rooms'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
-                        {/* Heroicon name: outline/shield-check */}
-                        <svg
-                          className='flex-shrink-0 h-6 w-6 text-[#ea580c]'
-                          xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          stroke='currentColor'
-                          aria-hidden='true'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
-                          />
-                        </svg>
+                        <IoBedSharp class='h-6 w-6 text-[#EA580C]' />
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
                             Delux Room
@@ -191,22 +161,8 @@ const Header = () => {
                         href='/rooms'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
-                        {/* Heroicon name: outline/view-grid */}
-                        <svg
-                          className='flex-shrink-0 h-6 w-6 text-[#ea580c]'
-                          xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          stroke='currentColor'
-                          aria-hidden='true'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z'
-                          />
-                        </svg>
+                        <IoBed class='h-6 w-6 text-[#EA580C]' />
+
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
                             Deluxe Suite
@@ -218,25 +174,10 @@ const Header = () => {
                         </div>
                       </a>
                       <a
-                        href='/rooms'
+                        href='/privacypolicy'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
-                        {/* Heroicon name: outline/refresh */}
-                        <svg
-                          className='flex-shrink-0 h-6 w-6 text-[#ea580c]'
-                          xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          stroke='currentColor'
-                          aria-hidden='true'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
-                          />
-                        </svg>
+                        <MdPrivacyTip class='h-7 w-7 text-[#EA580C]' />
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
                             Privacy Policy
@@ -378,22 +319,7 @@ const Header = () => {
                         href='/contact'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
-                        {/* Heroicon name: outline/support */}
-                        <svg
-                          className='flex-shrink-0 h-6 w-6 text-[#ea580c]'
-                          xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          stroke='currentColor'
-                          aria-hidden='true'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z'
-                          />
-                        </svg>
+                        <PiPhoneBold class='h-8 w-8 text-[#EA580C]' />
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
                             Contact Us
@@ -439,22 +365,7 @@ const Header = () => {
                         href='/'
                         className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'
                       >
-                        {/* Heroicon name: outline/shield-check */}
-                        <svg
-                          className='flex-shrink-0 h-6 w-6 text-[#ea580c]'
-                          xmlns='http://www.w3.org/2000/svg'
-                          fill='none'
-                          viewBox='0 0 24 24'
-                          stroke='currentColor'
-                          aria-hidden='true'
-                        >
-                          <path
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth={2}
-                            d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
-                          />
-                        </svg>
+                        <MdSecurity class='h-8 w-8 text-[#EA580C]' />
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
                             Security

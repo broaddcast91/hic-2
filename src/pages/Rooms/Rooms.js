@@ -13,6 +13,14 @@ const sections = [
     amenities, a cozy atmosphere, and thoughtful design, our
     Deluxe rooms provide the ideal space to unwind after a day
     of exploration or business meetings.`,
+    feature1: 'air-conditioning',
+    feature2: 'table',
+    feature3: 'chair',
+    feature4: 'tv',
+    feature5: '',
+    feature6: '',
+    feature7: '',
+    feature8: '',
   },
   {
     title: 'Executive Room',
@@ -24,6 +32,14 @@ const sections = [
       amenities, a cozy atmosphere, and thoughtful design, our
       Deluxe rooms provide the ideal space to unwind after a day
       of exploration or business meetings.`,
+    feature1: 'air-conditioning',
+    feature2: 'foldabletable',
+    feature3: 'armchair',
+    feature4: 'tv',
+    feature5: '',
+    feature6: '',
+    feature7: '',
+    feature8: '',
   },
   {
     title: 'Deluxe Room',
@@ -35,6 +51,14 @@ const sections = [
       amenities, a cozy atmosphere, and thoughtful design, our
       Deluxe rooms provide the ideal space to unwind after a day
       of exploration or business meetings.`,
+    feature1: 'semi air-conditioning',
+    feature2: 'twintable',
+    feature3: 'chair',
+    feature4: 'tv',
+    feature5: 'shampo',
+    feature6: '',
+    feature7: '',
+    feature8: '',
   },
   {
     title: 'Deluxe Suite',
@@ -46,6 +70,14 @@ const sections = [
       amenities, a cozy atmosphere, and thoughtful design, our
       Deluxe rooms provide the ideal space to unwind after a day
       of exploration or business meetings.`,
+    feature1: 'air-conditioning',
+    feature2: 'multitable',
+    feature3: '',
+    feature4: 'tv',
+    feature5: '',
+    feature6: '',
+    feature7: '',
+    feature8: '',
   },
 ];
 
@@ -134,7 +166,7 @@ const RoomInfo = () => {
                               d='M4.5 12.75l6 6 9-13.5'
                             />
                           </svg>
-                          Support 24/7
+                          {section.feature1}
                         </p>
                       </div>
 
@@ -154,7 +186,7 @@ const RoomInfo = () => {
                               d='M4.5 12.75l6 6 9-13.5'
                             />
                           </svg>
-                          Free Wifi
+                          {section.feature2}
                         </p>
                       </div>
 
@@ -174,7 +206,7 @@ const RoomInfo = () => {
                               d='M4.5 12.75l6 6 9-13.5'
                             />
                           </svg>
-                          Break Fast
+                          {section.feature3}
                         </p>
                       </div>
                     </div>

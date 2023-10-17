@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -27,7 +28,7 @@ const Footer = () => {
 
               <ul class='mt-8 flex justify-center gap-6 sm:justify-start md:gap-8'>
                 <li>
-                  <a
+                  <Link
                     href='/'
                     rel='noreferrer'
                     target='_blank'
@@ -46,7 +47,7 @@ const Footer = () => {
                         clip-rule='evenodd'
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
@@ -156,6 +157,48 @@ const Footer = () => {
                   <li>
                     <a
                       class='text-gray-700 transition hover:text-gray-700/75'
+                      href='/privacypolicy'
+                    >
+                      Meet the Team
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      class='text-gray-700 transition hover:text-gray-700/75'
+                      href='/'
+                    >
+                      Employee Handbook
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      class='text-gray-700 transition hover:text-gray-700/75'
+                      href='/faqs'
+                    >
+                      Careers
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class='text-center sm:text-left'>
+                <p class='text-lg font-medium text-gray-900'>About Us</p>
+
+                <ul class='mt-8 space-y-4 text-sm'>
+                  <li>
+                    <a
+                      class='text-gray-700 transition hover:text-gray-700/75'
+                      href='/'
+                    >
+                      Ice and spice
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      class='text-gray-700 transition hover:text-gray-700/75'
                       href='/'
                     >
                       Meet the Team
@@ -174,51 +217,9 @@ const Footer = () => {
                   <li>
                     <a
                       class='text-gray-700 transition hover:text-gray-700/75'
-                      href='/'
+                      href='/faqs'
                     >
                       Careers
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class='text-center sm:text-left'>
-                <p class='text-lg font-medium text-gray-900'>Our Services</p>
-
-                <ul class='mt-8 space-y-4 text-sm'>
-                  <li>
-                    <a
-                      class='text-gray-700 transition hover:text-gray-700/75'
-                      href='/'
-                    >
-                      Accommodation
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      class='text-gray-700 transition hover:text-gray-700/75'
-                      href='/'
-                    >
-                      Dining and Food
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      class='text-gray-700 transition hover:text-gray-700/75'
-                      href='/'
-                    >
-                      Leisure and Recreation
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      class='text-gray-700 transition hover:text-gray-700/75'
-                      href='/'
-                    >
-                      Guest Services
                     </a>
                   </li>
                 </ul>
@@ -231,9 +232,9 @@ const Footer = () => {
                   <li>
                     <a
                       class='text-gray-700 transition hover:text-gray-700/75'
-                      href='/'
+                      href='/privacypolicy'
                     >
-                      FAQs
+                      Meet the Team
                     </a>
                   </li>
 

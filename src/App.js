@@ -7,6 +7,8 @@ import HotelMenu from './pages/HotelMenu';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Rooms from './pages/Rooms/Rooms';
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
+import FAQSection from './components/FAQs/FAQSection';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/events' element={<Events />} />
           <Route path='/rooms' element={<Rooms />} />
+          <Route path='/privacypolicy' element={<PrivacyPolicy />} />
+          <Route path='/faqs' element={<FAQSection />} />
         </Routes>
       </BrowserRouter>
     </>

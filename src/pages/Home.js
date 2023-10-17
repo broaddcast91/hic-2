@@ -6,6 +6,7 @@ import Testimonials from '../components/Testimonials/Testimonials';
 import Footer from '../components/Footer/Footer';
 import HotelNumbers from '../components/HotelNumbers/HotelNumbers';
 import Services from '../components/Services/Services';
+import ScrollButton from '../components/ScrollToTop/ScrollButton';
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <HotelNumbers />
       <Testimonials />
       <Footer />
+      <ScrollButton />
     </>
   );
 };
