@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Rooms from './pages/Rooms/Rooms';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import FAQSection from './components/FAQs/FAQSection';
+import TextAnimation from './components/Text Animation/TextAnimation';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/rooms' element={<Rooms />} />
           <Route path='/privacypolicy' element={<PrivacyPolicy />} />
           <Route path='/faqs' element={<FAQSection />} />
+          <Route path='/textanm' element={<TextAnimation />} />
         </Routes>
       </BrowserRouter>
     </>

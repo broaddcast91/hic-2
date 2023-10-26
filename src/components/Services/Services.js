@@ -76,9 +76,10 @@ const Services = () => {
                 <div class='ml-4 grow'>
                   <p class='mb-1 font-bold'>Banquet Hall</p>
                   <p class='text-black '>
-                    Eum nostrum fugit numquam, voluptates veniam neque quibusdam
-                    ullam aspernatur odio soluta, quisquam dolore animi mollitia
-                    a omnis praesentium, expedita nobis!
+                    Discover our Banquet Hall, where moments turn into memories.
+                    The ideal setting for weddings, parties, and special events,
+                    our venue offers elegance and charm in abundance. Make your
+                    occasions extraordinary with us.
                   </p>
                 </div>
               </div>
@@ -92,9 +93,10 @@ const Services = () => {
                 <div class='ml-4 grow'>
                   <p class='mb-1 font-bold'>Conference</p>
                   <p class='text-black '>
-                    Enim cupiditate, minus nulla dolor cumque iure eveniet
-                    facere ullam beatae hic voluptatibus dolores exercitationem?
-                    Facilis debitis aspernatur amet nisi iure eveniet facere?
+                    Discover our Conference Halls, perfect for your meetings and
+                    events. Equipped with modern amenities, these spaces ensure
+                    success for your business gatherings. Book now for a
+                    seamless conference experience.
                   </p>
                 </div>
               </div>
