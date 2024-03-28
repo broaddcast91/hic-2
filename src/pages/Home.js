@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header/Header';
+// import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
 import AboutUsSection from '../components/AboutUs/AboutUs';
 import Testimonials from '../components/Testimonials/Testimonials';
@@ -16,11 +16,9 @@ const Home = () => {
       {/* <Header /> */}
       <NewHeader />
       <Hero />
-    
+
       <div className='container mx-auto'>
-        <SearchRoom />
-        {' '}
-        <AboutUsSection />
+        <SearchRoom /> <AboutUsSection />
         <Services />
         <HotelNumbers />
         <Testimonials />

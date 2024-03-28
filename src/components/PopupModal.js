@@ -4,10 +4,10 @@ import { InformationCircleIcon } from '@heroicons/react/24/outline';
 
 export default function PopupModal() {
   const [open, setOpen] = useState(true);
-  let [isOpen, setIsOpen] = useState(true);
+  // let [isOpen, setIsOpen] = useState(true);
 
   // State variables to hold name and phone number
-  const [name, setName] = useState('');
+  // const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
 
   const cancelButtonRef = useRef(null);
