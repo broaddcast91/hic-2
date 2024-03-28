@@ -368,10 +368,10 @@ const Header = () => {
                         <MdSecurity class='h-8 w-8 text-[#EA580C]' />
                         <div className='ml-4'>
                           <p className='text-base font-medium text-gray-900'>
-                            Security
+                            FAQs
                           </p>
                           <p className='mt-1 text-sm text-gray-500'>
-                            Understand how we take your privacy seriously.
+                            Our Commitment to Your Privacy and Security.
                           </p>
                         </div>
                       </a>
@@ -649,7 +649,7 @@ const Header = () => {
                   href='/'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
-                  Security
+                  FAQs
                 </a>
                 <a
                   href='/events'
