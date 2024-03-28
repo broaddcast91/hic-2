@@ -1,13 +1,14 @@
 import React from 'react';
 import Header from '../components/Header/Header';
+import NewHeader from '../components/Header/NewHeader';
 import Footer from '../components/Footer/Footer';
 import HTMLFlipBook from 'react-pageflip';
 
 const HotelMenu = () => {
   return (
     <>
-      <Header />
-
+      {/* <Header /> */}
+      <NewHeader />
       <section class='background-radial-gradient mb-20 text-center lg:text-left'>
         <div class="relative overflow-hidden bg-cover bg-no-repeat bg-[50%] bg-[url('https://media.istockphoto.com/id/1147561466/photo/dark-culinary-background-with-fresh-produce.jpg?s=1024x1024&w=is&k=20&c=OFs8DU1IAAb19blJ1UtgddOlpBTsL5we-WSz9GPP7IM=')] h-[500px]">
           <div class='absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed'>

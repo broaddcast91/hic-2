@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import NewHeader from '../../components/Header/NewHeader';
 
 const sections = [
   {
@@ -91,7 +92,7 @@ function shuffleArray(array) {
 const Rooms = () => {
   return (
     <>
-      <Header />
+      <NewHeader />
       <div
         class='relative overflow-hidden bg-cover bg-no-repeat'
         style={{

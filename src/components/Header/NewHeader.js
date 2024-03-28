@@ -1,4 +1,5 @@
 import { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import {
   ArrowPathIcon,
@@ -17,63 +18,69 @@ import {
 
 const products = [
   {
-    name: 'Analytics',
+    name: 'Standard Room',
     description: 'Get a better understanding of your traffic',
-    href: '#',
+    href: '/rooms',
     icon: ChartPieIcon,
   },
   {
-    name: 'Engagement',
+    name: 'Executive Room',
     description: 'Speak directly to your customers',
-    href: '#',
+    href: '/rooms',
     icon: CursorArrowRaysIcon,
   },
   {
-    name: 'Security',
+    name: 'Deluxe Room',
     description: 'Your customers’ data will be safe and secure',
-    href: '#',
+    href: '/rooms',
     icon: FingerPrintIcon,
   },
   {
-    name: 'Integrations',
+    name: 'Banquet Hall',
     description: 'Connect with third-party tools',
-    href: '#',
+    href: '/rooms',
     icon: SquaresPlusIcon,
   },
   {
-    name: 'Automations',
+    name: 'Events',
     description: 'Build strategic funnels that will convert',
-    href: '#',
+    href: '/events',
+    icon: ArrowPathIcon,
+  },
+  {
+    name: 'Refund Policy',
+    description: 'Build strategic funnels that will convert',
+    href: '/privacypolicy',
     icon: ArrowPathIcon,
   },
 ];
 const callsToAction = [
-  { name: 'Watch demos', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
+  { name: 'Contact Us', href: '/contact', icon: PhoneIcon },
 ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Example() {
+export default function NewHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className='bg-white'>
+    <header className='bg-white header'>
       <nav
-        className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8'
+        className='mx-auto flex max-w-7xl items-center  justify-between p-6 lg:px-8'
         aria-label='Global'
       >
         <div className='flex lg:flex-1'>
-          <a href='#' className='-m-1.5 p-1.5'>
+          <Link to='/' className='-m-1.5 p-1.5'>
             <span className='sr-only'>Your Company</span>
             <img
-              className='h-8 w-auto'
-              src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
+              className='h-10 w-auto sm:h-16'
+              src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/new/images/inner-circle-logo.webp'
               alt=''
             />
-          </a>
+          </Link>
         </div>
         <div className='flex lg:hidden'>
           <button
@@ -85,10 +92,10 @@ export default function Example() {
             <Bars3Icon className='h-6 w-6' aria-hidden='true' />
           </button>
         </div>
-        <Popover.Group className='hidden lg:flex lg:gap-x-12'>
+        <Popover.Group className='hidden lg:flex lg:gap-x-12 '>
           <Popover className='relative'>
-            <Popover.Button className='flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900'>
-              Product
+            <Popover.Button className='flex items-center gap-x-1  font-semibold leading-6 text-gray-900'>
+              Rooms
               <ChevronDownIcon
                 className='h-5 w-5 flex-none text-gray-400'
                 aria-hidden='true'
@@ -109,22 +116,22 @@ export default function Example() {
                   {products.map((item) => (
                     <div
                       key={item.name}
-                      className='group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50'
+                      className='group relative flex items-center gap-x-6 rounded-lg p-4  leading-6 hover:bg-gray-50'
                     >
                       <div className='flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white'>
                         <item.icon
-                          className='h-6 w-6 text-gray-600 group-hover:text-indigo-600'
+                          className='h-6 w-6 text-gray-600 group-hover:text-orange-600'
                           aria-hidden='true'
                         />
                       </div>
                       <div className='flex-auto'>
-                        <a
-                          href={item.href}
+                        <Link
+                          to={item.href}
                           className='block font-semibold text-gray-900'
                         >
                           {item.name}
                           <span className='absolute inset-0' />
-                        </a>
+                        </Link>
                         <p className='mt-1 text-gray-600'>{item.description}</p>
                       </div>
                     </div>
@@ -132,9 +139,9 @@ export default function Example() {
                 </div>
                 <div className='grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50'>
                   {callsToAction.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.href}
                       className='flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100'
                     >
                       <item.icon
@@ -142,27 +149,39 @@ export default function Example() {
                         aria-hidden='true'
                       />
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </Popover.Panel>
             </Transition>
           </Popover>
 
-          <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
-            Features
-          </a>
-          <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
-            Marketplace
-          </a>
-          <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
-            Company
-          </a>
+          <Link
+            to='/iceandspice'
+            className=' font-semibold leading-6 text-gray-900 text-md'
+          >
+            Ice n' Spice
+          </Link>
+          <Link
+            to='/gallery'
+            className='text-md font-semibold leading-6 text-gray-900'
+          >
+            Gallery
+          </Link>
+          <Link
+            to='/contact'
+            className='text-md font-semibold leading-6 text-gray-900'
+          >
+            Contact
+          </Link>
         </Popover.Group>
         <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-          <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
-            Log in <span aria-hidden='true'>&rarr;</span>
-          </a>
+          <Link
+            to='https://hotelinnercircle.bookingjini.com/property'
+            class='uppercase inline-flex items-center justify-center w-full px-10 py-3 text-base font-light leading-0 text-white bg-gradient-to-br bg-orange-600 border border-transparent rounded-full md:w-auto hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 shadow-lg'
+          >
+            Book
+          </Link>
         </div>
       </nav>
       <Dialog

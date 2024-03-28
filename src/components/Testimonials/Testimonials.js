@@ -17,10 +17,10 @@ const Testimonials = () => {
                 />
               </div>
               <h5 className='mb-2 text-lg font-bold'>Balvinder Singh</h5>
-              <h6 className='mb-4 font-medium text-primary dark:text-primary-400'>
+              <h6 className='mb-4 font-light text-primary dark:text-primary-400'>
                 Doctor
               </h6>
-              <p className='mb-4'>
+              <p className='mb-4 text-sm italic text-orange-600'>
                 "Absolutely outstanding! My stay at this hotel was a much-needed
                 respite from my busy life as a doctor. The comfort, hospitality,
                 and attention to detail were exceptional.
@@ -47,10 +47,10 @@ const Testimonials = () => {
                 />
               </div>
               <h5 className='mb-2 text-lg font-bold'>Janaki Devi</h5>
-              <h6 className='mb-4 font-medium text-primary dark:text-primary-400'>
+              <h6 className='mb-4 font-light text-primary dark:text-primary-400'>
                 Home Maker
               </h6>
-              <p className='mb-4'>
+              <p className='mb-4 text-sm italic text-orange-600'>
                 "We had the most comfortable and enjoyable stay at this hotel
                 with my family. The rooms were cozy, and the service was
                 impeccable. But what truly stood out was the delicious food.
@@ -79,10 +79,10 @@ const Testimonials = () => {
                 />
               </div>
               <h5 className='mb-2 text-lg font-bold'>Nikhil Kumar</h5>
-              <h6 className='mb-4 font-medium text-primary dark:text-primary-400'>
+              <h6 className='mb-4 font-light text-primary dark:text-primary-400'>
                 Student
               </h6>
-              <p className='mb-4'>
+              <p className='mb-4 text-sm italic text-orange-600'>
                 "My stay at this hotel made my interview experience stress-free
                 and comfortable. The peaceful ambiance allowed me to prepare and
                 focus, and the staff's warmth and assistance were truly

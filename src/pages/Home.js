@@ -7,17 +7,26 @@ import Footer from '../components/Footer/Footer';
 import HotelNumbers from '../components/HotelNumbers/HotelNumbers';
 import Services from '../components/Services/Services';
 import ScrollButton from '../components/ScrollToTop/ScrollButton';
+import NewHeader from '../components/Header/NewHeader';
+import SearchRoom from './SearchRoom/SearchRoom';
 
 const Home = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+      <NewHeader />
       <Hero />
-      <AboutUsSection />
-      <Services />
-      <HotelNumbers />
-      <Testimonials />
-      <Footer />
+    
+      <div className='container mx-auto'>
+        <SearchRoom />
+        {' '}
+        <AboutUsSection />
+        <Services />
+        <HotelNumbers />
+        <Testimonials />
+        <Footer />
+      </div>
+
       <ScrollButton />
     </>
   );

@@ -58,7 +58,7 @@ const Services = () => {
                 </div>
                 <div class='ml-4 grow'>
                   <p class='mb-1 font-bold'>Ice and Spice</p>
-                  <p class='text-black '>
+                  <p class='text-gray-600'>
                     Indulge your senses in a culinary journey like no other at
                     our hotel's exquisite restaurant. From the freshest
                     ingredients to exceptional service, every visit to our
@@ -75,7 +75,7 @@ const Services = () => {
                 </div>
                 <div class='ml-4 grow'>
                   <p class='mb-1 font-bold'>Banquet Hall</p>
-                  <p class='text-black '>
+                  <p class='text-gray-600 '>
                     Discover our Banquet Hall, where moments turn into memories.
                     The ideal setting for weddings, parties, and special events,
                     our venue offers elegance and charm in abundance. Make your
@@ -92,7 +92,7 @@ const Services = () => {
                 </div>
                 <div class='ml-4 grow'>
                   <p class='mb-1 font-bold'>Conference</p>
-                  <p class='text-black '>
+                  <p class='text-gray-600'>
                     Discover our Conference Halls, perfect for your meetings and
                     events. Equipped with modern amenities, these spaces ensure
                     success for your business gatherings. Book now for a
@@ -109,7 +109,7 @@ const Services = () => {
                 </div>
                 <div class='ml-4 grow'>
                   <p class='mb-1 font-bold'>Outdoor Caterings</p>
-                  <p class='text-black'>
+                  <p class='text-gray-600'>
                     Illum doloremque ea, blanditiis sed dolor laborum
                     praesentium maxime sint, consectetur atque ipsum ab adipisci
                     ullam aspernatur odio soluta, quisquam dolore
