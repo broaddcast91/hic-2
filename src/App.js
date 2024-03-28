@@ -11,7 +11,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import FAQSection from './components/FAQs/FAQSection';
 import TextAnimation from './components/Text Animation/TextAnimation';
 import PopupModal from './components/PopupModal';
-import AboutUsSection from './components/AboutUs/AboutUs';
+// import AboutUsSection from './components/AboutUs/AboutUs';
 
 function App() {
   return (

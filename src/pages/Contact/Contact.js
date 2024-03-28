@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from '../../components/Header/Header';
+// import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import NewHeader from '../../components/Header/NewHeader';
 
@@ -21,26 +21,26 @@ const ContactForm = () => {
     message: '',
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }));
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you can implement the logic to send the form data to your backend or handle it as needed
-    console.log('Form submitted:', formData);
-    // Reset form fields
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Here you can implement the logic to send the form data to your backend or handle it as needed
+  //   console.log('Form submitted:', formData);
+  //   // Reset form fields
+  //   setFormData({
+  //     name: '',
+  //     email: '',
+  //     subject: '',
+  //     message: '',
+  //   });
+  // };
 
   return (
     <>
