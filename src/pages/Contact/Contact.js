@@ -24,10 +24,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <section
-        class='min-h-screen bg-cover '
-        style={sectionStyle}
-      >
+      <section class='min-h-screen bg-cover ' style={sectionStyle}>
         <div class='flex flex-col min-h-screen bg-black/60'>
           <div class='container flex flex-col flex-1 px-6 py-12 mx-auto'>
             <div class='flex-1 lg:flex lg:items-center lg:-mx-6'>
@@ -53,7 +50,7 @@ const ContactForm = () => {
                   <div class='flex mt-4 -mx-1.5 '>
                     <a
                       class='mx-1.5 text-white transition-colors duration-300 transform hover:text-blue-500'
-                      href='#'
+                      href='/#'
                     >
                       <svg
                         class='w-10 h-10 fill-current'
@@ -67,7 +64,7 @@ const ContactForm = () => {
 
                     <a
                       class='mx-1.5 text-white transition-colors duration-300 transform hover:text-blue-500'
-                      href='#'
+                      href='/#'
                     >
                       <svg
                         class='w-8 h-8'
@@ -92,7 +89,7 @@ const ContactForm = () => {
 
                     <a
                       class='mx-1.5 text-white transition-colors duration-300 transform hover:text-blue-500'
-                      href='#'
+                      href='/#'
                     >
                       <svg
                         class='w-8 h-8'
@@ -109,7 +106,7 @@ const ContactForm = () => {
 
                     <a
                       class='mx-1.5 text-white transition-colors duration-300 transform hover:text-blue-500'
-                      href='#'
+                      href='/#'
                     >
                       <svg
                         class='w-8 h-8'
