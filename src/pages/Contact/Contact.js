@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import NewHeader from '../../components/Header/NewHeader';
@@ -14,12 +14,12 @@ const Contact = () => {
 };
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   email: '',
+  //   subject: '',
+  //   message: '',
+  // });
 
   // const handleChange = (e) => {
   //   const { name, value } = e.target;
