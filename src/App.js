@@ -11,6 +11,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import FAQSection from './components/FAQs/FAQSection';
 import TextAnimation from './components/Text Animation/TextAnimation';
 import PopupModal from './components/PopupModal';
+import NewFooter from './components/Footer/NewFooter';
 // import AboutUsSection from './components/AboutUs/AboutUs';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path='/privacypolicy' element={<PrivacyPolicy />} />
           <Route path='/faqs' element={<FAQSection />} />
           <Route path='/textanm' element={<TextAnimation />} />
+          <Route path='/newfooter' element={<NewFooter />} />
         </Routes>
       </BrowserRouter>
     </>

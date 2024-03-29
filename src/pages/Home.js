@@ -3,12 +3,13 @@ import React from 'react';
 import Hero from '../components/Hero/Hero';
 import AboutUsSection from '../components/AboutUs/AboutUs';
 import Testimonials from '../components/Testimonials/Testimonials';
-import Footer from '../components/Footer/Footer';
+// import Footer from '../components/Footer/Footer';
 import HotelNumbers from '../components/HotelNumbers/HotelNumbers';
 import Services from '../components/Services/Services';
 import ScrollButton from '../components/ScrollToTop/ScrollButton';
 import NewHeader from '../components/Header/NewHeader';
 import SearchRoom from './SearchRoom/SearchRoom';
+import NewFooter from '../components/Footer/NewFooter';
 
 const Home = () => {
   return (
@@ -22,9 +23,8 @@ const Home = () => {
         <Services />
         <HotelNumbers />
         <Testimonials />
-        <Footer />
       </div>
-
+      <NewFooter />
       <ScrollButton />
     </>
   );
