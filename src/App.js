@@ -10,14 +10,14 @@ import Rooms from './pages/Rooms/Rooms';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 import FAQSection from './components/FAQs/FAQSection';
 import TextAnimation from './components/Text Animation/TextAnimation';
-import PopupModal from './components/PopupModal';
+// import PopupModal from './components/PopupModal';
 import NewFooter from './components/Footer/NewFooter';
 // import AboutUsSection from './components/AboutUs/AboutUs';
 
 function App() {
   return (
     <>
-      <PopupModal />
+      {/* <PopupModal /> */}
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
