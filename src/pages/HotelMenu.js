@@ -1,7 +1,7 @@
 import React from 'react';
 // import Header from '../components/Header/Header';
 import NewHeader from '../components/Header/NewHeader';
-import Footer from '../components/Footer/Footer';
+import NewFooter from '../components/Footer/NewFooter';
 import HTMLFlipBook from 'react-pageflip';
 
 const HotelMenu = () => {
@@ -27,7 +27,7 @@ const HotelMenu = () => {
         </div>
       </section>
       <PageFlip />
-      <Footer />
+      <NewFooter />
     </>
   );
 };

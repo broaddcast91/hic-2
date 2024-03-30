@@ -1,7 +1,7 @@
 import React from 'react';
 // import Header from '../../components/Header/Header';
 import NewHeader from '../../components/Header/NewHeader';
-import Footer from '../../components/Footer/Footer';
+import NewFooter from '../components/Footer/NewFooter';
 import Gallery from './JustGallery';
 
 const ImageGallery = () => {
@@ -10,7 +10,7 @@ const ImageGallery = () => {
       {/* <Header /> */}
       <NewHeader />
       <Gallery />
-      <Footer />
+      <NewFooter />
     </>
   );
 };

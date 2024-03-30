@@ -1,6 +1,6 @@
 import React from 'react';
 // import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
+import NewFooter from '../components/Footer/NewFooter';
 import NewHeader from '../../components/Header/NewHeader';
 
 const width = window.innerWidth;
@@ -11,7 +11,7 @@ const Events = () => {
       <NewHeader />
       <EventsBanner />
       {width > 425 ? <EventDetails /> : <MobileEventDetails />}
-      <Footer />
+      <NewFooter />
     </>
   );
 };
