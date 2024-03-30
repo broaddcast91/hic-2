@@ -8,7 +8,7 @@ const NewFooter = () => {
   return (
     <>
       <div className='relative text-white  footer'>
-        <div className='absolute top-0 left-0 w-full overflow-hidden  bg-orange-500'>
+        <div className='absolute top-0 left-0 w-full overflow-hidden  bg-orange-400'>
           {' '}
           <svg
             data-name='Layer 1'
@@ -202,7 +202,7 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/privacypolicy'
+                        to='/'
                       >
                         Meet the Team
                       </Link>
@@ -211,7 +211,7 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/'
+                        to='/contact'
                       >
                         Support
                       </Link>
@@ -219,7 +219,7 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/'
+                        to='/privacypolicy'
                       >
                         FAQs
                       </Link>
@@ -227,7 +227,7 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/'
+                        to='/privacypolicy'
                       >
                         Refund Policy
                       </Link>
@@ -328,7 +328,7 @@ const NewFooter = () => {
                   <span class='block sm:inline'>All rights reserved.</span>
 
                   <Link
-                    class='inline-block text-white underline transition hover:text-[#EA580C]'
+                    class='inline-block text-white  transition hover:text-[#EA580C]'
                     to='/privacypolicy'
                   >
                     Terms & Conditions
@@ -337,7 +337,7 @@ const NewFooter = () => {
                   <span>&middot;</span>
 
                   <Link
-                    class='inline-block text-white underline transition hover:text-[#EA580C]'
+                    class='inline-block text-white  transition hover:text-[#EA580C]'
                     to='/privacypolicy'
                   >
                     Privacy Policy

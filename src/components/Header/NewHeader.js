@@ -178,7 +178,7 @@ export default function NewHeader() {
         <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
           <Link
             to='https://hotelinnercircle.bookingjini.com/property'
-            class='uppercase inline-flex items-center justify-center w-full px-10 py-3 text-base font-light leading-0 text-white bg-gradient-to-br bg-orange-600 border border-transparent rounded-full md:w-auto hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 shadow-lg'
+            class='uppercase inline-flex items-center justify-center w-full px-10 py-3 text-base font-light leading-0 text-white bg-gradient-to-br bg-orange-400 border border-transparent rounded-full md:w-auto hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 shadow-lg'
           >
             Book
           </Link>

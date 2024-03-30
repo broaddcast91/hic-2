@@ -90,7 +90,7 @@ const SearchRoom = () => {
       </div>
       <div className='flex items-center mb-4 sm:mr-4 '>
         <button
-          className='bg-orange-500 text-white py-2 px-4  hover:bg-blue-600 rounded-3xl'
+          className='bg-orange-400 text-white py-2 px-4  hover:bg-blue-600 rounded-3xl'
           onClick={handleSearch}
         >
           Check Availability

@@ -20,7 +20,7 @@ const Testimonials = () => {
               <h6 className='mb-4 font-light text-primary dark:text-primary-400'>
                 Doctor
               </h6>
-              <p className='mb-4 text-sm italic text-orange-600'>
+              <p className='mb-4 text-sm italic text-orange-400'>
                 "Absolutely outstanding! My stay at this hotel was a much-needed
                 respite from my busy life as a doctor. The comfort, hospitality,
                 and attention to detail were exceptional.
@@ -50,7 +50,7 @@ const Testimonials = () => {
               <h6 className='mb-4 font-light text-primary dark:text-primary-400'>
                 Home Maker
               </h6>
-              <p className='mb-4 text-sm italic text-orange-600'>
+              <p className='mb-4 text-sm italic text-orange-400'>
                 "We had the most comfortable and enjoyable stay at this hotel
                 with my family. The rooms were cozy, and the service was
                 impeccable. But what truly stood out was the delicious food.
@@ -82,7 +82,7 @@ const Testimonials = () => {
               <h6 className='mb-4 font-light text-primary dark:text-primary-400'>
                 Student
               </h6>
-              <p className='mb-4 text-sm italic text-orange-600'>
+              <p className='mb-4 text-sm italic text-orange-400'>
                 "My stay at this hotel made my interview experience stress-free
                 and comfortable. The peaceful ambiance allowed me to prepare and
                 focus, and the staff's warmth and assistance were truly

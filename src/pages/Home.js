@@ -6,11 +6,11 @@ import Testimonials from '../components/Testimonials/Testimonials';
 // import Footer from '../components/Footer/Footer';
 import HotelNumbers from '../components/HotelNumbers/HotelNumbers';
 import Services from '../components/Services/Services';
-import ScrollButton from '../components/ScrollToTop/ScrollButton';
+// import ScrollButton from '../components/ScrollToTop/ScrollButton';
 import NewHeader from '../components/Header/NewHeader';
 import SearchRoom from './SearchRoom/SearchRoom';
 import NewFooter from '../components/Footer/NewFooter';
-import SocialTileTab from '../components/SocialTileTab/SocialTileTab';
+// import SocialTileTab from '../components/SocialTileTab/SocialTileTab';
 
 const Home = () => {
   return (
@@ -23,12 +23,12 @@ const Home = () => {
         <SearchRoom /> <AboutUsSection />
         <Services />
         <HotelNumbers />
-        <SocialTileTab />
+        {/* <SocialTileTab /> */}
         <Testimonials />
 
       </div>
       <NewFooter />
-      <ScrollButton />
+      {/* <ScrollButton /> */}
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // import Header from '../../components/Header/Header';
-import NewFooter from '../components/Footer/NewFooter';
+import NewFooter from '../../components/Footer/NewFooter';
 import NewHeader from '../../components/Header/NewHeader';
 
 const sections = [

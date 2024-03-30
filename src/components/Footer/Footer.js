@@ -8,7 +8,7 @@ const Footer = () => {
         <div class='mx-auto max-w-screen-xl px-4 pb-6 pt-10 sm:px-6 lg:px-8 lg:pt-18'>
           <div class='grid grid-cols-1 gap-8 lg:grid-cols-3'>
             <div>
-              <div class='flex justify-center text-[#EA580C] sm:justify-start'>
+              <div class='flex justify-center text-orange-400 sm:justify-start'>
                 <div className='flex justify-start lg:w-0 lg:flex-1'>
                   <Link to='/'>
                     <span className='sr-only'>Workflow</span>
@@ -138,7 +138,7 @@ const Footer = () => {
               </div>
 
               <div class='text-center sm:text-left'>
-                <p class='text-lg font-bold text-orange-600'>Rooms</p>
+                <p class='text-lg font-bold text-orange-400'>Rooms</p>
 
                 <ul class='mt-8 space-y-4 text-sm'>
                   <li>
@@ -180,7 +180,7 @@ const Footer = () => {
               </div>
 
               <div class='text-center sm:text-left'>
-                <p class='text-lg font-bold text-orange-600'>Helpful Links</p>
+                <p class='text-lg font-bold text-orange-400'>Helpful Links</p>
 
                 <ul class='mt-8 space-y-4 text-sm'>
                   <li>
@@ -220,7 +220,7 @@ const Footer = () => {
               </div>
 
               <div class='text-center sm:text-left'>
-                <p class='text-lg font-bold text-orange-600'>Contact Us</p>
+                <p class='text-lg font-bold text-orange-400'>Contact Us</p>
 
                 <ul class='mt-8 space-y-4 text-sm'>
                   <li>
