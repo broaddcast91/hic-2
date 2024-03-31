@@ -16,7 +16,7 @@ const HotelMenu = () => {
               <div class='max-w-[800px] px-6 py-6 text-center text-white md:py-0 md:px-12'>
                 <h2 class='mb-12 text-5xl font-bold leading-tight tracking-tight md:text-6xl xl:text-7xl'>
                   Are you ready <br />
-                  <span>delicious yummy food</span>
+                  <span>delicious yummy food?</span>
                 </h2>
                 <p class='text-lg'>
                   Explore Our Delectable Hotel Menu: A Culinary Journey Awaits!

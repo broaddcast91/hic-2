@@ -37,7 +37,7 @@ const NewFooter = () => {
                   </div>
                 </div>
 
-                <p class='mt-6 max-w-md text-center leading-relaxed text-white sm:max-w-xs sm:text-left'>
+                <p class='mt-6 max-w-md text-center leading-relaxed text-white  font-semibold sm:max-w-xs sm:text-left'>
                   Discover Luxury and Comfort at Hotel Inner Circle – Where
                   Every Stay is a Memorable Experience.
                 </p>
@@ -48,7 +48,7 @@ const NewFooter = () => {
                       href='/'
                       rel='noreferrer'
                       target='_blank'
-                      class='text-white transition hover:text-[#EA580C]'
+                      class='text-white transition-all duration-150 ease-in-out transform hover:scale-150 hover:text-gray-400'
                     >
                       <span class='sr-only'>Facebook</span>
                       <svg
@@ -71,7 +71,7 @@ const NewFooter = () => {
                       href='/'
                       rel='noreferrer'
                       target='_blank'
-                      class='text-white transition hover:text-[#EA580C]'
+                      class='text-white transition-all duration-150 ease-in-out transform hover:scale-150 hover:text-gray-400'
                     >
                       <span class='sr-only'>Instagram</span>
                       <svg
@@ -94,7 +94,7 @@ const NewFooter = () => {
                       to='/'
                       rel='noreferrer'
                       target='_blank'
-                      class='text-white transition hover:text-[#EA580C]'
+                      class='text-white transition-all duration-150 ease-in-out transform hover:scale-150 hover:text-gray-400'
                     >
                       <span class='sr-only'>Twitter</span>
                       <svg
@@ -112,55 +112,13 @@ const NewFooter = () => {
 
               <div class='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2'>
                 <div class='text-center sm:text-left'>
-                  <p class='text-lg font-bold text-white'>Services</p>
+                  <p class='text-lg font-bold text-white'>More Links</p>
 
                   <ul class='mt-8 space-y-4 text-sm'>
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/'
-                      >
-                        Order Food
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link
-                        class='text-white transition hover:text-gray-700/75'
-                        to='/iceandspice'
-                      >
-                        Ice n' Spice
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link
-                        class='text-white transition hover:text-gray-700/75'
-                        to='/'
-                      >
-                        Book a Room
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link
-                        class='text-white transition hover:text-gray-700/75'
-                        to='/faqs'
-                      >
-                        Book an Event
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class='text-center sm:text-left'>
-                  <p class='text-lg font-bold text-white'>Rooms</p>
-
-                  <ul class='mt-8 space-y-4 text-sm'>
-                    <li>
-                      <Link
-                        class='text-white transition hover:text-gray-700/75'
-                        to='/'
+                        to='/rooms'
                       >
                         Standard Room
                       </Link>
@@ -169,7 +127,7 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/'
+                        to='/rooms'
                       >
                         Executive Room
                       </Link>
@@ -178,7 +136,7 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/'
+                        to='/rooms'
                       >
                         Deluxe Room
                       </Link>
@@ -187,16 +145,24 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/faqs'
+                        to='/rooms'
                       >
-                        Banquet Hall
+                        Deluxe Suite
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        class='text-white transition hover:text-gray-700/75'
+                        to='/privacypolicy'
+                      >
+                        Privacy Policy
                       </Link>
                     </li>
                   </ul>
                 </div>
 
                 <div class='text-center sm:text-left'>
-                  <p class='text-lg font-bold text-white'>Helpful Links</p>
+                  <p class='text-lg font-bold text-white'>Useful Links</p>
 
                   <ul class='mt-8 space-y-4 text-sm text-white'>
                     <li>
@@ -204,32 +170,48 @@ const NewFooter = () => {
                         class='text-white transition hover:text-gray-700/75'
                         to='/'
                       >
-                        Meet the Team
+                        About Us
                       </Link>
                     </li>
 
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/contact'
+                        to='/rooms'
                       >
-                        Support
+                        Our Rooms
                       </Link>
                     </li>
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
                         to='/privacypolicy'
+                      >
+                        Gallery
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        class='text-white transition hover:text-gray-700/75'
+                        to='/privacypolicy'
+                      >
+                        Ice N' Spice
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        class='text-white transition hover:text-gray-700/75'
+                        to='/privacypolicy'
+                      >
+                        Contact
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        class='text-white transition hover:text-gray-700/75'
+                        to='/faqs'
                       >
                         FAQs
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        class='text-white transition hover:text-gray-700/75'
-                        to='/privacypolicy'
-                      >
-                        Refund Policy
                       </Link>
                     </li>
                   </ul>

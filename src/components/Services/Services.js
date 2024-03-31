@@ -7,9 +7,9 @@ import { GiFoodTruck } from 'react-icons/gi';
 const Services = () => {
   return (
     <>
-      <div class='container my-24 mx-auto md:px-6'>
+      <div class='container  mx-auto md:px-6 border'>
         <section class='mb-32'>
-          <h2 class='mb-12 text-center text-3xl font-bold'>
+          <h2 class='mb-12 text-center text-3xl font-bold text-orange-400'>
             Our Awesome Services
           </h2>
 
@@ -17,12 +17,13 @@ const Services = () => {
             <div class='mb-12 w-full shrink-0 grow-0 basis-auto md:px-6 lg:mb-0 lg:w-5/12'>
               <div
                 class='relative overflow-hidden rounded-lg bg-cover bg-[50%] bg-no-repeat shadow-lg dark:shadow-black/20'
+                style={{ height: '600px' }}
                 data-te-ripple-init
                 data-te-ripple-color='light'
               >
                 <img
-                  src='https://images.unsplash.com/photo-1505576391880-b3f9d713dc4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1870&q=80'
-                  class='w-full'
+                  src='https://plus.unsplash.com/premium_photo-1687995673398-bf3e55667dc5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+                  class='w-full h-full object-cover'
                   alt='services'
                 />
                 <a href='#!'>
@@ -52,7 +53,7 @@ const Services = () => {
             <div class='w-full shrink-0 grow-0 basis-auto md:px-6 lg:w-7/12'>
               <div class='mb-12 flex'>
                 <div class='shrink-0'>
-                  <div class='rounded-md bg-[#ea580c] p-4 shadow-lg '>
+                  <div class='rounded-md bg-orange-400 p-4 shadow-lg '>
                     <MdFastfood class='h-5 w-5 text-white' />
                   </div>
                 </div>
@@ -69,7 +70,7 @@ const Services = () => {
 
               <div class='mb-12 flex'>
                 <div class='shrink-0'>
-                  <div class='rounded-md bg-[#ea580c] p-4 shadow-lg '>
+                  <div class='rounded-md bg-orange-400 p-4 shadow-lg '>
                     <GiGlassCelebration class='h-5 w-5 text-white' />
                   </div>
                 </div>
@@ -86,7 +87,7 @@ const Services = () => {
 
               <div class='mb-12 flex'>
                 <div class='shrink-0'>
-                  <div class='rounded-md bg-[#ea580c] p-4 shadow-lg '>
+                  <div class='rounded-md bg-orange-400 p-4 shadow-lg '>
                     <GiVideoConference class='h-5 w-5 text-white' />
                   </div>
                 </div>
@@ -103,7 +104,7 @@ const Services = () => {
 
               <div class='flex'>
                 <div class='shrink-0'>
-                  <div class='rounded-md bg-[#ea580c] p-4 shadow-lg '>
+                  <div class='rounded-md bg-orange-400 p-4 shadow-lg '>
                     <GiFoodTruck class='h-5 w-5 text-white' />
                   </div>
                 </div>
@@ -120,7 +121,6 @@ const Services = () => {
           </div>
         </section>
       </div>
-      ;
     </>
   );
 };

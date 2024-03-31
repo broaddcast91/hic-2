@@ -8,8 +8,9 @@ import HotelNumbers from '../components/HotelNumbers/HotelNumbers';
 import Services from '../components/Services/Services';
 // import ScrollButton from '../components/ScrollToTop/ScrollButton';
 import NewHeader from '../components/Header/NewHeader';
-import SearchRoom from './SearchRoom/SearchRoom';
+// import SearchRoom from './SearchRoom/SearchRoom';
 import NewFooter from '../components/Footer/NewFooter';
+
 // import SocialTileTab from '../components/SocialTileTab/SocialTileTab';
 
 const Home = () => {
@@ -20,12 +21,12 @@ const Home = () => {
       <Hero />
 
       <div className='container mx-auto'>
-        <SearchRoom /> <AboutUsSection />
+        {/* <SearchRoom /> */}
+        <AboutUsSection />
         <Services />
         <HotelNumbers />
         {/* <SocialTileTab /> */}
         <Testimonials />
-
       </div>
       <NewFooter />
       {/* <ScrollButton /> */}

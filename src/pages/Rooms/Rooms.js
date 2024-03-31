@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import Header from '../../components/Header/Header';
 import NewFooter from '../../components/Footer/NewFooter';
 import NewHeader from '../../components/Header/NewHeader';
+// import NewRoomLayout from './NewRoomLayout';
 
 const sections = [
   {
@@ -114,6 +115,7 @@ const Rooms = () => {
         </div>
       </div>
       <RoomInfo />
+      {/* <NewRoomLayout /> */}
       <NewFooter />
     </>
   );
@@ -133,7 +135,7 @@ const RoomInfo = () => {
         {shuffledSections.map((section, index) => (
           <section key={index} className='p-2'>
             {/* Your section content goes here */}
-            <div className='block rounded-lg bg-[#ea580c] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)'>
+            <div className='block rounded-lg bg-orange-400 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)'>
               <div className='flex flex-wrap items-center'>
                 <div className='block w-full shrink-0 grow-0 basis-auto lg:flex lg:w-5/12 xl:w-3/12'>
                   <img
