@@ -185,7 +185,7 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/privacypolicy'
+                        to='/gallery'
                       >
                         Gallery
                       </Link>
@@ -193,7 +193,7 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/privacypolicy'
+                        to='/iceandspice'
                       >
                         Ice N' Spice
                       </Link>
@@ -201,7 +201,7 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/privacypolicy'
+                        to='/contact'
                       >
                         Contact
                       </Link>

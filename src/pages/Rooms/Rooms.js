@@ -1,247 +1,114 @@
-import React, { useState, useEffect } from 'react';
-// import Header from '../../components/Header/Header';
-import NewFooter from '../../components/Footer/NewFooter';
+import './styles.css';
 import NewHeader from '../../components/Header/NewHeader';
-// import NewRoomLayout from './NewRoomLayout';
+import NewFooter from '../../components/Footer/NewFooter';
+// import { useLocation } from 'react-router-dom';
 
-const sections = [
-  {
-    title: 'Standard Room',
-    imageUrl:
-      'https://images.unsplash.com/photo-1578898886225-c7c894047899?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80',
-    description: `Discover comfort and style in our Deluxe rooms. These
-    well-appointed accommodations offer a perfect blend of
-    convenience and relaxation for your stay. Featuring modern
-    amenities, a cozy atmosphere, and thoughtful design, our
-    Deluxe rooms provide the ideal space to unwind after a day
-    of exploration or business meetings.`,
-    feature1: 'air-conditioning',
-    feature2: 'table',
-    feature3: 'chair',
-    feature4: 'tv',
-    feature5: '',
-    feature6: '',
-    feature7: '',
-    feature8: '',
-  },
-  {
-    title: 'Executive Room',
-    imageUrl:
-      'https://plus.unsplash.com/premium_photo-1678297270385-ad5067126607?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80',
-    description: `Discover comfort and style in our Deluxe rooms. These
-      well-appointed accommodations offer a perfect blend of
-      convenience and relaxation for your stay. Featuring modern
-      amenities, a cozy atmosphere, and thoughtful design, our
-      Deluxe rooms provide the ideal space to unwind after a day
-      of exploration or business meetings.`,
-    feature1: 'air-conditioning',
-    feature2: 'foldabletable',
-    feature3: 'armchair',
-    feature4: 'tv',
-    feature5: '',
-    feature6: '',
-    feature7: '',
-    feature8: '',
-  },
-  {
-    title: 'Deluxe Room',
-    imageUrl:
-      'https://images.unsplash.com/photo-1605346434674-a440ca4dc4c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80',
-    description: `Discover comfort and style in our Deluxe rooms. These
-      well-appointed accommodations offer a perfect blend of
-      convenience and relaxation for your stay. Featuring modern
-      amenities, a cozy atmosphere, and thoughtful design, our
-      Deluxe rooms provide the ideal space to unwind after a day
-      of exploration or business meetings.`,
-    feature1: 'semi air-conditioning',
-    feature2: 'twintable',
-    feature3: 'chair',
-    feature4: 'tv',
-    feature5: 'shampo',
-    feature6: '',
-    feature7: '',
-    feature8: '',
-  },
-  {
-    title: 'Deluxe Suite',
-    imageUrl:
-      'https://images.unsplash.com/photo-1573052905904-34ad8c27f0cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pA%3D%3D&auto=format&fit=crop&w=2835&q=80',
-    description: `Discover comfort and style in our Deluxe rooms. These
-      well-appointed accommodations offer a perfect blend of
-      convenience and relaxation for your stay. Featuring modern
-      amenities, a cozy atmosphere, and thoughtful design, our
-      Deluxe rooms provide the ideal space to unwind after a day
-      of exploration or business meetings.`,
-    feature1: 'air-conditioning',
-    feature2: 'multitable',
-    feature3: '',
-    feature4: 'tv',
-    feature5: '',
-    feature6: '',
-    feature7: '',
-    feature8: '',
-  },
-];
-
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
+import SearchItem from '../../components/searchItem/SearchItem';
+import { Link } from 'react-router-dom';
 
 const Rooms = () => {
+  // const location = useLocation();
+  // const [destination, setDestination] = useState(location.state.destination);
+  // const [date, setDate] = useState(location.state.date);
+  // const [openDate, setOpenDate] = useState(false);
+  // const [options, setOptions] = useState(location.state.options);
+
   return (
-    <>
+    <div>
       <NewHeader />
-      <div
-        class='relative overflow-hidden bg-cover bg-no-repeat'
-        style={{
-          backgroundPosition: '50%',
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1594560913095-8cf34bab82ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2938&q=80')",
-          height: '400px',
-        }}
-      >
-        <div class='absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed'>
-          <div class='flex h-full items-center justify-center'>
-            <div class='px-6 text-center text-white md:px-12'>
-              <h1 class='mt-2 mb-8 text-2xl font-bold tracking-tight md:text-6xl xl:text-7xl'>
-                Your Oasis of <br />
-                <span>Serenity and Luxury</span>
-              </h1>
-            </div>
+      <RoomsHeader />
+      <div className='listContainer'>
+        <div className='listWrapper'>
+          <div className='listResult'>
+            <SearchItem
+              title='Standard Room | Single'
+              img='https://www.hotelinnercircle.in/admin/Roomimages/Standard%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
+            />
+            <SearchItem
+              title='Standard Room | Double'
+              img='https://www.hotelinnercircle.in/admin/Roomimages/Standard%20Room/17.Inner%20Circle%20Standard%20Room.jpg'
+            />
+            <SearchItem
+              title='Executive Room | Single'
+              img='https://www.hotelinnercircle.in/admin/Roomimages/Executive%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
+            />
+            <SearchItem
+              title='Executive Room | Double'
+              img='https://www.hotelinnercircle.in/admin/Roomimages/Executive%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
+            />
+            <SearchItem
+              title='Deluxe Room | Single'
+              img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Room/20.Inner%20Circle%20Deluxe.%20Room.jpg'
+            />
+            <SearchItem
+              title='Deluxe Room | Double'
+              img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Room/23.Iner%20Circle%20Deluxe%20%20suit.Room.JPG'
+            />
+            <SearchItem
+              title='Deluxe Suite | Single'
+              img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Suite/22.Inner%20Circle%20Delux%20Suit%20Room%20sit-out.JPG'
+            />
+            <SearchItem
+              title='Deluxe Suite | Double'
+              img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Suite/23.Iner%20Circle%20Deluxe%20%20suit.Room.JPG'
+            />
           </div>
         </div>
       </div>
-      <RoomInfo />
-      {/* <NewRoomLayout /> */}
       <NewFooter />
-    </>
+    </div>
   );
 };
 
-const RoomInfo = () => {
-  const [shuffledSections, setShuffledSections] = useState([]);
-
-  useEffect(() => {
-    const shuffledSectionsCopy = [...sections];
-    shuffleArray(shuffledSectionsCopy);
-    setShuffledSections(shuffledSectionsCopy);
-  }, []);
+const RoomsHeader = () => {
   return (
     <>
-      <div className='container my-24 mx-auto md:px-6'>
-        {shuffledSections.map((section, index) => (
-          <section key={index} className='p-2'>
-            {/* Your section content goes here */}
-            <div className='block rounded-lg bg-orange-400 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)'>
-              <div className='flex flex-wrap items-center'>
-                <div className='block w-full shrink-0 grow-0 basis-auto lg:flex lg:w-5/12 xl:w-3/12'>
-                  <img
-                    src={section.imageUrl}
-                    alt='Trendy Pants and Shoes'
-                    className='w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg'
-                  />
-                </div>
-                <div className='w-full shrink-0 grow-0 basis-auto lg:w-7/12 xl:w-9/12'>
-                  <div className='px-4 py-8 md:px-8'>
-                    <h2 className='mb-4 pb-1 text-3xl text-white font-bold'>
-                      {section.title}
-                    </h2>
-                    <p className='mb-6 pb-2 text-white '>
-                      {section.description}
-                    </p>
-                    <div class='grid gap-x-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-                      <div class='mb-6'>
-                        <p class='flex items-center'>
-                          <svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            fill='none'
-                            viewBox='0 0 24 24'
-                            stroke-width='2'
-                            stroke='currentColor'
-                            class='mr-2 h-5 w-5 text-neutral-900 '
-                          >
-                            <path
-                              stroke-linecap='round'
-                              stroke-linejoin='round'
-                              d='M4.5 12.75l6 6 9-13.5'
-                            />
-                          </svg>
-                          {section.feature1}
-                        </p>
-                      </div>
-
-                      <div class='mb-6'>
-                        <p class='flex items-center'>
-                          <svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            fill='none'
-                            viewBox='0 0 24 24'
-                            stroke-width='2'
-                            stroke='currentColor'
-                            class='mr-2 h-5 w-5 text-neutral-900'
-                          >
-                            <path
-                              stroke-linecap='round'
-                              stroke-linejoin='round'
-                              d='M4.5 12.75l6 6 9-13.5'
-                            />
-                          </svg>
-                          {section.feature2}
-                        </p>
-                      </div>
-
-                      <div class='mb-6'>
-                        <p class='flex items-center'>
-                          <svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            fill='none'
-                            viewBox='0 0 24 24'
-                            stroke-width='2'
-                            stroke='currentColor'
-                            class='mr-2 h-5 w-5 text-neutral-900 '
-                          >
-                            <path
-                              stroke-linecap='round'
-                              stroke-linejoin='round'
-                              d='M4.5 12.75l6 6 9-13.5'
-                            />
-                          </svg>
-                          {section.feature3}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='h-full flex flex-col md:flex-row justify-end items-start p-4'>
-                    {/* This link is hidden on small screens (md and below) */}
-                    <div className='hidden md:flex items-center justify-start md:flex-1 lg:w-0'>
-                      <a
-                        href='https://hotelinnercircle.bookingjini.com/'
-                        className='ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border rounded-3xl shadow-sm text-base font-medium text-black bg-white hover:bg-[#edba9f] hover:border-[#ea580c] hover:text-white'
-                      >
-                        BOOK NOW
-                      </a>
-                    </div>
-
-                    {/* This link is visible on small screens (md and below) */}
-                    <div className='md:hidden mt-4'>
-                      <a
-                        href='https://hotelinnercircle.bookingjini.com/'
-                        className='whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border rounded-3xl shadow-sm text-base font-medium text-black bg-white 
-     hover:bg-[#ea580c] hover:border-[#ea580c] hover:text-white'
-                      >
-                        BOOK NOW
-                      </a>
-                    </div>
-                  </div>
-                </div>
+      <section class='background-radial-gradient text-center lg:text-left'>
+        <div class="relative overflow-hidden bg-cover bg-no-repeat bg-[50%] bg-[url('https://www.hotelinnercircle.in/images/5.Inner%20Circle%20Reception%20Lobby.jpg')] h-[500px]">
+          <div class='absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed'>
+            <div class='flex h-full items-center justify-center'>
+              <div class='max-w-[800px] px-6 py-6 text-center text-white md:py-0 md:px-12'>
+                <h2 class='mb-12 text-5xl font-bold leading-tight tracking-tight md:text-6xl xl:text-7xl'>
+                  Rooms
+                </h2>
+                <p class='text-lg'>
+                  Inner Circle , a centrally air conditioned & centrally located
+                  hotel, provides smart hospitality solution for corporate and
+                  business executives.
+                </p>
               </div>
             </div>
-            {/* Add the rest of your section content here */}
-          </section>
-        ))}
+          </div>
+        </div>
+      </section>
+      <div>
+        <nav class='relative flex w-full flex-wrap items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4'>
+          <div class='flex w-full flex-wrap items-center justify-between px-3'>
+            <nav class='w-full rounded-md' aria-label='breadcrumb'>
+              <ol class='list-reset ms-2 flex'>
+                <li>
+                  <Link
+                    to='/'
+                    class='motion-reduce:transition-none-none text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80'
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <span class='mx-2 text-black/60 dark:text-white/60'>/</span>
+                </li>
+                <li>
+                  <Link
+                    to='/#'
+                    class='motion-reduce:transition-none-none text-orange-400 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80'
+                  >
+                    Rooms
+                  </Link>
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </nav>
       </div>
     </>
   );

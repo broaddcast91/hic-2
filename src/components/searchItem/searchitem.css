@@ -32,11 +32,12 @@
 
 .siTaxiOp {
   font-size: 12px;
-  background-color: #008009;
+  background-color: rgb(250, 52, 52);
   color: white;
   width: max-content;
-  padding: 3px;
+  padding: 6px;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 .siSubtitle {
@@ -75,7 +76,7 @@
   font-weight: 500;
 }
 .siRating > button {
-  background-color: #003580;
+  background-color: #caa169;
   color: white;
   padding: 5px;
   font-weight: bold;
@@ -99,7 +100,7 @@
 }
 
 .siCheckButton {
-  background-color: #0071c2;
+  background-color: rgb(231, 128, 91);
   color: white;
   font-weight: bold;
   padding: 10px 5px;

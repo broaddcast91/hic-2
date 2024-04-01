@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUsSection = () => {
   return (
-    <div className=' rounded-lg p-4 md:p-8 flex flex-col md:flex-row'>
+    <div className=' rounded-lg p-4 md:p-8 flex flex-col md:flex-row border'>
       {/* About Us Section (Left) */}
       <div className='md:w-1/2 p-4'>
         <h2 className='text-4xl md:text-3xl font-bold mb-4 text-orange-400'>

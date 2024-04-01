@@ -47,9 +47,55 @@ const FAQSection = ({ faqs }) => {
   return (
     <div>
       <NewHeader />
+      <section class='background-radial-gradient text-center lg:text-left'>
+        <div class="relative overflow-hidden bg-cover bg-no-repeat bg-[50%] bg-[url('https://www.hotelinnercircle.in/images/5.Inner%20Circle%20Reception%20Lobby.jpg')] h-[500px]">
+          <div class='absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed'>
+            <div class='flex h-full items-center justify-center'>
+              <div class='max-w-[800px] px-6 py-6 text-center text-white md:py-0 md:px-12'>
+                <h2 class='mb-12 text-5xl font-bold leading-tight tracking-tight md:text-6xl xl:text-7xl'>
+                  FAQ
+                </h2>
+                <p class='text-lg'>
+                  Find answers to common questions about our hotel reservation
+                  service.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div>
+        <nav class='relative flex w-full flex-wrap items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4'>
+          <div class='flex w-full flex-wrap items-center justify-between px-3'>
+            <nav class='w-full rounded-md' aria-label='breadcrumb'>
+              <ol class='list-reset ms-2 flex'>
+                <li>
+                  <Link
+                    to='/'
+                    class='motion-reduce:transition-none-none text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80'
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <span class='mx-2 text-black/60 dark:text-white/60'>/</span>
+                </li>
+                <li>
+                  <Link
+                    to='#'
+                    class='motion-reduce:transition-none-none text-orange-400 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80'
+                  >
+                    FAQ
+                  </Link>
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </nav>
+      </div>
       <section className='py-10 bg-white sm:py-16 lg:py-24'>
         <div className='px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl'>
-          <div className='max-w-2xl mx-auto text-center'>
+          {/* <div className='max-w-2xl mx-auto text-center'>
             <h2 className='text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl text-orange-400'>
               Frequently Asked Questions
             </h2>
@@ -57,9 +103,9 @@ const FAQSection = ({ faqs }) => {
               Find answers to common questions about our hotel reservation
               service.
             </p>
-          </div>
+          </div> */}
 
-          <div className='max-w-3xl mx-auto mt-8 space-y-4 md:mt-16'>
+          <div className='max-w-3xl mx-auto mt-4 space-y-4 md:mt-4'>
             {faqList.map((faq, index) => (
               <FaqItem
                 key={index}

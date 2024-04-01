@@ -1,21 +1,22 @@
 import React from 'react';
-import Header from '../../components/Header/Header';
+// import Header from '../../components/Header/Header';
 import NewFooter from '../../components/Footer/NewFooter';
+import NewHeader from '../../components/Header/NewHeader';
 
 const PrivacyPolicy = () => {
   return (
     <>
-      <Header />
+    <NewHeader />
       <Policy />
       <NewFooter />
-    </>
+  </>
   );
 };
 
 const Policy = () => {
   return (
     <>
-      <div className='bg-gray-100 p-8'>
+      <div className=' p-8'>
         <div className='max-w-5xl mx-auto bg-white p-8 rounded-lg shadow'>
           <img
             src='https://images.unsplash.com/photo-1690608824884-4470daf0940d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2831&q=80'
