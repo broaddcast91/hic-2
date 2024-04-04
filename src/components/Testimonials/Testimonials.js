@@ -3,7 +3,7 @@ import React from 'react';
 const Testimonials = () => {
   return (
     <>
-      <div className='container   mx-auto md:px-6 border'>
+      <div className='container   mx-auto md:px-6'>
         <section className='mb-32 text-center'>
           <h2 className='mb-12 text-3xl font-bold'>Reviews</h2>
 

@@ -17,7 +17,7 @@ const SearchRoom = () => {
   };
 
   return (
-    <div className='flex flex-col sm:flex-row items-center justify-center mt-8 py-2 px-4 border bg-white text-black rounded-xl absolute bottom-6 left-1/2 transform -translate-x-1/2 text-sm'>
+    <div className='container mx-auto md:px-12  flex flex-col sm:flex-row items-center justify-center mt-8 py-2 px-4 border bg-white text-black rounded-xl absolute bottom-6 left-1/2 transform -translate-x-1/2 text-sm'>
       <div className='flex items-center mb-4 sm:mr-4 mt-4'>
         <label htmlFor='roomType' className='mr-2'>
           Room Type:

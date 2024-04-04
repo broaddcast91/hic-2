@@ -10,6 +10,7 @@ import Services from '../components/Services/Services';
 import NewHeader from '../components/Header/NewHeader';
 // import SearchRoom from './SearchRoom/SearchRoom';
 import NewFooter from '../components/Footer/NewFooter';
+import TopDeals from './TopDeals/TopDeals';
 
 // import SocialTileTab from '../components/SocialTileTab/SocialTileTab';
 
@@ -20,9 +21,10 @@ const Home = () => {
       <NewHeader />
       <Hero />
 
-      <div className='container mx-auto'>
+      <div className=''>
         {/* <SearchRoom /> */}
         <AboutUsSection />
+        <TopDeals />
         <Services />
         <HotelNumbers />
         {/* <SocialTileTab /> */}

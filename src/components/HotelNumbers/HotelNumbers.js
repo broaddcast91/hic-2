@@ -1,59 +1,70 @@
 import React from 'react';
+import CountUp from 'react-countup';
+import { FaUser } from 'react-icons/fa';
+import { FaUserFriends } from 'react-icons/fa';
+import { FaStar } from 'react-icons/fa';
+import { MdFreeBreakfast } from 'react-icons/md';
 
 const HotelNumbers = () => {
   return (
-    <>
-      <div class='container   mx-auto md:px-6 border'>
+    <div className='bg-orange-400 py-12'>
+      <div class='container mx-auto md:px-12 '>
         {/* <!-- Section: Design Block --> */}
-        <section class='mb-32 text-center'>
-          <div class='grid gap-x-6 md:grid-cols-4 lg:gap-x-12'>
-            <div class='mb-12 md:mb-0'>
-              <h2 class='display-5 mb-4 text-4xl font-bold text-primary dark:text-primary-400 text-orange-400'>
-                869
+        <section class='m-10 text-center'>
+          <div class='grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
+            <div class='mb-16 md:mb-0  flex flex-col items-center justify-center text-white'>
+              <h2 class='display-5 mb-8 text-4xl md:text-5xl font-bold text-primary dark:text-primary-400 text-orange-400'>
+                <FaUser className='ml-10 mb-4 text-white' />
+                <CountUp
+                  end={869}
+                  className='text-4xl md:text-6xl text-white'
+                />
+                +
               </h2>
-              <h5 class='mb-4 text-lg font-medium'>Happy clients</h5>
-              <p class='text-neutral-500 dark:text-neutral-300'>
-                Laudantium totam quas cumque pariatur at doloremque hic quos
-                quia eius
-              </p>
+              <h5 class='mb-4 text-lg md:text-xl font-bold'>Happy clients</h5>
             </div>
 
-            <div class='mb-12 md:mb-0'>
-              <h2 class='display-5 mb-4 text-4xl font-bold text-primary dark:text-primary-400 text-orange-400'>
-                769
+            <div class='mb-16 md:mb-0  flex flex-col items-center justify-center text-white'>
+              <h2 class='display-5 mb-8 text-4xl md:text-5xl font-bold text-primary dark:text-primary-400 text-orange-400'>
+                <FaUserFriends className='ml-10 mb-4 text-white' />
+                <CountUp
+                  end={769}
+                  className='text-4xl md:text-6xl text-white'
+                />
               </h2>
-              <h5 class='mb-4 text-lg font-medium'>New Friendships</h5>
-              <p class='text-neutral-500 dark:text-neutral-300'>
-                Eum nostrum fugit numquam, voluptates veniam neque quibusdam
-                ullam
-              </p>
+              <h5 class='mb-4 text-lg md:text-xl font-bold'>New Friendships</h5>
             </div>
 
-            <div class='mb-12 md:mb-0'>
-              <h2 class='display-5 mb-4 text-4xl font-bold text-primary dark:text-primary-400 text-orange-400'>
-                179
+            <div class='mb-16 md:mb-0  flex flex-col items-center justify-center text-white'>
+              <h2 class='display-5 mb-8 text-4xl md:text-5xl font-bold text-primary dark:text-primary-400 text-orange-400'>
+                <FaStar className='ml-7 mb-4 text-white' />
+                <CountUp
+                  end={179}
+                  className='text-4xl md:text-6xl text-white'
+                />
               </h2>
-              <h5 class='mb-4 text-lg font-medium'>Five Start Ratings</h5>
-              <p class='text-neutral-500 dark:text-neutral-300'>
-                Enim cupiditate, minus nulla dolor cumque iure eveniet facere
-                potistas
-              </p>
+              <h5 class='mb-4 text-lg md:text-xl font-bold'>
+                Five Star Ratings
+              </h5>
             </div>
-            <div class='mb-12 md:mb-0'>
-              <h2 class='display-5 mb-4 text-4xl font-bold text-primary dark:text-primary-400 text-orange-400'>
-                745
+
+            <div class='mb-16 md:mb-0  flex flex-col items-center justify-center text-white'>
+              <h2 class=' display-5 mb-8 text-4xl md:text-5xl font-bold text-primary dark:text-primary-400 text-orange-400'>
+                <MdFreeBreakfast className='ml-8 mb-4 text-white' />
+                <CountUp
+                  end={745}
+                  className='text-4xl md:text-6xl text-white'
+                />
               </h2>
-              <h5 class='mb-4 text-lg font-medium'>Served Breakfast</h5>
-              <p class='text-neutral-500 dark:text-neutral-300'>
-                Enim cupiditate, minus nulla dolor cumque iure eveniet facere
-                potistas
-              </p>
+              <h5 class=' mb-4 text-lg md:text-xl font-bold'>
+                Served Breakfast
+              </h5>
             </div>
           </div>
         </section>
         {/* <!-- Section: Design Block --> */}
       </div>
-    </>
+    </div>
   );
 };
 

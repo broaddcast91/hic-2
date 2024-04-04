@@ -23,34 +23,42 @@ const Rooms = () => {
             <SearchItem
               title='Standard Room | Single'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Standard%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
+              price='3899.00'
             />
             <SearchItem
               title='Standard Room | Double'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Standard%20Room/17.Inner%20Circle%20Standard%20Room.jpg'
+              price='4299.00'
             />
             <SearchItem
               title='Executive Room | Single'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Executive%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
+              price='4499.00'
             />
             <SearchItem
               title='Executive Room | Double'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Executive%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
+              price='5299.00'
             />
             <SearchItem
               title='Deluxe Room | Single'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Room/20.Inner%20Circle%20Deluxe.%20Room.jpg'
+              price='5499.00'
             />
             <SearchItem
               title='Deluxe Room | Double'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Room/23.Iner%20Circle%20Deluxe%20%20suit.Room.JPG'
+              price='6299.00'
             />
             <SearchItem
               title='Deluxe Suite | Single'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Suite/22.Inner%20Circle%20Delux%20Suit%20Room%20sit-out.JPG'
+              price='7299.00'
             />
             <SearchItem
               title='Deluxe Suite | Double'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Suite/23.Iner%20Circle%20Deluxe%20%20suit.Room.JPG'
+              price='7299.00'
             />
           </div>
         </div>

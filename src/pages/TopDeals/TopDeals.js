@@ -1,10 +1,16 @@
 import React from 'react';
+import ImageSlider from './ImageSlider';
 
 const TopDeals = () => {
   return (
     <>
-      <div className='bg-orange-400 flex justify-center'>
-        <div className='container mx-auto'>top deals</div>
+      <div class='container  mx-auto md:px-6'>
+        <section class='mb-32'>
+          <h2 class='mb-12 text-center text-3xl font-bold text-orange-400'>
+            Our Favourite Rooms
+          </h2>
+          <ImageSlider />
+        </section>
       </div>
     </>
   );

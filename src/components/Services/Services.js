@@ -7,7 +7,7 @@ import { GiFoodTruck } from 'react-icons/gi';
 const Services = () => {
   return (
     <>
-      <div class='container  mx-auto md:px-6 border'>
+      <div class='container  mx-auto md:px-6 '>
         <section class='mb-32'>
           <h2 class='mb-12 text-center text-3xl font-bold text-orange-400'>
             Our Awesome Services
