@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 // import Header from '../../components/Header/Header';
 import NewFooter from '../../components/Footer/NewFooter';
 import NewHeader from '../../components/Header/NewHeader';
 import { Link } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 const Contact = () => {
   return (
@@ -15,36 +19,73 @@ const Contact = () => {
 };
 
 const ContactForm = () => {
-  // const [formData, setFormData] = useState({
-  //   name: '',
-  //   email: '',
-  //   subject: '',
-  //   message: '',
-  // });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     [name]: value,
-  //   }));
-  // };
+  const navigate = useNavigate();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Here you can implement the logic to send the form data to your backend or handle it as needed
-  //   console.log('Form submitted:', formData);
-  //   // Reset form fields
-  //   setFormData({
-  //     name: '',
-  //     email: '',
-  //     subject: '',
-  //     message: '',
-  //   });
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Validation checks
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      // Show error toast if any field is empty
+      toast.error('Please fill in all the fields.');
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      // Show error toast if email is invalid
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        'https://hic-backend.onrender.com/contactus',
+        formData
+      );
+      console.log('Form submitted successfully:', response.data);
+      // Reset form fields
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
+      // Show success toast
+      toast.success('Form submitted successfully!');
+      navigate('/thankyou');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Show error toast
+      toast.error(
+        'An error occurred while submitting the form. Please try again later.'
+      );
+    }
+  };
 
   return (
     <>
+      <ToastContainer />
       <section class='background-radial-gradient text-center lg:text-left'>
         <div class="relative overflow-hidden bg-cover bg-no-repeat bg-[50%] bg-[url('https://www.hotelinnercircle.in/images/5.Inner%20Circle%20Reception%20Lobby.jpg')] h-[500px]">
           <div class='absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsla(0,0%,0%,0.75)] bg-fixed'>
@@ -96,12 +137,14 @@ const ContactForm = () => {
         <div class='py-8 lg:py-16 px-4 mx-auto max-w-screen-md'>
           {/* <h2 class='mb-4 text-4xl tracking-tight font-extrabold text-center text-orange-400 dark:text-white'>
             Contact Us
-          </h2>
-          <p class='mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl'>
-            Got a technical issue? Want to send feedback about a beta feature?
-            Need details about our Business plan? Let us know.
-          </p> */}
-          <form class='space-y-8'>
+          </h2> */}
+          <p class='mb-8 lg:mb-16 font-light text-center text-orange-400 dark:text-gray-400 sm:text-xl'>
+            Need assistance with your hotel reservations? Have questions about
+            availability, rates, or amenities? Contact our dedicated team for
+            personalized support and expert guidance throughout your booking
+            journey.
+          </p>
+          <form class='space-y-8' onSubmit={handleSubmit}>
             <div>
               <label
                 for='Name'
@@ -111,8 +154,11 @@ const ContactForm = () => {
               </label>
               <input
                 type='text'
-                id='subject'
-                class='block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
+                id='name'
+                name='name'
+                value={formData.name}
+                onChange={handleChange}
+                className='block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
                 placeholder='Tell us your name'
                 required
               />
@@ -127,7 +173,10 @@ const ContactForm = () => {
               <input
                 type='email'
                 id='email'
-                class='shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
+                name='email'
+                value={formData.email}
+                onChange={handleChange}
+                className='shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
                 placeholder='name@hic.com'
                 required
               />
@@ -142,7 +191,10 @@ const ContactForm = () => {
               <input
                 type='text'
                 id='subject'
-                class='block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
+                name='subject'
+                value={formData.subject}
+                onChange={handleChange}
+                className='block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
                 placeholder='Let us know how we can help you'
                 required
               />
@@ -156,18 +208,30 @@ const ContactForm = () => {
               </label>
               <textarea
                 id='message'
+                name='message'
                 rows='6'
-                class='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'
+                value={formData.message}
+                onChange={handleChange}
+                className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'
                 placeholder='Leave a comment...'
               ></textarea>
             </div>
             <button
               type='submit'
-              class='uppercase inline-flex items-center justify-center w-full px-10 py-3 text-base font-light leading-0 text-white bg-gradient-to-br bg-orange-400 border border-transparent rounded-full md:w-auto hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 shadow-lg'
+              className='uppercase inline-flex items-center justify-center w-full px-10 py-3 text-base font-light leading-0 text-white bg-gradient-to-br bg-orange-400 border border-transparent rounded-full md:w-auto hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 shadow-lg'
             >
               Send message
             </button>
           </form>
+        </div>
+        <div className='flex justify-center items-center italic mb-10'>
+          <p className='text-center'>
+            have queries? please share your{' '}
+            <span className='text-orange-400 hover:font-extrabold'>
+              <Link to='/feedback'>feedback</Link>
+            </span>{' '}
+            here
+          </p>
         </div>
       </section>
     </>

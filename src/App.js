@@ -15,6 +15,9 @@ import NewFooter from './components/Footer/NewFooter';
 // import List from './pages/List/List';
 // import AboutUsSection from './components/AboutUs/AboutUs';
 import { useLocation } from 'react-router-dom';
+import StdSingle from './pages/Rooms/IndividualRooms/StdSingle';
+import FeedbackForm from './pages/Feedback/Feedback';
+import ThankYou from './pages/Thankyou/ThankYou';
 
 const ScrollToTopOnLocationChange = () => {
   const location = useLocation();
@@ -36,12 +39,15 @@ function App() {
           <Route path='/iceandspice' element={<HotelMenu />} />
           <Route path='/gallery' element={<ImageGallery />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/feedback' element={<FeedbackForm />} />
           <Route path='/events' element={<Events />} />
           <Route path='/rooms' element={<Rooms />} />
           <Route path='/privacypolicy' element={<PrivacyPolicy />} />
           <Route path='/faqs' element={<FAQSection />} />
           <Route path='/textanm' element={<TextAnimation />} />
           <Route path='/newfooter' element={<NewFooter />} />
+          <Route path='/standardsingle' element={<StdSingle />} />
+          <Route path='/thankyou' element={<ThankYou />} />
         </Routes>
       </BrowserRouter>
     </>

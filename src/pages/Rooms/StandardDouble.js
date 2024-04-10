@@ -33,7 +33,7 @@ const images = [
   },
 ];
 
-const SearchItem = ({ title, img, price }) => {
+const StandardDouble = ({ title, img, price }) => {
   const [open, setOpen] = useState(false);
 
   const [loading, setLoading] = useState(false);
@@ -326,4 +326,4 @@ function MyDialog() {
   );
 }
 
-export default SearchItem;
+export default StandardDouble;

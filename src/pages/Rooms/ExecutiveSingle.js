@@ -1,4 +1,4 @@
-import './searchitem.css';
+import '../../components/searchItem/searchitem.css'
 import { FaBed, FaWifi, FaTv, FaBuildingCircleCheck } from 'react-icons/fa6';
 import { MdFamilyRestroom } from 'react-icons/md';
 
@@ -33,7 +33,7 @@ const images = [
   },
 ];
 
-const SearchItem = ({ title, img, price }) => {
+const ExecutiveSingle = ({ title, img, price }) => {
   const [open, setOpen] = useState(false);
 
   const [loading, setLoading] = useState(false);
@@ -326,4 +326,4 @@ function MyDialog() {
   );
 }
 
-export default SearchItem;
+export default ExecutiveSingle;
