@@ -1,5 +1,5 @@
 import './searchitem.css';
-import { FaBed, FaWifi, FaTv, FaBuildingCircleCheck } from 'react-icons/fa6';
+import { FaBed, FaWifi, FaBuildingCircleCheck } from 'react-icons/fa6';
 import { MdFamilyRestroom } from 'react-icons/md';
 
 import {
@@ -12,7 +12,7 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 import ReactImageGallery from 'react-image-gallery';
 import { Fragment, useState, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { CgSpinner } from 'react-icons/cg';
+// import { CgSpinner } from 'react-icons/cg';
 
 const images = [
   {
@@ -36,7 +36,7 @@ const images = [
 const SearchItem = ({ title, img, price }) => {
   const [open, setOpen] = useState(false);
 
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const cancelButtonRef = useRef(null);
   return (
@@ -263,14 +263,15 @@ const SearchItem = ({ title, img, price }) => {
                             : 'bg-red-800 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'
                         }`}
                       >
-                        {loading ? (
+                        {/* {loading ? (
                           <div className='flex items-center justify-center'>
                             <CgSpinner className='animate-spin h-5 mr-2 text-white' />
                             Loading
                           </div>
                         ) : (
                           'SUBMIT'
-                        )}
+                        )} */}
+                        SUBMIT
                       </button>
 
                       <button
@@ -293,37 +294,37 @@ const SearchItem = ({ title, img, price }) => {
   );
 };
 
-function MyDialog() {
-  let [isOpen, setIsOpen] = useState(true);
+// function MyDialog() {
+//   let [isOpen, setIsOpen] = useState(true);
 
-  const handleDeactivate = () => {
-    // Add logic for deactivating account here
-    setIsOpen(false);
-  };
+//   const handleDeactivate = () => {
+//     // Add logic for deactivating account here
+//     setIsOpen(false);
+//   };
 
-  const handleCancel = () => {
-    // Add logic for canceling here
-    setIsOpen(false);
-  };
+//   const handleCancel = () => {
+//     // Add logic for canceling here
+//     setIsOpen(false);
+//   };
 
-  return (
-    <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
-      <Dialog.Panel>
-        <Dialog.Title>Deactivate account</Dialog.Title>
-        <Dialog.Description>
-          This will permanently deactivate your account
-        </Dialog.Description>
+//   return (
+//     <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+//       <Dialog.Panel>
+//         <Dialog.Title>Deactivate account</Dialog.Title>
+//         <Dialog.Description>
+//           This will permanently deactivate your account
+//         </Dialog.Description>
 
-        <p>
-          Are you sure you want to deactivate your account? All of your data
-          will be permanently removed. This action cannot be undone.
-        </p>
+//         <p>
+//           Are you sure you want to deactivate your account? All of your data
+//           will be permanently removed. This action cannot be undone.
+//         </p>
 
-        <button onClick={handleDeactivate}>Deactivate</button>
-        <button onClick={handleCancel}>Cancel</button>
-      </Dialog.Panel>
-    </Dialog>
-  );
-}
+//         <button onClick={handleDeactivate}>Deactivate</button>
+//         <button onClick={handleCancel}>Cancel</button>
+//       </Dialog.Panel>
+//     </Dialog>
+//   );
+// }
 
 export default SearchItem;

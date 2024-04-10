@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MdEmail } from 'react-icons/md';
-import { FaPhoneVolume } from 'react-icons/fa6';
+// import { FaPhoneVolume } from 'react-icons/fa6';
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState('about');
@@ -75,6 +75,7 @@ const MapContent = () => {
             style={{ border: '0' }}
             allowFullScreen=''
             loading='lazy'
+            title='map-location'
             referrerPolicy='no-referrer-when-downgrade'
           ></iframe>
         </div>
