@@ -21,16 +21,11 @@ const Rooms = () => {
       <div className='listContainer'>
         <div className='listWrapper'>
           <div className='listResult'>
-            <Link
-              to='/standardsingle'
-              class='motion-reduce:transition-none-none text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80'
-            >
-              <ExecutiveSingle
-                title='Standard Room | Single'
-                img='https://www.hotelinnercircle.in/admin/Roomimages/Standard%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
-                price='3899.00'
-              />
-            </Link>
+            <ExecutiveSingle
+              title='Standard Room | Single'
+              img='https://www.hotelinnercircle.in/admin/Roomimages/Standard%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
+              price='3899.00'
+            />
 
             <SearchItem
               title='Standard Room | Double'

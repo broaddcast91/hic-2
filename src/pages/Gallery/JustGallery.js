@@ -11,7 +11,7 @@ const Gallery = ({ images, imagesPerPage }) => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className='container mx-auto'>
+    <div className='container mx-auto mt-5'>
       <div className='grid grid-cols-3 gap-4'>
         {currentImages.map((image, index) => (
           <div key={index} className='p-2'>

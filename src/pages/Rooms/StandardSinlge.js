@@ -13,6 +13,7 @@ import ReactImageGallery from 'react-image-gallery';
 import { Fragment, useState, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { CgSpinner } from 'react-icons/cg';
+import React, { useState } from 'react';
 
 const images = [
   {

@@ -81,3 +81,44 @@
 .listResult {
   flex: 3;
 }
+
+.dialog-container {
+  width: 100%; /* Adjust the width as needed */
+  position: relative;
+  z-index: 9999; /* Ensure a high z-index to appear on top */
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-picker-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-picker-wrapper > div {
+  flex: 1;
+  margin-right: 10px; /* Adjust margin between date pickers */
+}
+
+/* Adjust styles for date picker components as needed */
+
+/* Ensure date picker components appear above the modal overlay */
+.react-datepicker-wrapper {
+  z-index: 9999; /* Adjust z-index as needed */
+}
+
+/* Position date picker dropdown relative to its wrapper */
+.react-datepicker {
+  position: absolute;
+}
+
+/* Adjust date picker dropdown positioning to prevent cutting off */
+.react-datepicker__triangle {
+  top: auto;
+  bottom: 100%;
+}
+
+/* Adjust any other styles as needed */

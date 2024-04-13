@@ -1,18 +1,24 @@
-import '../../components/searchItem/searchitem.css';
+import React, { useState, Fragment, useRef } from 'react';
+
 import { FaBed, FaWifi, FaBuildingCircleCheck } from 'react-icons/fa6';
 import { MdFamilyRestroom } from 'react-icons/md';
 
+import ReactImageGallery from 'react-image-gallery';
+
+import { Dialog, Transition } from '@headlessui/react';
+import { CgSpinner } from 'react-icons/cg';
+import axios from 'axios';
+import DatePicker from 'react-datepicker';
 import {
   FaRegSnowflake,
   FaCoffee,
   FaGlassCheers,
   FaLock,
 } from 'react-icons/fa';
+import 'react-datepicker/dist/react-datepicker.css';
 import 'react-image-gallery/styles/css/image-gallery.css';
-import ReactImageGallery from 'react-image-gallery';
-import { Fragment, useState, useRef } from 'react';
-import { Dialog, Transition } from '@headlessui/react';
-// import { CgSpinner } from 'react-icons/cg';
+import './styles.css';
+import '../../components/searchItem/searchitem.css';
 
 const images = [
   {
@@ -35,10 +41,29 @@ const images = [
 
 const ExecutiveSingle = ({ title, img, price }) => {
   const [open, setOpen] = useState(false);
+  const [checkInDate, setCheckInDate] = useState(null);
+  const [checkOutDate, setCheckOutDate] = useState(null);
+  const [selectedRoom, setSelectedRoom] = useState('');
+  const [loading, setLoading] = useState(false); // Define loading state
+  const [roomStatus, setRoomStatus] = useState(null);
 
   // const [loading, setLoading] = useState(false);
 
   const cancelButtonRef = useRef(null);
+  const fetchBookedRoomsByDate = async (checkInDate, checkOutDate, roomId) => {
+    try {
+      setLoading(true);
+      const response = await axios.get(
+        `https://hic-backend.onrender.com/getBookedroomBydate?checkIn=${checkInDate}&checkOut=${checkOutDate}&room=${roomId}`
+      );
+      setLoading(false);
+      setRoomStatus(response.data); // Set room status to the entire response data
+    } catch (error) {
+      setLoading(false);
+      console.error('Error fetching booked rooms:', error);
+    }
+  };
+
   return (
     <>
       {' '}
@@ -136,12 +161,19 @@ const ExecutiveSingle = ({ title, img, price }) => {
           </div>
         </div>
       </div>
+      {/* Modal */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as='div'
           className='relative z-10'
           initialFocus={cancelButtonRef}
-          onClose={setOpen}
+          onClose={() => {
+            setOpen(false);
+            // Reset form fields and state when modal is closed
+            setCheckInDate(null);
+            setCheckOutDate(null);
+            setSelectedRoom('');
+          }}
         >
           <Transition.Child
             as={Fragment}
@@ -167,17 +199,19 @@ const ExecutiveSingle = ({ title, img, price }) => {
                 leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
               >
                 <form
-                // id='arenaCarEnq2'
-                // action={
-                //   pattern.test(phone) && phone.length === 10
-                //     ? 'https://crm.zoho.in/crm/WebToLeadForm'
-                //     : '#'
-                // }
-                // name='WebToLeads54158000083979838'
-                // method={'POST'}
-                // acceptCharset='UTF-8'
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    fetchBookedRoomsByDate(
+                      checkInDate,
+                      checkOutDate,
+                      selectedRoom
+                    ); // Pass selectedRoom as the roomId
+                  }}
                 >
-                  <Dialog.Panel className='relative bg-gray-100 p-2 text-left  rounded-3xl overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full '>
+                  <Dialog.Panel
+                    className='relative bg-gray-100 p-6 text-left  rounded-3xl overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-xl sm:w-full '
+                    style={{ height: '500px' }}
+                  >
                     <div className='bg-gray-100 px-4 pt-5 pb-4 sm:p-6 sm:pb-4 lg:p-10'>
                       <div className='mt-3'>
                         <Dialog.Title
@@ -193,39 +227,74 @@ const ExecutiveSingle = ({ title, img, price }) => {
                                 Room Type
                                 <span className='sub text-red-600'>*</span>
                               </label>
+                              {/* // Modify the select element: */}
                               <select
                                 id='LEADCF23'
                                 name='LEADCF23'
-                                defaultValue='Select Outlet'
+                                value={selectedRoom}
+                                onChange={(e) =>
+                                  setSelectedRoom(e.target.value)
+                                } // Update selectedRoom state
                                 className='block w-full h-10 py-2 px-3 border border-gray-300 bg-white rounded-3xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'
                               >
                                 <option disabled>Select Room Type</option>
-                                <option value='Standard Room'>
+                                <option value='661901d82831864696c9ff70'>
                                   Standard Room | Single
                                 </option>
-                                <option value='Standard Room'>
+                                <option value='661902052831864696c9ff72'>
                                   Standard Room | Double
                                 </option>
-                                <option value='Executive room'>
+                                <option value='661902282831864696c9ff74'>
                                   Executive room | Single
                                 </option>
-                                <option value='Executive room'>
-                                  {' '}
+                                <option value='661902402831864696c9ff76'>
                                   Executive room | Double
                                 </option>
-                                <option value='Deluxe Room'>
+                                <option value='661902732831864696c9ff78'>
                                   Deluxe Room | Single
                                 </option>
-                                <option value='Deluxe Room'>
+                                <option value='661902892831864696c9ff7a'>
                                   Deluxe Room | Double
                                 </option>
-                                <option value='Deluxe Suite '>
+                                <option value='6619029d2831864696c9ff7c'>
                                   Deluxe Suite | Single
                                 </option>
-                                <option value='Deluxe Suite'>
+                                <option value='661902bf2831864696c9ff7e'>
                                   Deluxe Suite | Double
                                 </option>
                               </select>
+                            </div>
+                          </div>
+                          <div className='flex space-x-4 ml-6'>
+                            <div>
+                              <label className='block text-sm font-light text-gray-700'>
+                                Check-in Date
+                                <span className='sub text-red-600'>*</span>
+                              </label>
+                              <DatePicker
+                                selected={checkInDate}
+                                onChange={(date) => setCheckInDate(date)}
+                                selectsStart
+                                startDate={checkInDate}
+                                endDate={checkOutDate}
+                                className='block w-full h-10 py-2 px-3 border border-gray-300 bg-white rounded-3xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'
+                              />
+                            </div>
+
+                            <div>
+                              <label className='block text-sm font-light text-gray-700'>
+                                Check-out Date
+                                <span className='sub text-red-600'>*</span>
+                              </label>
+                              <DatePicker
+                                selected={checkOutDate}
+                                onChange={(date) => setCheckOutDate(date)}
+                                selectsEnd
+                                startDate={checkInDate}
+                                endDate={checkOutDate}
+                                minDate={checkInDate}
+                                className='block w-full h-10 py-2 px-3 border border-gray-300 bg-white rounded-3xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'
+                              />
                             </div>
                           </div>
 
@@ -242,7 +311,7 @@ const ExecutiveSingle = ({ title, img, price }) => {
                                   : By clicking 'SUBMIT',&nbsp; you agree to our
                                 </span>
                                 <a
-                                  href='/maruti-car-terms-and-conditions'
+                                  href='/'
                                   target='_blank'
                                   rel='noopener noreferrer'
                                   className='font-semibold text-xs  text-blue-800 hover:font-bold hover:underline'
@@ -259,19 +328,32 @@ const ExecutiveSingle = ({ title, img, price }) => {
                       <button
                         type='submit'
                         className={`bg-orange-400 h-10 inline-flex m-4 justify-center w-full sm:w-auto my-2 sm:my-0 py-2 px-4 mt-4 mb-2 border border-transparent shadow-sm text-sm font-medium rounded-full text-white 
-                            ? 'bg-gray-400 cursor-not-allowed'
-                            : 'bg-red-800 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'
-                        }`}
+      ${
+        loading
+          ? 'cursor-not-allowed bg-gray-400'
+          : 'bg-red-800 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'
+      }`}
+                        onClick={(e) => {
+                          e.preventDefault(); // Prevent default form submission
+                          if (!loading) {
+                            // Check if loading state is false
+                            fetchBookedRoomsByDate(
+                              checkInDate,
+                              checkOutDate,
+                              selectedRoom
+                            ); // Call the API function
+                          }
+                        }}
                       >
-                        {/* {loading ? (
+                        {loading ? (
                           <div className='flex items-center justify-center'>
-                            <CgSpinner className='animate-spin h-5 mr-2 text-white' />
+                            <CgSpinner className='animate-spin h-5 mr-2 text-white' />{' '}
+                            {/* Render the CgSpinner component */}
                             Loading
                           </div>
                         ) : (
                           'SUBMIT'
-                        )} */}
-                        Submit
+                        )}
                       </button>
 
                       <button
@@ -283,6 +365,21 @@ const ExecutiveSingle = ({ title, img, price }) => {
                         Cancel
                       </button>
                     </div>
+                    {/* Display room status message */}
+                    {roomStatus && (
+                      <div className='text-center mt-4'>
+                        <p
+                          className={`${
+                            roomStatus.status
+                              ? 'text-green-600'
+                              : 'text-red-600'
+                          }`}
+                        >
+                          {roomStatus.message}
+                          {console.log(roomStatus.message)}
+                        </p>
+                      </div>
+                    )}
                   </Dialog.Panel>
                 </form>
               </Transition.Child>

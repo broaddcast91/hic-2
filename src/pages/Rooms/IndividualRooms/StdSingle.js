@@ -65,7 +65,7 @@ const MainLayout = () => {
   };
   return (
     <>
-      <div className='mx-auto flex max-w-7xl items-center  justify-between p-6 lg:px-8 border'>
+      <div className='mx-auto flex max-w-7xl items-center  justify-between p-6 lg:px-8 bg-orange-100 rounded-lg'>
         <div>
           <div className='hotelContainer'>
             {open && (

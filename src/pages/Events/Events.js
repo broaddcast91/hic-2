@@ -2,6 +2,7 @@ import React from 'react';
 // import Header from '../../components/Header/Header';
 import NewFooter from '../../components/Footer/NewFooter';
 import NewHeader from '../../components/Header/NewHeader';
+import { Link } from 'react-router-dom';
 
 const width = window.innerWidth;
 
@@ -39,6 +40,35 @@ const EventsBanner = () => {
           </div>
         </div>
       </div>
+      <div>
+        <nav class='relative flex w-full flex-wrap items-center justify-between bg-zinc-50 py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4'>
+          <div class='flex w-full flex-wrap items-center justify-between px-3'>
+            <nav class='w-full rounded-md' aria-label='breadcrumb'>
+              <ol class='list-reset ms-2 flex'>
+                <li>
+                  <Link
+                    to='/'
+                    class='motion-reduce:transition-none-none text-black/60 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80'
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <span class='mx-2 text-black/60 dark:text-white/60'>/</span>
+                </li>
+                <li>
+                  <Link
+                    to='#'
+                    class='motion-reduce:transition-none-none text-orange-400 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80'
+                  >
+                    Events
+                  </Link>
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </nav>
+      </div>
     </>
   );
 };
@@ -60,7 +90,7 @@ const EventDetails = () => {
             </div>
 
             <div class='w-full shrink-0 grow-0 basis-auto lg:w-7/12'>
-              <div class='flex h-full items-center rounded-lg bg-[#EA580C] p-6 text-center text-white lg:pl-12 lg:text-left'>
+              <div class='flex h-full items-center rounded-lg bg-orange-400 p-6 text-center text-white lg:pl-12 lg:text-left'>
                 <div class='lg:pl-12'>
                   <h2 class='mb-8 text-3xl font-bold'>Grand Gala Wedding</h2>
                   <p class='mb-8 pb-2 lg:pb-0'>
@@ -146,7 +176,7 @@ const EventDetails = () => {
             <div className='grid items-center lg:grid-cols-2'>
               <div className='mb-12 lg:mb-0 lg:w-7/1'>
                 {/* Increase the width by changing lg:w-5/12 to lg:w-7/12 */}
-                <div className='relative z-[3] block rounded-lg bg-[#EA580C] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] text-white md:px-12 lg:-mr-20'>
+                <div className='relative z-[3] block rounded-lg bg-orange-400 px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] text-white md:px-12 lg:-mr-20'>
                   <h2 className='mb-8 text-3xl font-bold'>
                     Business Conference - Industry Insights 2023
                   </h2>
@@ -251,7 +281,7 @@ const EventDetails = () => {
             </div>
 
             <div class='w-full shrink-0 grow-0 basis-auto lg:w-7/12'>
-              <div class='flex h-full items-center rounded-lg bg-[#EA580C] p-6 text-center text-white lg:pl-12 lg:text-left'>
+              <div class='flex h-full items-center rounded-lg bg-orange-400 p-6 text-center text-white lg:pl-12 lg:text-left'>
                 <div class='lg:pl-12'>
                   <h2 class='mb-8 text-3xl font-bold'>
                     Birthday Parties & Much More...
