@@ -3,7 +3,7 @@ import NewHeader from '../../components/Header/NewHeader';
 import NewFooter from '../../components/Footer/NewFooter';
 // import { useLocation } from 'react-router-dom';
 
-import SearchItem from '../../components/searchItem/SearchItem';
+// import SearchItem from '../../components/searchItem/SearchItem';
 import { Link } from 'react-router-dom';
 import ExecutiveSingle from './ExecutiveSingle';
 import StandardSinlge from './StandardSinlge';
