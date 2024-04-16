@@ -1,7 +1,7 @@
-import './searchitem.css';
+// import './searchitem.css';
 import { FaBed, FaWifi, FaTv, FaBuildingCircleCheck } from 'react-icons/fa6';
 import { MdFamilyRestroom } from 'react-icons/md';
-
+import { Link } from 'react-router-dom';
 import {
   FaRegSnowflake,
   FaCoffee,
@@ -130,6 +130,9 @@ const DeluxeDouble = ({ title, img, price }) => {
               <span className='font-semibold'>{price}</span>
             </span>
             <span className='siTaxOp'>Includes taxes and fees</span>
+            <Link to='/deluxedouble' className='siCheckButtonViewRoom'>
+              View Room
+            </Link>
             <button className='siCheckButton' onClick={() => setOpen(true)}>
               See availability
             </button>

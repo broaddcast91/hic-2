@@ -1,7 +1,7 @@
-import './searchitem.css';
+// import './searchitem.css';
 import { FaBed, FaWifi, FaTv, FaBuildingCircleCheck } from 'react-icons/fa6';
 import { MdFamilyRestroom } from 'react-icons/md';
-
+import { Link } from 'react-router-dom';
 import {
   FaRegSnowflake,
   FaCoffee,
@@ -10,7 +10,7 @@ import {
 } from 'react-icons/fa';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import ReactImageGallery from 'react-image-gallery';
-import { Fragment, useState, useRef } from 'react';
+import { Fragment, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { CgSpinner } from 'react-icons/cg';
 import React, { useState } from 'react';
@@ -131,6 +131,9 @@ const StandardSinlge = ({ title, img, price }) => {
               <span className='font-semibold'>{price}</span>
             </span>
             <span className='siTaxOp'>Includes taxes and fees</span>
+            <Link to='/standardsingle' className='siCheckButtonViewRoom'>
+              View Room
+            </Link>
             <button className='siCheckButton' onClick={() => setOpen(true)}>
               See availability
             </button>

@@ -16,8 +16,21 @@ import NewFooter from './components/Footer/NewFooter';
 // import AboutUsSection from './components/AboutUs/AboutUs';
 import { useLocation } from 'react-router-dom';
 import StdSingle from './pages/Rooms/IndividualRooms/StdSingle';
+import StdDouble from './pages/Rooms/IndividualRooms/StdDouble';
 import FeedbackForm from './pages/Feedback/Feedback';
 import ThankYou from './pages/Thankyou/ThankYou';
+import DeluxeSuiteDouble from './pages/Rooms/DeluxeSuiteDouble';
+import DeluxeSuiteSingle from './pages/Rooms/DeluxeSuiteSingle';
+import DeluxeDouble from './pages/Rooms/DeluxeDouble';
+import DelSingle from './pages/Rooms/IndividualRooms/DelSingle';
+import DeluxeSingle from './pages/Rooms/DeluxeSingle';
+import ExecutiveDouble from './pages/Rooms/ExecutiveDouble';
+import ExecutiveSingle from './pages/Rooms/ExecutiveSingle';
+import ExeSingle from './pages/Rooms/IndividualRooms/ExeSingle';
+import ExeDouble from './pages/Rooms/IndividualRooms/ExeDouble';
+import DelDouble from './pages/Rooms/IndividualRooms/DelDouble';
+import DelSuitSingle from './pages/Rooms/IndividualRooms/DelSuitSingle';
+import DelSuitDouble from './pages/Rooms/IndividualRooms/DelSuitDouble';
 
 const ScrollToTopOnLocationChange = () => {
   const location = useLocation();
@@ -47,6 +60,13 @@ function App() {
           <Route path='/textanm' element={<TextAnimation />} />
           <Route path='/newfooter' element={<NewFooter />} />
           <Route path='/standardsingle' element={<StdSingle />} />
+          <Route path='/standarddouble' element={<StdDouble />} />
+          <Route path='/executivesingle' element={<ExeSingle />} />
+          <Route path='/executivedouble' element={<ExeDouble />} />
+          <Route path='/deluxesingle' element={<DelSingle />} />
+          <Route path='/deluxedouble' element={<DelDouble />} />
+          <Route path='/deluxesuitesingle' element={<DelSuitSingle />} />
+          <Route path='/deluxesuitedouble' element={<DelSuitDouble />} />
           <Route path='/thankyou' element={<ThankYou />} />
         </Routes>
       </BrowserRouter>

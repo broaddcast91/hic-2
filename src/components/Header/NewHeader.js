@@ -55,7 +55,7 @@ const products = [
   },
 ];
 const callsToAction = [
-  { name: 'Watch demo', href: '/', icon: PlayCircleIcon },
+  { name: 'All Rooms', href: '/rooms', icon: PlayCircleIcon },
   { name: 'Contact Us', href: '/contact', icon: PhoneIcon },
 ];
 

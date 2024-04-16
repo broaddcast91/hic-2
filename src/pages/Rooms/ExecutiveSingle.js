@@ -2,7 +2,7 @@ import React, { useState, Fragment, useRef } from 'react';
 
 import { FaBed, FaWifi, FaBuildingCircleCheck } from 'react-icons/fa6';
 import { MdFamilyRestroom } from 'react-icons/md';
-
+import { Link } from 'react-router-dom';
 import ReactImageGallery from 'react-image-gallery';
 
 import { Dialog, Transition } from '@headlessui/react';
@@ -41,7 +41,7 @@ const images = [
 
 const ExecutiveSingle = ({ title, img, price }) => {
   const [open, setOpen] = useState(false);
-  const [checkInDate, setCheckInDate] = useState(null);
+  const [checkInDate, setCheckInDate] = useState('');
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [selectedRoom, setSelectedRoom] = useState('');
   const [loading, setLoading] = useState(false); // Define loading state
@@ -60,7 +60,18 @@ const ExecutiveSingle = ({ title, img, price }) => {
       setRoomStatus(response.data); // Set room status to the entire response data
     } catch (error) {
       setLoading(false);
-      console.error('Error fetching booked rooms:', error);
+      if (error.response) {
+        // Handle 404 error specifically
+        if (error.response.status === 404) {
+          setRoomStatus({ status: false, message: 'Rooms are not available' });
+        } else {
+          const errorMessage = error.response.data.message;
+          alert(errorMessage);
+        }
+      } else {
+        // Handle other errors
+        console.error('Error fetching booked rooms:', error);
+      }
     }
   };
 
@@ -149,14 +160,18 @@ const ExecutiveSingle = ({ title, img, price }) => {
             <span>Excellent</span>
             <button className='bg-[color: #caa169;]'>8.9</button>
           </div>
-          <div className='siDetailTexts'>
+          <div className='siDetailTexts '>
             <span className='siPrice'>
               <span className='text-sm'>₹</span>&nbsp;
               <span className='font-semibold'>{price}</span>
             </span>
             <span className='siTaxOp'>Includes taxes and fees</span>
+
+            <Link to='/executivesingle' className='siCheckButtonViewRoom'>
+              View Room
+            </Link>
             <button className='siCheckButton' onClick={() => setOpen(true)}>
-              See availability
+              See Availability
             </button>
           </div>
         </div>
@@ -209,14 +224,14 @@ const ExecutiveSingle = ({ title, img, price }) => {
                   }}
                 >
                   <Dialog.Panel
-                    className='relative bg-gray-100 p-6 text-left  rounded-3xl overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-xl sm:w-full '
+                    className='relative bg-gray-100 p-6 text-left rounded-3xl overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-xl sm:w-full '
                     style={{ height: '500px' }}
                   >
-                    <div className='bg-gray-100 px-4 pt-5 pb-4 sm:p-6 sm:pb-4 lg:p-10'>
+                    <div className='bg-gray-100 px-4 pt-2 pb-4 sm:p-6 sm:pb-4 lg:p-10'>
                       <div className='mt-3'>
                         <Dialog.Title
                           as='h3'
-                          className='text-xl leading-6 font-medium text-blue-900 text-center'
+                          className='text-xl leading-6 font-medium text-orange-400 text-center'
                         >
                           Check Room Availability
                         </Dialog.Title>
@@ -277,6 +292,9 @@ const ExecutiveSingle = ({ title, img, price }) => {
                                 selectsStart
                                 startDate={checkInDate}
                                 endDate={checkOutDate}
+                                minDate={new Date()}
+                                // minDate={new Date()} // Set minDate to the current date
+                                dateFormat='yyyy/MM/dd'
                                 className='block w-full h-10 py-2 px-3 border border-gray-300 bg-white rounded-3xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'
                               />
                             </div>
@@ -293,32 +311,9 @@ const ExecutiveSingle = ({ title, img, price }) => {
                                 startDate={checkInDate}
                                 endDate={checkOutDate}
                                 minDate={checkInDate}
+                                dateFormat='yyyy/MM/dd'
                                 className='block w-full h-10 py-2 px-3 border border-gray-300 bg-white rounded-3xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'
                               />
-                            </div>
-                          </div>
-
-                          <div className='flex items-start '>
-                            <div className='ml-2 italic text-xs'>
-                              <label
-                                htmlFor='disclaimer'
-                                className='font-medium text-gray-700'
-                              >
-                                <span className='text-black font-bold'>
-                                  Disclaimer
-                                </span>
-                                <span className='text-black font-light text-xs'>
-                                  : By clicking 'SUBMIT',&nbsp; you agree to our
-                                </span>
-                                <a
-                                  href='/'
-                                  target='_blank'
-                                  rel='noopener noreferrer'
-                                  className='font-semibold text-xs  text-blue-800 hover:font-bold hover:underline'
-                                >
-                                  &nbsp;Terms and Conditions
-                                </a>
-                              </label>
                             </div>
                           </div>
                         </div>
@@ -331,7 +326,7 @@ const ExecutiveSingle = ({ title, img, price }) => {
       ${
         loading
           ? 'cursor-not-allowed bg-gray-400'
-          : 'bg-red-800 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'
+          : 'bg-orange-400 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'
       }`}
                         onClick={(e) => {
                           e.preventDefault(); // Prevent default form submission
@@ -358,7 +353,7 @@ const ExecutiveSingle = ({ title, img, price }) => {
 
                       <button
                         type='button'
-                        className='h-10 rounded-full inline-flex justify-center px-4 py-2 border-solid border-blue-900 border shadow-md bg-white text-base font-medium text-blue-900 hover:bg-red-700 hover:border-red-700 hover:text-white focus:outline-none w-full sm:w-auto sm:text-sm'
+                        className='h-10 rounded-full inline-flex justify-center px-4 py-2 border-solid border-gray-400 border shadow-md bg-white text-base font-medium text-gray-600 hover:bg-red-700 hover:border-red-700 hover:text-white focus:outline-none w-full sm:w-auto sm:text-sm'
                         onClick={() => setOpen(false)}
                         ref={cancelButtonRef}
                       >
