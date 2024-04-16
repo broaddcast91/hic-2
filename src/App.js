@@ -31,6 +31,7 @@ import ExeDouble from './pages/Rooms/IndividualRooms/ExeDouble';
 import DelDouble from './pages/Rooms/IndividualRooms/DelDouble';
 import DelSuitSingle from './pages/Rooms/IndividualRooms/DelSuitSingle';
 import DelSuitDouble from './pages/Rooms/IndividualRooms/DelSuitDouble';
+import EnrollAsGuest from './pages/EnrollAsGuest/EnrollAsGuest';
 
 const ScrollToTopOnLocationChange = () => {
   const location = useLocation();
@@ -67,6 +68,7 @@ function App() {
           <Route path='/deluxedouble' element={<DelDouble />} />
           <Route path='/deluxesuitesingle' element={<DelSuitSingle />} />
           <Route path='/deluxesuitedouble' element={<DelSuitDouble />} />
+          <Route path='/enroll' element={<EnrollAsGuest />} />
           <Route path='/thankyou' element={<ThankYou />} />
         </Routes>
       </BrowserRouter>

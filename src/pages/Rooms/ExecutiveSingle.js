@@ -4,7 +4,8 @@ import { FaBed, FaWifi, FaBuildingCircleCheck } from 'react-icons/fa6';
 import { MdFamilyRestroom } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import ReactImageGallery from 'react-image-gallery';
-
+// import EnrollAsGuest from '../EnrollAsGuest/EnrollAsGuest';
+import { useNavigate } from 'react-router-dom';
 import { Dialog, Transition } from '@headlessui/react';
 import { CgSpinner } from 'react-icons/cg';
 import axios from 'axios';
@@ -46,6 +47,8 @@ const ExecutiveSingle = ({ title, img, price }) => {
   const [selectedRoom, setSelectedRoom] = useState('');
   const [loading, setLoading] = useState(false); // Define loading state
   const [roomStatus, setRoomStatus] = useState(null);
+  // const [enrollAsGuest, setEnrollAsGuest] = useState(false);
+  const navigate = useNavigate();
 
   // const [loading, setLoading] = useState(false);
 
@@ -73,6 +76,11 @@ const ExecutiveSingle = ({ title, img, price }) => {
         console.error('Error fetching booked rooms:', error);
       }
     }
+  };
+
+  const handleBookAsGuest = () => {
+    // Redirect to another page within the application
+    navigate('/enroll'); // Replace '/enroll' with the route of the component/page you want to redirect to
   };
 
   return (
@@ -373,6 +381,14 @@ const ExecutiveSingle = ({ title, img, price }) => {
                           {roomStatus.message}
                           {console.log(roomStatus.message)}
                         </p>
+                        {roomStatus.status && (
+                          <button
+                            className='bg-orange-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-3xl mt-4'
+                            onClick={handleBookAsGuest}
+                          >
+                            Book as Guest
+                          </button>
+                        )}
                       </div>
                     )}
                   </Dialog.Panel>
