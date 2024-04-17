@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { Link } from 'react-router-dom';
 import 'swiper/swiper-bundle.css';
 import { Pagination, Autoplay } from 'swiper/modules';
 
@@ -12,6 +12,7 @@ const ImageSlider = () => {
       text: 'Deluxe Suite',
       desc: 'A step above standard, moderate and superior rooms, deluxe accomdations combine a desirable view with a number of luxurious amentities',
       buttonLabel: 'Book Now',
+      link: 'suite',
     },
     {
       imageUrl:
@@ -19,6 +20,7 @@ const ImageSlider = () => {
       text: 'Deluxe Room',
       desc: 'it will be bigger, more luxurious, and probably have a great view.',
       buttonLabel: 'Book Now',
+      link: 'deluxeroom',
     },
     {
       imageUrl:
@@ -26,6 +28,7 @@ const ImageSlider = () => {
       text: 'Executive Room',
       desc: 'The executive was more than adequate - good sized and large bathroom, dressing gown + slippers + nice toiletries included, large, opening windows with street view.',
       buttonLabel: 'Book Now',
+      link: 'executiveroom',
     },
     {
       imageUrl:
@@ -33,6 +36,7 @@ const ImageSlider = () => {
       text: 'Standard Room',
       desc: 'It is a type of single room, which has a king-size bed, or as two beds — this room is decorated with two queen-size beds.',
       buttonLabel: 'Book Now',
+      link: 'standardroom',
     },
     // Add more slides as needed
   ];
@@ -68,9 +72,12 @@ const ImageSlider = () => {
               <p className='text-white mb-4 font-bold text-md p-4'>
                 {slide.desc}
               </p>
-              <button className='bg-white text-black px-4 py-2 rounded-md absolute bottom-0 right-0 m-4 hover:bg-orange-400'>
+              <Link
+                to={slide.link}
+                className='bg-white text-black px-4 py-2 rounded-md absolute bottom-0 right-0 m-4 hover:bg-orange-400'
+              >
                 {slide.buttonLabel}
-              </button>
+              </Link>
             </div>
           </div>
         </SwiperSlide>

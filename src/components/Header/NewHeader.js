@@ -20,19 +20,19 @@ const products = [
   {
     name: 'Standard Room',
     description: 'Get a better understanding of your traffic',
-    href: '/standardsingle',
+    href: '/standardroom',
     icon: ChartPieIcon,
   },
   {
     name: 'Executive Room',
     description: 'Speak directly to your customers',
-    href: '/rooms',
+    href: '/executiveroom',
     icon: CursorArrowRaysIcon,
   },
   {
     name: 'Deluxe Room',
     description: 'Your customers’ data will be safe and secure',
-    href: '/rooms',
+    href: '/deluxeroom',
     icon: FingerPrintIcon,
   },
   {
@@ -177,7 +177,7 @@ export default function NewHeader() {
         </Popover.Group>
         <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
           <Link
-            to='https://hotelinnercircle.bookingjini.com/property'
+            to='/enroll'
             class='uppercase inline-flex items-center justify-center w-full px-10 py-3 text-base font-light leading-0 text-white bg-gradient-to-br bg-orange-400 border border-transparent rounded-full md:w-auto hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 shadow-lg'
           >
             Book

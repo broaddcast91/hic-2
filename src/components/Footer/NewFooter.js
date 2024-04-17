@@ -118,7 +118,7 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/rooms'
+                        to='/standardroom'
                       >
                         Standard Room
                       </Link>
@@ -127,7 +127,7 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/rooms'
+                        to='/executiveroom'
                       >
                         Executive Room
                       </Link>
@@ -136,7 +136,7 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/rooms'
+                        to='/deluxeroom'
                       >
                         Deluxe Room
                       </Link>
@@ -145,7 +145,7 @@ const NewFooter = () => {
                     <li>
                       <Link
                         class='text-white transition hover:text-gray-700/75'
-                        to='/rooms'
+                        to='/suite'
                       >
                         Deluxe Suite
                       </Link>

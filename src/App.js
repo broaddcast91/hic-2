@@ -32,6 +32,11 @@ import DelDouble from './pages/Rooms/IndividualRooms/DelDouble';
 import DelSuitSingle from './pages/Rooms/IndividualRooms/DelSuitSingle';
 import DelSuitDouble from './pages/Rooms/IndividualRooms/DelSuitDouble';
 import EnrollAsGuest from './pages/EnrollAsGuest/EnrollAsGuest';
+import ThankYouEnroll from './pages/Thankyou/ThankyouEnroll';
+import OnlyStandardRoom from './pages/Rooms/OnlyStandardRoom';
+import OnlyExecutiveRoom from './pages/Rooms/OnlyExecutiveRoom';
+import OnlyDeluxeRoom from './pages/Rooms/OnlyDeluxeRoom';
+import OnlySuite from './pages/Rooms/OnlySuite';
 
 const ScrollToTopOnLocationChange = () => {
   const location = useLocation();
@@ -49,6 +54,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTopOnLocationChange />
         <Routes>
+          {/* Main files and privacy files */}
           <Route path='/' element={<Home />} />
           <Route path='/iceandspice' element={<HotelMenu />} />
           <Route path='/gallery' element={<ImageGallery />} />
@@ -60,6 +66,7 @@ function App() {
           <Route path='/faqs' element={<FAQSection />} />
           <Route path='/textanm' element={<TextAnimation />} />
           <Route path='/newfooter' element={<NewFooter />} />
+          {/* Individual Rooms */}
           <Route path='/standardsingle' element={<StdSingle />} />
           <Route path='/standarddouble' element={<StdDouble />} />
           <Route path='/executivesingle' element={<ExeSingle />} />
@@ -68,7 +75,15 @@ function App() {
           <Route path='/deluxedouble' element={<DelDouble />} />
           <Route path='/deluxesuitesingle' element={<DelSuitSingle />} />
           <Route path='/deluxesuitedouble' element={<DelSuitDouble />} />
+          {/* Book a Room */}
           <Route path='/enroll' element={<EnrollAsGuest />} />
+          {/* Rooms Section */}
+          <Route path='/standardroom' element={<OnlyStandardRoom />} />
+          <Route path='/executiveroom' element={<OnlyExecutiveRoom />} />
+          <Route path='/deluxeroom' element={<OnlyDeluxeRoom />} />
+          <Route path='/suite' element={<OnlySuite />} />
+          {/* Thank you pages */}
+          <Route path='/thankyouenroll' element={<ThankYouEnroll />} />
           <Route path='/thankyou' element={<ThankYou />} />
         </Routes>
       </BrowserRouter>

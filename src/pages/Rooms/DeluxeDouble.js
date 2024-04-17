@@ -12,7 +12,10 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 import ReactImageGallery from 'react-image-gallery';
 import { Fragment, useState, useRef } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-// import { CgSpinner } from 'react-icons/cg';
+import { CgSpinner } from 'react-icons/cg';
+import axios from 'axios';
+import DatePicker from 'react-datepicker';
+import { useNavigate } from 'react-router-dom';
 
 const images = [
   {
@@ -35,10 +38,47 @@ const images = [
 
 const DeluxeDouble = ({ title, img, price }) => {
   const [open, setOpen] = useState(false);
+  const [checkInDate, setCheckInDate] = useState('');
+  const [checkOutDate, setCheckOutDate] = useState(null);
+  const [selectedRoom, setSelectedRoom] = useState('');
+  const [loading, setLoading] = useState(false); // Define loading state
+  const [roomStatus, setRoomStatus] = useState(null);
+  // const [enrollAsGuest, setEnrollAsGuest] = useState(false);
+  const navigate = useNavigate();
 
   // const [loading, setLoading] = useState(false);
 
   const cancelButtonRef = useRef(null);
+
+  const fetchBookedRoomsByDate = async (checkInDate, checkOutDate, roomId) => {
+    try {
+      setLoading(true);
+      const response = await axios.get(
+        `https://hic-backend.onrender.com/getBookedroomBydate?checkIn=${checkInDate}&checkOut=${checkOutDate}&room=${roomId}`
+      );
+      setLoading(false);
+      setRoomStatus(response.data); // Set room status to the entire response data
+    } catch (error) {
+      setLoading(false);
+      if (error.response) {
+        // Handle 404 error specifically
+        if (error.response.status === 404) {
+          setRoomStatus({ status: false, message: 'Rooms are not available' });
+        } else {
+          const errorMessage = error.response.data.message;
+          alert(errorMessage);
+        }
+      } else {
+        // Handle other errors
+        console.error('Error fetching booked rooms:', error);
+      }
+    }
+  };
+
+  const handleBookAsGuest = () => {
+    // Redirect to another page within the application
+    navigate('/enroll'); // Replace '/enroll' with the route of the component/page you want to redirect to
+  };
   return (
     <>
       {' '}
@@ -142,9 +182,14 @@ const DeluxeDouble = ({ title, img, price }) => {
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as='div'
-          className='relative z-10'
+          className='fixed inset-0 z-10 overflow-y-auto'
           initialFocus={cancelButtonRef}
-          onClose={setOpen}
+          onClose={() => {
+            setOpen(false);
+            setCheckInDate(null);
+            setCheckOutDate(null);
+            setSelectedRoom('');
+          }}
         >
           <Transition.Child
             as={Fragment}
@@ -155,140 +200,169 @@ const DeluxeDouble = ({ title, img, price }) => {
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >
-            <div className='fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity' />
+            <Dialog.Overlay className='fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity' />
           </Transition.Child>
 
-          <div className='fixed z-10 inset-0 overflow-y-auto'>
-            <div className='flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0'>
-              <Transition.Child
-                as={Fragment}
-                enter='ease-out duration-300'
-                enterFrom='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
-                enterTo='opacity-100 translate-y-0 sm:scale-100'
-                leave='ease-in duration-200'
-                leaveFrom='opacity-100 translate-y-0 sm:scale-100'
-                leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
+          <div className='flex items-center justify-center min-h-full'>
+            <Transition.Child
+              as={Fragment}
+              enter='ease-out duration-300'
+              enterFrom='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
+              enterTo='opacity-100 translate-y-0 sm:scale-100'
+              leave='ease-in duration-200'
+              leaveFrom='opacity-100 translate-y-0 sm:scale-100'
+              leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
+            >
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  fetchBookedRoomsByDate(
+                    checkInDate,
+                    checkOutDate,
+                    selectedRoom
+                  );
+                }}
+                className='relative bg-white pb-[150px] text-left rounded-3xl overflow-hidden shadow-xl sm:max-w-2xl h-full  sm:w-full'
               >
-                <form
-                // id='arenaCarEnq2'
-                // action={
-                //   pattern.test(phone) && phone.length === 10
-                //     ? 'https://crm.zoho.in/crm/WebToLeadForm'
-                //     : '#'
-                // }
-                // name='WebToLeads54158000083979838'
-                // method={'POST'}
-                // acceptCharset='UTF-8'
-                >
-                  <Dialog.Panel className='relative bg-gray-100 p-2 text-left  rounded-3xl overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full '>
-                    <div className='bg-gray-100 px-4 pt-5 pb-4 sm:p-6 sm:pb-4 lg:p-10'>
-                      <div className='mt-3'>
-                        <Dialog.Title
-                          as='h3'
-                          className='text-xl leading-6 font-medium text-blue-900 text-center'
+                <div className='bg-white px-4 pt-2  sm:p-6 sm:pb-4 lg:p-10'>
+                  <Dialog.Title
+                    as='h3'
+                    className='text-3xl leading-6 mb-10 font-medium text-orange-400 text-center'
+                  >
+                    Check Room Availability
+                  </Dialog.Title>
+                  <div className='mt-3 space-y-3'>
+                    <div className='mt-2 space-y-3 '>
+                      <label
+                        htmlFor='roomType'
+                        className='block text-sm font-light text-gray-700'
+                      >
+                        Room Type <span className='sub text-red-600'>*</span>
+                      </label>
+                      <select
+                        id='roomType'
+                        name='roomType'
+                        value={selectedRoom}
+                        onChange={(e) => setSelectedRoom(e.target.value)}
+                        className='block w-full h-10 py-2 px-3 border border-gray-300 bg-white rounded-3xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'
+                      >
+                        <option disabled>Select Room Type</option>
+                        {/* Add options here */}
+                        
+                        <option value='661902892831864696c9ff7a'>
+                          Deluxe Room | Double
+                        </option>
+                     
+                      </select>
+                    </div>
+                    <div className='flex justify-center mt-4 space-x-4'>
+                      <div className='w-1/2 flex flex-col '>
+                        <label
+                          htmlFor='checkInDate'
+                          className='text-sm font-light text-gray-700 mb-1'
                         >
-                          Check Room Availability
-                        </Dialog.Title>
-                        <div className='mt-2 space-y-3'>
-                          <div className='mt-2 space-y-3'>
-                            <div>
-                              <label className='block text-sm font-light text-gray-700'>
-                                Room Type
-                                <span className='sub text-red-600'>*</span>
-                              </label>
-                              <select
-                                id='LEADCF23'
-                                name='LEADCF23'
-                                defaultValue='Select Outlet'
-                                className='block w-full h-10 py-2 px-3 border border-gray-300 bg-white rounded-3xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'
-                              >
-                                <option disabled>Select Room Type</option>
-                                <option value='Standard Room'>
-                                  Standard Room | Single
-                                </option>
-                                <option value='Standard Room'>
-                                  Standard Room | Double
-                                </option>
-                                <option value='Executive room'>
-                                  Executive room | Single
-                                </option>
-                                <option value='Executive room'>
-                                  {' '}
-                                  Executive room | Double
-                                </option>
-                                <option value='Deluxe Room'>
-                                  Deluxe Room | Single
-                                </option>
-                                <option value='Deluxe Room'>
-                                  Deluxe Room | Double
-                                </option>
-                                <option value='Deluxe Suite '>
-                                  Deluxe Suite | Single
-                                </option>
-                                <option value='Deluxe Suite'>
-                                  Deluxe Suite | Double
-                                </option>
-                              </select>
-                            </div>
-                          </div>
-
-                          <div className='flex items-start '>
-                            <div className='ml-2 italic text-xs'>
-                              <label
-                                htmlFor='disclaimer'
-                                className='font-medium text-gray-700'
-                              >
-                                <span className='text-black font-bold'>
-                                  Disclaimer
-                                </span>
-                                <span className='text-black font-light text-xs'>
-                                  : By clicking 'SUBMIT',&nbsp; you agree to our
-                                </span>
-                                <a
-                                  href='/maruti-car-terms-and-conditions'
-                                  target='_blank'
-                                  rel='noopener noreferrer'
-                                  className='font-semibold text-xs  text-blue-800 hover:font-bold hover:underline'
-                                >
-                                  &nbsp;Terms and Conditions
-                                </a>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
+                          Check-in Date{' '}
+                          <span className='sub text-red-600'>*</span>
+                        </label>
+                        <DatePicker
+                          selected={checkInDate}
+                          onChange={(date) => setCheckInDate(date)}
+                          selectsStart
+                          startDate={checkInDate}
+                          endDate={checkOutDate}
+                          minDate={new Date()}
+                          dateFormat='yyyy/MM/dd'
+                          className='block w-full h-10 py-2 px-3 border border-gray-300 bg-white rounded-3xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'
+                        />
+                      </div>
+                      <div className='w-1/2 flex flex-col'>
+                        <label
+                          htmlFor='checkOutDate'
+                          className='text-sm font-light text-gray-700 mb-1'
+                        >
+                          Check-out Date{' '}
+                          <span className='sub text-red-600'>*</span>
+                        </label>
+                        <DatePicker
+                          selected={checkOutDate}
+                          onChange={(date) => setCheckOutDate(date)}
+                          selectsEnd
+                          startDate={checkInDate}
+                          endDate={checkOutDate}
+                          minDate={checkInDate}
+                          dateFormat='yyyy/MM/dd'
+                          className='block w-full h-10 py-2 px-3 border border-gray-300 bg-white rounded-3xl shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm'
+                        />
                       </div>
                     </div>
-                    <div className='bg-gray-100 p-3 pd-8 sm:px-6 sm:flex sm:flex-row-reverse flex flex-col items-center justify-center'>
-                      <button
-                        type='submit'
-                        className={`bg-orange-400 h-10 inline-flex m-4 justify-center w-full sm:w-auto my-2 sm:my-0 py-2 px-4 mt-4 mb-2 border border-transparent shadow-sm text-sm font-medium rounded-full text-white 
-                            ? 'bg-gray-400 cursor-not-allowed'
-                            : 'bg-red-800 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'
+                  </div>
+                </div>
+                <div className='bg-white sm:px-6 sm:flex sm:flex-row-reverse flex flex-col items-center justify-center'>
+                  <button
+                    type='submit'
+                    className={`bg-orange-400 h-10 inline-flex m-4 justify-center w-full sm:w-auto my-2 sm:my-0 py-2 px-4 mt-4 mb-2 border border-transparent shadow-sm text-sm font-medium rounded-full text-white 
+      ${
+        loading
+          ? 'cursor-not-allowed bg-white'
+          : 'bg-orange-400 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'
+      }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (!loading) {
+                        fetchBookedRoomsByDate(
+                          checkInDate,
+                          checkOutDate,
+                          selectedRoom
+                        );
+                      }
+                    }}
+                  >
+                    {loading ? (
+                      <div className='flex items-center justify-center'>
+                        <CgSpinner className='animate-spin h-5 mr-2 text-white' />{' '}
+                        Loading
+                      </div>
+                    ) : (
+                      'SUBMIT'
+                    )}
+                  </button>
+                  <button
+                    type='button'
+                    className='h-10 rounded-full inline-flex justify-center px-4 py-2 border-solid border-gray-400 border shadow-md bg-white text-base font-medium text-gray-600 hover:bg-red-700 hover:border-red-700 hover:text-white focus:outline-none w-full sm:w-auto sm:text-sm'
+                    onClick={() => setOpen(false)}
+                    ref={cancelButtonRef}
+                  >
+                    Cancel
+                  </button>
+                </div>
+                {/* Display room status message */}
+                <div className=' mt-10'>
+                  {' '}
+                  {roomStatus && (
+                    <div className='text-center mt-4'>
+                      <p
+                        className={`${
+                          roomStatus.status
+                            ? 'text-green-600 text-2xl'
+                            : 'text-red-600'
                         }`}
                       >
-                        {/* {loading ? (
-                          <div className='flex items-center justify-center'>
-                            <CgSpinner className='animate-spin h-5 mr-2 text-white' />
-                            Loading
-                          </div>
-                        ) : (
-                          'SUBMIT'
-                        )} */}Submit
-                      </button>
-
-                      <button
-                        type='button'
-                        className='h-10 rounded-full inline-flex justify-center px-4 py-2 border-solid border-blue-900 border shadow-md bg-white text-base font-medium text-blue-900 hover:bg-red-700 hover:border-red-700 hover:text-white focus:outline-none w-full sm:w-auto sm:text-sm'
-                        onClick={() => setOpen(false)}
-                        ref={cancelButtonRef}
-                      >
-                        Cancel
-                      </button>
+                        {roomStatus.message}
+                        {console.log(roomStatus.message)}
+                      </p>
+                      {roomStatus.status && (
+                        <button
+                          className='bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-3xl mt-4'
+                          onClick={handleBookAsGuest}
+                        >
+                          Book as Guest
+                        </button>
+                      )}
                     </div>
-                  </Dialog.Panel>
-                </form>
-              </Transition.Child>
-            </div>
+                  )}
+                </div>
+              </form>
+            </Transition.Child>
           </div>
         </Dialog>
       </Transition.Root>
