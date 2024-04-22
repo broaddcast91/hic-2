@@ -146,32 +146,57 @@ const Enroll = () => {
               className='border rounded-3xl px-4 py-2 w-full'
               required
             >
-              <option disabled>Select Room Type</option>
-              <option value='661901d82831864696c9ff70'>
+                    <option disabled>Select room type</option>
+                <option value='Standard Room | Single'>
+                  Standard Room | Single
+                </option>
+                <option value='Standard Room | Double'>
+                  Standard Room | Double
+                </option>
+                <option value='Executive Room | Single'>
+                  Executive Room | Single
+                </option>
+                <option value='Deluxe Room | Single'>
+                  Deluxe Room | Single
+                </option>
+                <option value='Deluxe Room | Double'>
+                  Deluxe Room | Double
+                </option>
+                <option value='Deluxe Suite | Single'>
+                  Deluxe Suite | Single
+                </option>
+                <option value='Deluxe Suite | Double'>
+                  Deluxe Suite | Double
+                </option>
+            </select>
+            {/* <select
+              id='roomType'
+              name='roomType'
+              value={formData.roomType}
+              onChange={handleRoomInputChange}
+              className='block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
+              required
+            >
+              <option value=''>Select room type</option>
+              <option value='Standard Room | Single'>
                 Standard Room | Single
               </option>
-              <option value='661902052831864696c9ff72'>
+              <option value='Standard Room | Double'>
                 Standard Room | Double
               </option>
-              <option value='661902282831864696c9ff74'>
-                Executive room | Single
+              <option value='Executive Room | Single'>
+                Executive Room | Single
               </option>
-              <option value='661902402831864696c9ff76'>
-                Executive room | Double
-              </option>
-              <option value='661902732831864696c9ff78'>
-                Deluxe Room | Single
-              </option>
-              <option value='661902892831864696c9ff7a'>
-                Deluxe Room | Double
-              </option>
-              <option value='6619029d2831864696c9ff7c'>
+              <option value='Deluxe Room | Single'>Deluxe Room | Single</option>
+              <option value='Deluxe Room | Double'>Deluxe Room | Double</option>
+              <option value='Deluxe Suite | Single'>
                 Deluxe Suite | Single
               </option>
-              <option value='661902bf2831864696c9ff7e'>
+              <option value='Deluxe Suite | Double'>
                 Deluxe Suite | Double
               </option>
-            </select>
+              <option value='Banquet Hall'>Banquet Hall</option>
+            </select> */}
           </div>
           {/* add phone and email fields here */}
           {/* Phone Number Field */}

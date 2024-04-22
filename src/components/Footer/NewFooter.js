@@ -30,7 +30,7 @@ const NewFooter = () => {
                       <span className='sr-only'>Workflow</span>
                       <img
                         className='h-10 w-auto sm:h-16'
-                        src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/new/images/inner-circle-logo.webp'
+                        src='https://www.hotelinnercircle.in/img/HIC-white-logo.png'
                         alt=''
                       />
                     </Link>
@@ -45,7 +45,7 @@ const NewFooter = () => {
                 <ul class='mt-8 flex justify-center gap-6 sm:justify-start md:gap-8'>
                   <li>
                     <Link
-                      href='/'
+                      href='https://www.facebook.com/hotelinnercirclehyderabad'
                       rel='noreferrer'
                       target='_blank'
                       class='text-white transition-all duration-150 ease-in-out transform hover:scale-150 hover:text-gray-400'
@@ -68,7 +68,7 @@ const NewFooter = () => {
 
                   <li>
                     <a
-                      href='/'
+                      href='https://www.instagram.com/hotelinnercircle/'
                       rel='noreferrer'
                       target='_blank'
                       class='text-white transition-all duration-150 ease-in-out transform hover:scale-150 hover:text-gray-400'
@@ -91,7 +91,7 @@ const NewFooter = () => {
 
                   <li>
                     <Link
-                      to='/'
+                      to='https://twitter.com/innercirclehyd1'
                       rel='noreferrer'
                       target='_blank'
                       class='text-white transition-all duration-150 ease-in-out transform hover:scale-150 hover:text-gray-400'

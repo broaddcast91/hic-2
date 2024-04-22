@@ -1,62 +1,56 @@
 import { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline';
-import {
-  ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from '@heroicons/react/20/solid';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { MdBed } from 'react-icons/md';
+import { IoBedSharp } from 'react-icons/io5';
+import { MdOutlineBed, MdPrivacyTip, MdEmail } from 'react-icons/md';
+import { IoBedOutline } from 'react-icons/io5';
+import { LuPartyPopper } from 'react-icons/lu';
+import { BiSolidDoorOpen } from 'react-icons/bi';
 
 const products = [
   {
     name: 'Standard Room',
     description: 'Get a better understanding of your traffic',
     href: '/standardroom',
-    icon: ChartPieIcon,
+    icon: MdOutlineBed,
   },
   {
     name: 'Executive Room',
     description: 'Speak directly to your customers',
     href: '/executiveroom',
-    icon: CursorArrowRaysIcon,
+    icon: IoBedOutline,
   },
   {
     name: 'Deluxe Room',
     description: 'Your customers’ data will be safe and secure',
     href: '/deluxeroom',
-    icon: FingerPrintIcon,
+    icon: MdBed,
   },
   {
     name: 'Banquet Hall',
     description: 'Connect with third-party tools',
     href: '/rooms',
-    icon: SquaresPlusIcon,
+    icon: IoBedSharp,
   },
   {
     name: 'Events',
     description: 'Build strategic funnels that will convert',
     href: '/events',
-    icon: ArrowPathIcon,
+    icon: LuPartyPopper,
   },
   {
     name: 'Refund Policy',
     description: 'Build strategic funnels that will convert',
     href: '/privacypolicy',
-    icon: ArrowPathIcon,
+    icon: MdPrivacyTip,
   },
 ];
 const callsToAction = [
-  { name: 'All Rooms', href: '/rooms', icon: PlayCircleIcon },
-  { name: 'Contact Us', href: '/contact', icon: PhoneIcon },
+  { name: 'All Rooms', href: '/rooms', icon: BiSolidDoorOpen },
+  { name: 'Contact Us', href: '/contact', icon: MdEmail },
 ];
 
 function classNames(...classes) {
