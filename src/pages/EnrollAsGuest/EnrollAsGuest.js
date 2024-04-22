@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import NewHeader from '../../components/Header/NewHeader';
@@ -74,6 +74,15 @@ const Enroll = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Fetch current date to disable past dates
+    const currentDate = new Date().toISOString().split('T')[0];
+    setFormData((prevData) => ({
+      ...prevData,
+      checkindate: currentDate,
+    }));
+  }, []);
+
   // Function to handle form submission
   const handleBooking = async (e) => {
     e.preventDefault();
@@ -146,28 +155,24 @@ const Enroll = () => {
               className='border rounded-3xl px-4 py-2 w-full'
               required
             >
-                    <option disabled>Select room type</option>
-                <option value='Standard Room | Single'>
-                  Standard Room | Single
-                </option>
-                <option value='Standard Room | Double'>
-                  Standard Room | Double
-                </option>
-                <option value='Executive Room | Single'>
-                  Executive Room | Single
-                </option>
-                <option value='Deluxe Room | Single'>
-                  Deluxe Room | Single
-                </option>
-                <option value='Deluxe Room | Double'>
-                  Deluxe Room | Double
-                </option>
-                <option value='Deluxe Suite | Single'>
-                  Deluxe Suite | Single
-                </option>
-                <option value='Deluxe Suite | Double'>
-                  Deluxe Suite | Double
-                </option>
+              <option disabled>Select room type</option>
+              <option value='Standard Room | Single'>
+                Standard Room | Single
+              </option>
+              <option value='Standard Room | Double'>
+                Standard Room | Double
+              </option>
+              <option value='Executive Room | Single'>
+                Executive Room | Single
+              </option>
+              <option value='Deluxe Room | Single'>Deluxe Room | Single</option>
+              <option value='Deluxe Room | Double'>Deluxe Room | Double</option>
+              <option value='Deluxe Suite | Single'>
+                Deluxe Suite | Single
+              </option>
+              <option value='Deluxe Suite | Double'>
+                Deluxe Suite | Double
+              </option>
             </select>
             {/* <select
               id='roomType'
@@ -239,6 +244,7 @@ const Enroll = () => {
               name='checkindate'
               value={formData.checkindate}
               onChange={handleInputChange}
+              min={new Date().toISOString().split('T')[0]}
               className='border rounded-3xl px-4 py-2 w-full'
               required
             />
@@ -252,6 +258,7 @@ const Enroll = () => {
               id='checkoutdate'
               name='checkoutdate'
               value={formData.checkoutdate}
+              min={formData.checkindate}
               onChange={handleInputChange}
               className='border rounded-3xl px-4 py-2 w-full'
               required
