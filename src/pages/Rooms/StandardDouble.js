@@ -1,6 +1,6 @@
 // import './searchitem.css';
 import { FaBed, FaWifi, FaBuildingCircleCheck } from 'react-icons/fa6';
-import { MdFamilyRestroom } from 'react-icons/md';
+// import { MdFamilyRestroom } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import {
   FaRegSnowflake,
@@ -19,20 +19,58 @@ import DatePicker from 'react-datepicker';
 
 const images = [
   {
-    original: 'https://www.hotelinnercircle.in/images/rooms/17StandardRoom.png',
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/1-ss.webp',
     thumbnail:
-      'https://www.hotelinnercircle.in/images/rooms/17StandardRoom.png',
-  },
-  {
-    original: 'https://www.hotelinnercircle.in/images/rooms/17StandardRoom.png',
-    thumbnail:
-      'https://www.hotelinnercircle.in/images/rooms/17StandardRoom.png',
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/1-ss.webp',
   },
   {
     original:
-      'https://www.hotelinnercircle.in/images/rooms/23DeluxesuitRoom.png',
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/2-ss.webp',
     thumbnail:
-      'https://www.hotelinnercircle.in/images/rooms/23DeluxesuitRoom.png',
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/2-ss.webp',
+  },
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/3-ss.webp',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/3-ss.webp',
+  },
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/4-ss.webp',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/4-ss.webp',
+  },
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/5-ss.webp',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/5-ss.webp',
+  },
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/6-ss.webp',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/6-ss.webp',
+  },
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/7-ss.webp',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/7-ss.webp',
+  },
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/8-ss.webp',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/8-ss.webp',
+  },
+  {
+    original:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/9-ss.webp',
+    thumbnail:
+      'https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/9-ss.webp',
   },
 ];
 
@@ -96,8 +134,7 @@ const StandardDouble = ({ title, img, price }) => {
         <div className='siDesc'>
           <h1 className='text-orange-500 text-2xl  font-extrabold'>{title}</h1>
           <span className='siDistance'>
-            24 hours check out time Tariff includes complimentary buffet
-            breakfast at the coffee shop
+            Check in time 12:00 Noon, Check out time: 10:00 AM
           </span>
           <span className='siTaxiOp'>AVAILABLE</span>
           <span className='siSubtitle'>Room Facility</span>
@@ -144,11 +181,11 @@ const StandardDouble = ({ title, img, price }) => {
                     Contact less CheckIn
                   </li>
                   {/* Add more list items for additional features */}
-                  <li className='flex items-center '>
+                  {/* <li className='flex items-center '>
                     <MdFamilyRestroom className='mr-2' />
                     <span className=''>Max Occupancy:</span>&nbsp; 2 Adult, 1
                     Child
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>
@@ -250,7 +287,7 @@ const StandardDouble = ({ title, img, price }) => {
                         {/* Add options here */}
 
                         <option value='661902052831864696c9ff72'>
-                          Standard Room | Double
+                          Standard Room - Double
                         </option>
                       </select>
                     </div>

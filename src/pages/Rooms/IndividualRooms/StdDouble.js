@@ -97,7 +97,7 @@ const MainLayout = () => {
             <div className='hotelWrapper '>
               <button className='bookNow'>Check Availability</button>
               <h1 className='hotelTitle font-bold  text-orange-400'>
-                Standard Room | Double
+                Standard Room - Double
               </h1>
               <div className='hotelAddress'>
                 <FontAwesomeIcon icon={faLocationDot} />

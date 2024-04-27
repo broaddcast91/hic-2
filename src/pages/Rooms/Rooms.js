@@ -37,43 +37,43 @@ const Rooms = () => {
         <div className='listWrapper'>
           <div className='listResult'>
             <StandardSinlge
-              title='Standard Room | Single'
+              title='Standard Room - Single'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Executive%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
               price='4499.00'
             />
             <StandardDouble
-              title='Standard Room | Double'
+              title='Standard Room - Double'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Standard%20Room/17.Inner%20Circle%20Standard%20Room.jpg'
               price='5299.00'
             />
             <ExecutiveSingle
-              title='Executive Room | Single'
+              title='Executive Room - Single'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Standard%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
               price='5099.00'
             />
 
             <ExecutiveDouble
-              title='Executive Room | Double'
+              title='Executive Room - Double'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Executive%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
               price='5999.00'
             />
             <DeluxeSingle
-              title='Deluxe Room | Single'
+              title='Deluxe Room - Single'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Room/20.Inner%20Circle%20Deluxe.%20Room.jpg'
               price='5699.00'
             />
             <DeluxeDouble
-              title='Deluxe Room | Double'
+              title='Deluxe Room - Double'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Room/23.Iner%20Circle%20Deluxe%20%20suit.Room.JPG'
               price='6599.00'
             />
             <DeluxeSuiteSingle
-              title='Deluxe Suite | Single'
+              title='Deluxe Suite - Single'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Suite/22.Inner%20Circle%20Delux%20Suit%20Room%20sit-out.JPG'
               price='7399.00'
             />
             <DeluxeSuiteDouble
-              title='Deluxe Suite | Double'
+              title='Deluxe Suite - Double'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Suite/23.Iner%20Circle%20Deluxe%20%20suit.Room.JPG'
               price='7399.00'
             />

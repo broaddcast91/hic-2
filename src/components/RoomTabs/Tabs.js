@@ -168,26 +168,24 @@ const PolicyContent = () => {
 const AboutContet = () => {
   return (
     <>
-      <div className='max-w-4xl mx-auto border'>
-        <div className='flex flex-col border m-2'>
+      <div className='max-w-4xl mx-auto '>
+        <div className='flex flex-col  m-2'>
           {/* Row 1 */}
-          <div className='flex items-center mb-4 border'>
-            <div className='border text-xl font-semibold'>
-              HOTEL INNER CIRCLE
-            </div>
+          <div className='flex items-center mb-4 '>
+            <div className=' text-xl font-semibold'>HOTEL INNER CIRCLE</div>
           </div>
 
           {/* Row 2 */}
-          <div className='flex items-center mb-4 border'>
-            <div className='border'>
+          <div className='flex items-center mb-4 '>
+            <div className=''>
               SABOO HEIGHTS, 6-3-905, RAJBHAVAN ROAD, Somajiguda, Hyderabad,
               Telangana, India
             </div>
           </div>
 
           {/* Row 3 */}
-          <div className='flex items-center mb-4 border'>
-            <div className='flex items-center border'>
+          <div className='flex items-center mb-4 '>
+            <div className='flex items-center '>
               <div className='mr-2'>
                 <MdEmail />
               </div>

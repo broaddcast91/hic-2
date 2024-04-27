@@ -14,12 +14,12 @@ const OnlyStandardRoom = () => {
         <div className='listWrapper'>
           <div className='listResult'>
             <StandardSinlge
-              title='Standard Room | Single'
+              title='Standard Room - Single'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Executive%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
               price='4499.00'
             />
             <StandardDouble
-              title='Standard Room | Double'
+              title='Standard Room - Double'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Standard%20Room/17.Inner%20Circle%20Standard%20Room.jpg'
               price='5299.00'
             />

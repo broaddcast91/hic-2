@@ -163,22 +163,22 @@ const Enroll = () => {
               required
             >
               <option disabled>Select room type</option>
-              <option value='Standard Room | Single'>
-                Standard Room | Single
+              <option value='Standard Room - Single'>
+                Standard Room - Single
               </option>
-              <option value='Standard Room | Double'>
-                Standard Room | Double
+              <option value='Standard Room - Double'>
+                Standard Room - Double
               </option>
-              <option value='Executive Room | Single'>
-                Executive Room | Single
+              <option value='Executive Room - Single'>
+                Executive Room - Single
               </option>
-              <option value='Deluxe Room | Single'>Deluxe Room | Single</option>
-              <option value='Deluxe Room | Double'>Deluxe Room | Double</option>
-              <option value='Deluxe Suite | Single'>
-                Deluxe Suite | Single
+              <option value='Deluxe Room - Single'>Deluxe Room - Single</option>
+              <option value='Deluxe Room - Double'>Deluxe Room - Double</option>
+              <option value='Deluxe Suite - Single'>
+                Deluxe Suite - Single
               </option>
-              <option value='Deluxe Suite | Double'>
-                Deluxe Suite | Double
+              <option value='Deluxe Suite - Double'>
+                Deluxe Suite - Double
               </option>
             </select>
             {/* <select

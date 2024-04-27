@@ -1,6 +1,6 @@
 import './searchitem.css';
 import { FaBed, FaWifi, FaBuildingCircleCheck } from 'react-icons/fa6';
-import { MdFamilyRestroom } from 'react-icons/md';
+// import { MdFamilyRestroom } from 'react-icons/md';
 
 import {
   FaRegSnowflake,
@@ -56,8 +56,7 @@ const SearchItem = ({ title, img, price }) => {
         <div className='siDesc'>
           <h1 className='text-orange-500 text-2xl  font-extrabold'>{title}</h1>
           <span className='siDistance'>
-            24 hours check out time Tariff includes complimentary buffet
-            breakfast at the coffee shop
+            Check in time 12:00 Noon, Check out time: 10:00 AM
           </span>
           <span className='siTaxiOp'>AVAILABLE</span>
           <span className='siSubtitle'>Room Facility</span>
@@ -201,29 +200,29 @@ const SearchItem = ({ title, img, price }) => {
                               >
                                 <option disabled>Select Room Type</option>
                                 <option value='Standard Room'>
-                                  Standard Room | Single
+                                  Standard Room - Single
                                 </option>
                                 <option value='Standard Room'>
-                                  Standard Room | Double
+                                  Standard Room - Double
                                 </option>
                                 <option value='Executive room'>
-                                  Executive room | Single
+                                  Executive room - Single
                                 </option>
                                 <option value='Executive room'>
                                   {' '}
-                                  Executive room | Double
+                                  Executive room - Double
                                 </option>
                                 <option value='Deluxe Room'>
-                                  Deluxe Room | Single
+                                  Deluxe Room - Single
                                 </option>
                                 <option value='Deluxe Room'>
-                                  Deluxe Room | Double
+                                  Deluxe Room - Double
                                 </option>
                                 <option value='Deluxe Suite '>
-                                  Deluxe Suite | Single
+                                  Deluxe Suite - Single
                                 </option>
                                 <option value='Deluxe Suite'>
-                                  Deluxe Suite | Double
+                                  Deluxe Suite - Double
                                 </option>
                               </select>
                             </div>

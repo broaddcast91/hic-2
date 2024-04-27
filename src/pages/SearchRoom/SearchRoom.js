@@ -63,28 +63,28 @@ const SearchRoom = () => {
             >
               <option disabled>Select Room Type</option>
               <option value='661901d82831864696c9ff70'>
-                Standard Room | Single
+                Standard Room - Single
               </option>
               <option value='661902052831864696c9ff72'>
-                Standard Room | Double
+                Standard Room - Double
               </option>
               <option value='661902282831864696c9ff74'>
-                Executive room | Single
+                Executive room - Single
               </option>
               <option value='661902402831864696c9ff76'>
-                Executive room | Double
+                Executive room - Double
               </option>
               <option value='661902732831864696c9ff78'>
-                Deluxe Room | Single
+                Deluxe Room - Single
               </option>
               <option value='661902892831864696c9ff7a'>
-                Deluxe Room | Double
+                Deluxe Room - Double
               </option>
               <option value='6619029d2831864696c9ff7c'>
-                Deluxe Suite | Single
+                Deluxe Suite - Single
               </option>
               <option value='661902bf2831864696c9ff7e'>
-                Deluxe Suite | Double
+                Deluxe Suite - Double
               </option>
             </select>
           </div>

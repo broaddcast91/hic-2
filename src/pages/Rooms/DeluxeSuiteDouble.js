@@ -1,6 +1,6 @@
 // import './searchitem.css';
 import { FaBed, FaWifi, FaBuildingCircleCheck } from 'react-icons/fa6';
-import { MdFamilyRestroom } from 'react-icons/md';
+// import { MdFamilyRestroom } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import {
   FaRegSnowflake,
@@ -97,8 +97,7 @@ const DeluxeSuiteDouble = ({ title, img, price }) => {
         <div className='siDesc'>
           <h1 className='text-orange-500 text-2xl  font-extrabold'>{title}</h1>
           <span className='siDistance'>
-            24 hours check out time Tariff includes complimentary buffet
-            breakfast at the coffee shop
+            Check in time 12:00 Noon, Check out time: 10:00 AM
           </span>
           <span className='siTaxiOp'>AVAILABLE</span>
           <span className='siSubtitle'>Room Facility</span>
@@ -145,11 +144,11 @@ const DeluxeSuiteDouble = ({ title, img, price }) => {
                     Contact less CheckIn
                   </li>
                   {/* Add more list items for additional features */}
-                  <li className='flex items-center '>
+                  {/* <li className='flex items-center '>
                     <MdFamilyRestroom className='mr-2' />
                     <span className=''>Max Occupancy:</span>&nbsp; 2 Adult, 1
                     Child
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>

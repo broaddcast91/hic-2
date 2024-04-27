@@ -112,7 +112,7 @@ export default function NewHeader() {
               leaveTo='opacity-0 translate-y-1'
             >
               <Popover.Panel className='absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5'>
-                <div className='p-4'>
+                <div className='p-2'>
                   {products.map((item) => (
                     <div
                       key={item.name}
@@ -163,6 +163,12 @@ export default function NewHeader() {
             className=' font-semibold leading-6 text-gray-900 text-md'
           >
             Ice n' Spice
+          </Link>
+          <Link
+            to='/banquet'
+            className='text-md font-semibold leading-6 text-gray-900'
+          >
+            Banquet
           </Link>
           <Link
             to='/gallery'
@@ -219,7 +225,7 @@ export default function NewHeader() {
                   {({ open }) => (
                     <>
                       <Disclosure.Button className='flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'>
-                        Product
+                        Rooms
                         <ChevronDownIcon
                           className={classNames(
                             open ? 'rotate-180' : '',
@@ -247,19 +253,19 @@ export default function NewHeader() {
                   to='/#'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
-                  Features
+                  Ice and Spice
                 </Link>
                 <Link
                   to='/#'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
-                  Marketplace
+                  Gallery
                 </Link>
                 <a
                   href='/#'
                   className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
-                  Company
+                  Contact
                 </a>
               </div>
               <div className='py-6'>
@@ -267,7 +273,7 @@ export default function NewHeader() {
                   href='/#'
                   className='-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
-                  Log in
+                  Book a Room
                 </a>
               </div>
             </div>
