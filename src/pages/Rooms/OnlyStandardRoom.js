@@ -16,12 +16,12 @@ const OnlyStandardRoom = () => {
             <StandardSinlge
               title='Standard Room | Single'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Executive%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
-              price='3899.00'
+              price='4499.00'
             />
             <StandardDouble
               title='Standard Room | Double'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Standard%20Room/17.Inner%20Circle%20Standard%20Room.jpg'
-              price='4299.00'
+              price='5299.00'
             />
           </div>
         </div>

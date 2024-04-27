@@ -17,12 +17,12 @@ const OnlySuite = () => {
             <DeluxeSuiteSingle
               title='Deluxe Suite | Single'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Suite/22.Inner%20Circle%20Delux%20Suit%20Room%20sit-out.JPG'
-              price='7299.00'
+              price='7399.00'
             />
             <DeluxeSuiteDouble
               title='Deluxe Suite | Double'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Deluxe%20Suite/23.Iner%20Circle%20Deluxe%20%20suit.Room.JPG'
-              price='7299.00'
+              price='7399.00'
             />
           </div>
         </div>

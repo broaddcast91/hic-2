@@ -16,13 +16,13 @@ const OnlyExecutiveRoom = () => {
             <ExecutiveSingle
               title='Executive Room | Single'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Standard%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
-              price='4499.00'
+              price='5099.00'
             />
 
             <ExecutiveDouble
               title='Executive Room | Double'
               img='https://www.hotelinnercircle.in/admin/Roomimages/Executive%20Room/19.Inner%20Circle%20Exe%20Room.jpg'
-              price='5299.00'
+              price='5999.00'
             />
           </div>
         </div>

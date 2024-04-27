@@ -13,37 +13,43 @@ import { BiSolidDoorOpen } from 'react-icons/bi';
 const products = [
   {
     name: 'Standard Room',
-    description: 'Get a better understanding of your traffic',
+    description:
+      'Comfortable accommodations with essential amenities for a pleasant stay',
     href: '/standardroom',
     icon: MdOutlineBed,
   },
   {
     name: 'Executive Room',
-    description: 'Speak directly to your customers',
+    description:
+      'Elevate your stay with luxurious amenities and personalized service',
     href: '/executiveroom',
     icon: IoBedOutline,
   },
   {
     name: 'Deluxe Room',
-    description: 'Your customers’ data will be safe and secure',
+    description:
+      'Experience indulgence and sophistication in every detail for a memorable stay',
     href: '/deluxeroom',
     icon: MdBed,
   },
   {
-    name: 'Banquet Hall',
-    description: 'Connect with third-party tools',
-    href: '/rooms',
-    icon: IoBedSharp,
-  },
-  {
-    name: 'Events',
-    description: 'Build strategic funnels that will convert',
-    href: '/events',
+    name: 'Suite',
+    description:
+      'Where luxury meets comfort, creating an unforgettable retreat.',
+    href: '/suite',
     icon: LuPartyPopper,
   },
   {
+    name: 'Banquet Hall',
+    description:
+      'The perfect venue for celebrations, meetings, and events, offering elegance and versatility',
+    href: '/rooms',
+    icon: IoBedSharp,
+  },
+
+  {
     name: 'Refund Policy',
-    description: 'Build strategic funnels that will convert',
+    description: 'Ensuring your peace of mind with hassle-free refunds.',
     href: '/privacypolicy',
     icon: MdPrivacyTip,
   },
@@ -110,9 +116,9 @@ export default function NewHeader() {
                   {products.map((item) => (
                     <div
                       key={item.name}
-                      className='group relative flex items-center gap-x-6 rounded-lg p-4  leading-6 hover:bg-gray-50'
+                      className='group relative flex items-center gap-x-6 rounded-lg p-4  leading-6 hover:bg-orange-100'
                     >
-                      <div className='flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white'>
+                      <div className='flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-orange-00'>
                         <item.icon
                           className='h-6 w-6 text-gray-600 group-hover:text-orange-600'
                           aria-hidden='true'
@@ -126,7 +132,9 @@ export default function NewHeader() {
                           {item.name}
                           <span className='absolute inset-0' />
                         </Link>
-                        <p className='mt-1 text-gray-600'>{item.description}</p>
+                        <p className='mt-1 text-sm text-gray-600'>
+                          {item.description}
+                        </p>
                       </div>
                     </div>
                   ))}

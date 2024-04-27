@@ -18,7 +18,8 @@ import {
 const products = [
   {
     name: 'Analytics',
-    description: 'Get a better understanding of your traffic',
+    description:
+      'Comfortable accommodations with essential amenities for a pleasant stay',
     href: '#',
     icon: ChartPieIcon,
   },

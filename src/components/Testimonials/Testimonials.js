@@ -3,9 +3,9 @@ import React from 'react';
 const Testimonials = () => {
   return (
     <>
-      <div className='container   mx-auto md:px-6'>
+      <div className='container   mx-auto md:px-6 mt-10'>
         <section className='mb-32 text-center'>
-          <h2 className='mb-12 text-3xl font-bold'>Reviews</h2>
+          <h2 className='mb-12 text-3xl text-orange-400 font-bold'>Reviews</h2>
 
           <div className='grid gap-x-6 md:grid-cols-3 lg:gap-x-12'>
             <div className='mb-12 md:mb-0'>
