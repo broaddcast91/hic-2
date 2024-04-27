@@ -16,6 +16,7 @@ import { CgSpinner } from 'react-icons/cg';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const images = [
   {
@@ -82,6 +83,13 @@ const DeluxeDouble = ({ title, img, price }) => {
   return (
     <>
       {' '}
+      <Helmet>
+        <title>Deluxe Double Room - Hotel Inner Circle</title>
+        <meta
+          name='description'
+          content='Discover the diverse range of accommodations available at Hotel Inner Circle. From cozy single rooms to luxurious suites, our `All Rooms` page showcases our selection of well-appointed accommodations. Find the perfect room to suit your preferences and make your stay with us unforgettable.'
+        />
+      </Helmet>
       <div className='searchItem'>
         <div className='image-gallery-wrapper'>
           <ReactImageGallery
@@ -174,7 +182,7 @@ const DeluxeDouble = ({ title, img, price }) => {
               View Room
             </Link>
             <button className='siCheckButton' onClick={() => setOpen(true)}>
-              See availability
+              Book
             </button>
           </div>
         </div>
@@ -248,11 +256,10 @@ const DeluxeDouble = ({ title, img, price }) => {
                       >
                         <option disabled>Select Room Type</option>
                         {/* Add options here */}
-                        
+
                         <option value='661902892831864696c9ff7a'>
                           Deluxe Room | Double
                         </option>
-                     
                       </select>
                     </div>
                     <div className='flex justify-center mt-4 space-x-4'>

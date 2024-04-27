@@ -4,11 +4,18 @@ import NewHeader from '../components/Header/NewHeader';
 import NewFooter from '../components/Footer/NewFooter';
 import HTMLFlipBook from 'react-pageflip';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const HotelMenu = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Helmet>
+        <title>Ice and Spice Menu - Hotel Inner Circle</title>
+        <meta
+          name='description'
+          content='Explore the delectable offerings of our "Ice and Spice" menu at our hotel. From refreshing ice-cold beverages to spicy culinary delights, our menu is crafted to tantalize your taste buds. Browse through our diverse selection of dishes and drinks to enhance your dining experience during your stay with us'
+        />
+      </Helmet>
       <NewHeader />
       <section class='background-radial-gradient text-center lg:text-left '>
         <div class="relative overflow-hidden bg-cover bg-no-repeat bg-[50%] bg-[url('https://media.istockphoto.com/id/650826126/photo/wedding-banquet.jpg?s=2048x2048&w=is&k=20&c=93BrXt0eIEjKXqk7XEDY0OxBBz1N0lnuSnCht5CT6yQ=')] h-[500px]">

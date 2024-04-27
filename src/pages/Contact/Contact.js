@@ -7,10 +7,18 @@ import NewHeader from '../../components/Header/NewHeader';
 import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 const Contact = () => {
   return (
     <>
+      <Helmet>
+        <title>Contact Us - Hotel Inner Circle</title>
+        <meta
+          name='description'
+          content='Contact our hotel reservation system team for assistance, inquiries, or support. Whether you have questions about bookings, need help with reservations, or want to provide feedback, our dedicated team is here to help. Reach out to us for prompt and reliable assistance.'
+        />
+      </Helmet>
       <NewHeader />
       <ContactForm />
       <NewFooter />

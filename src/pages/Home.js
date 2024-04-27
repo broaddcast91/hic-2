@@ -11,13 +11,22 @@ import NewHeader from '../components/Header/NewHeader';
 // import SearchRoom from './SearchRoom/SearchRoom';
 import NewFooter from '../components/Footer/NewFooter';
 import TopDeals from './TopDeals/TopDeals';
+import { Helmet } from 'react-helmet';
 
 // import SocialTileTab from '../components/SocialTileTab/SocialTileTab';
 
 const Home = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Helmet>
+        <title>
+          Welcome to Hotel Inner Circle | Luxury Business Hotel in Hyderabad
+        </title>
+        <meta
+          name='description'
+          content='Luxury Business Hotel in Hyderabad, Book your rooms with great prices'
+        />
+      </Helmet>
       <NewHeader />
       <Hero />
 

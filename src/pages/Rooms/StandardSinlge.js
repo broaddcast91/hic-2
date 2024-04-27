@@ -173,7 +173,7 @@ const StandardSinlge = ({ title, img, price }) => {
               View Room
             </Link>
             <button className='siCheckButton' onClick={() => setOpen(true)}>
-              See availability
+              Book
             </button>
           </div>
         </div>
@@ -250,7 +250,6 @@ const StandardSinlge = ({ title, img, price }) => {
                         <option value='661901d82831864696c9ff70'>
                           Standard Room | Single
                         </option>
-                       
                       </select>
                     </div>
                     <div className='flex justify-center mt-4 space-x-4'>

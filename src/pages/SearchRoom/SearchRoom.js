@@ -126,7 +126,7 @@ const SearchRoom = () => {
               className='bg-orange-400 text-white py-2 px-12 hover:bg-orange-600 rounded-3xl '
               onClick={handleSearch}
             >
-              Check Availability
+            Book
             </div>
           </div>
         </div>

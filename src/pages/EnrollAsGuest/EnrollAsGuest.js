@@ -5,7 +5,7 @@ import NewHeader from '../../components/Header/NewHeader';
 import NewFooter from '../../components/Footer/NewFooter';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 const faqList = [
@@ -51,6 +51,13 @@ const faqList = [
 const EnrollAsGuest = () => {
   return (
     <>
+      <Helmet>
+        <title>Booking Room - Hotel Inner Circle</title>
+        <meta
+          name='description'
+          content='Secure your ideal accommodations at Hotel Inner Circle with ease. Our booking room page allows you to browse available rooms, select your preferred dates, and complete your reservation seamlessly. Experience comfort, convenience, and exceptional service when you book your stay with us.'
+        />
+      </Helmet>
       <NewHeader />
       <Enroll />
       <EnrollFAQ />

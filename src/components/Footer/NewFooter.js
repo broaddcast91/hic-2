@@ -158,6 +158,14 @@ const NewFooter = () => {
                         Privacy Policy
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        class='text-white transition hover:text-gray-700/75'
+                        to='/tariff'
+                      >
+                        Tariff
+                      </Link>
+                    </li>
                   </ul>
                 </div>
 

@@ -13,6 +13,7 @@ import DeluxeSingle from './DeluxeSingle';
 import DeluxeDouble from './DeluxeDouble';
 import DeluxeSuiteSingle from './DeluxeSuiteSingle';
 import DeluxeSuiteDouble from './DeluxeSuiteDouble';
+import { Helmet } from 'react-helmet';
 
 const Rooms = () => {
   // const location = useLocation();
@@ -23,6 +24,13 @@ const Rooms = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>All Rooms - Hotel Inner Circle</title>
+        <meta
+          name='description'
+          content='Discover the diverse range of accommodations available at Hotel Inner Circle. From cozy single rooms to luxurious suites, our `All Rooms` page showcases our selection of well-appointed accommodations. Find the perfect room to suit your preferences and make your stay with us unforgettable.'
+        />
+      </Helmet>
       <NewHeader />
       <RoomsHeader />
       <div className='listContainer'>

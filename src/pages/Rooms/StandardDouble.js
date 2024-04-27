@@ -174,7 +174,7 @@ const StandardDouble = ({ title, img, price }) => {
               View Room
             </Link>
             <button className='siCheckButton' onClick={() => setOpen(true)}>
-              See availability
+              Book
             </button>
           </div>
         </div>
@@ -248,11 +248,10 @@ const StandardDouble = ({ title, img, price }) => {
                       >
                         <option disabled>Select Room Type</option>
                         {/* Add options here */}
-                      
+
                         <option value='661902052831864696c9ff72'>
                           Standard Room | Double
                         </option>
-                       
                       </select>
                     </div>
                     <div className='flex justify-center mt-4 space-x-4'>

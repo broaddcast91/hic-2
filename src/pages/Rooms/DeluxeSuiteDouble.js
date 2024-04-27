@@ -175,7 +175,7 @@ const DeluxeSuiteDouble = ({ title, img, price }) => {
               View Room
             </Link>
             <button className='siCheckButton' onClick={() => setOpen(true)}>
-              See availability
+              Book
             </button>
           </div>
         </div>
@@ -249,7 +249,7 @@ const DeluxeSuiteDouble = ({ title, img, price }) => {
                       >
                         <option disabled>Select Room Type</option>
                         {/* Add options here */}
-                  
+
                         <option value='661902bf2831864696c9ff7e'>
                           Deluxe Suite | Double
                         </option>

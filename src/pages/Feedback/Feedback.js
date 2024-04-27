@@ -6,10 +6,21 @@ import NewFooter from '../../components/Footer/NewFooter';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 const Feedback = () => {
   return (
     <>
+      <Helmet>
+        <title>
+          Write your Feedback | Hotel Inner Circle | Luxury Business Hotel in
+          Hyderabad
+        </title>
+        <meta
+          name='description'
+          content='Share your experience with our hotel Inner Circle  by providing feedback. Your input helps us improve our services and ensure a seamless booking experience for all our guests. Whether you have suggestions, compliments, or concerns, we value your feedback and strive to make your experience with us exceptional.'
+        />
+      </Helmet>
       <NewHeader />
       <FeedbackForm />
       <NewFooter />
