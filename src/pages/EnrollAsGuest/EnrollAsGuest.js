@@ -66,7 +66,7 @@ const EnrollAsGuest = () => {
   );
 };
 
-const Enroll = () => {
+export const Enroll = () => {
   // State to hold form data
   const [formData, setFormData] = useState({
     name: '',
@@ -181,34 +181,6 @@ const Enroll = () => {
                 Deluxe Suite - Double
               </option>
             </select>
-            {/* <select
-              id='roomType'
-              name='roomType'
-              value={formData.roomType}
-              onChange={handleRoomInputChange}
-              className='block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
-              required
-            >
-              <option value=''>Select room type</option>
-              <option value='Standard Room | Single'>
-                Standard Room | Single
-              </option>
-              <option value='Standard Room | Double'>
-                Standard Room | Double
-              </option>
-              <option value='Executive Room | Single'>
-                Executive Room | Single
-              </option>
-              <option value='Deluxe Room | Single'>Deluxe Room | Single</option>
-              <option value='Deluxe Room | Double'>Deluxe Room | Double</option>
-              <option value='Deluxe Suite | Single'>
-                Deluxe Suite | Single
-              </option>
-              <option value='Deluxe Suite | Double'>
-                Deluxe Suite | Double
-              </option>
-              <option value='Banquet Hall'>Banquet Hall</option>
-            </select> */}
           </div>
           {/* add phone and email fields here */}
           {/* Phone Number Field */}
@@ -278,6 +250,209 @@ const Enroll = () => {
               className='bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-3xl'
             >
               {loading ? 'processing...' : 'Book Room'}{' '}
+              {/* Show 'Loading...' text when loading is true */}
+            </button>
+          </div>
+        </form>
+      </div>
+      <ToastContainer
+        position='bottom-center'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='light'
+      />
+    </>
+  );
+};
+
+export const BanquetEnroll = () => {
+  // State to hold form data
+  const [formData, setFormData] = useState({
+    name: '',
+    roomtype: '',
+    phone: '',
+    email: '',
+    checkindate: '',
+    checkoutdate: '',
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Fetch current date to disable past dates
+    const currentDate = new Date().toISOString().split('T')[0];
+    setFormData((prevData) => ({
+      ...prevData,
+      checkindate: currentDate,
+    }));
+  }, []);
+
+  // Function to handle form submission
+  const handleBooking = async (e) => {
+    e.preventDefault();
+    // Handle booking logic
+    try {
+      setLoading(true);
+      const response = await axios.post(
+        'https://hic-backend.onrender.com/guests',
+        formData
+      );
+      console.log('Booking successful!', response.data);
+      toast.success('Enquiry submitted successfully');
+      setTimeout(() => {
+        navigate('/thankyouenroll');
+      }, 3000);
+    } catch (error) {
+      console.error('Booking error:', error);
+      toast.error('Error submitting enquiry. Please try again later.');
+      // Handle error
+    } finally {
+      setLoading(false); // Set loading back to false after submission
+    }
+  };
+
+  // Function to handle input changes
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Function to room type input changes
+  const handleRoomInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  return (
+    <>
+      <div className='container mx-auto mt-8 p-4 bg-orange-200'>
+        <h2 className='text-2xl font-semibold mb-4'>Book Banquet Hall</h2>
+        <form onSubmit={handleBooking} className='flex flex-col'>
+          <div className='mb-4'>
+            <label htmlFor='guestName' className='block font-semibold mb-1'>
+              Guest Name:
+            </label>
+            <input
+              type='text'
+              id='name'
+              name='name'
+              value={formData.name}
+              onChange={handleInputChange}
+              className='border rounded-3xl px-4 py-2 w-full'
+              required
+            />
+          </div>
+          <div className='mb-4'>
+            <label htmlFor='roomType' className='block font-semibold mb-1'>
+              Room Type:
+            </label>
+            <select
+              id='roomtype'
+              name='roomtype'
+              value={formData.roomtype}
+              onChange={handleRoomInputChange}
+              className='border rounded-3xl px-4 py-2 w-full'
+              required
+            >
+              <option disabled>Select room type</option>
+              <option value='Standard Room - Single'>
+                Standard Room - Single
+              </option>
+              <option value='Standard Room - Double'>
+                Standard Room - Double
+              </option>
+              <option value='Executive Room - Single'>
+                Executive Room - Single
+              </option>
+              <option value='Deluxe Room - Single'>Deluxe Room - Single</option>
+              <option value='Deluxe Room - Double'>Deluxe Room - Double</option>
+              <option value='Deluxe Suite - Single'>
+                Deluxe Suite - Single
+              </option>
+              <option value='Deluxe Suite - Double'>
+                Deluxe Suite - Double
+              </option>
+            </select>
+          </div>
+          {/* add phone and email fields here */}
+          <div className='mb-4'>
+            <label htmlFor='phoneNumber' className='block font-semibold mb-1'>
+              Phone Number:
+            </label>
+            <input
+              type='tel'
+              id='phone'
+              name='phone'
+              value={formData.phone}
+              onChange={handleInputChange}
+              className='border rounded-3xl px-4 py-2 w-full'
+              required
+            />
+          </div>
+          {/* Email Field */}
+          <div className='mb-4'>
+            <label htmlFor='email' className='block font-semibold mb-1'>
+              Email:
+            </label>
+            <input
+              type='email'
+              id='email'
+              name='email'
+              value={formData.email}
+              onChange={handleInputChange}
+              className='border rounded-3xl px-4 py-2 w-full'
+              required
+            />
+          </div>
+          <div className='mb-4'>
+            <label htmlFor='checkInDate' className='block font-semibold mb-1'>
+              Check-in Date:
+            </label>
+            <input
+              type='date'
+              id='checkindate'
+              name='checkindate'
+              value={formData.checkindate}
+              onChange={handleInputChange}
+              min={new Date().toISOString().split('T')[0]}
+              className='border rounded-3xl px-4 py-2 w-full'
+              required
+            />
+          </div>
+          <div className='mb-4'>
+            <label htmlFor='checkOutDate' className='block font-semibold mb-1'>
+              Check-out Date:
+            </label>
+            <input
+              type='date'
+              id='checkoutdate'
+              name='checkoutdate'
+              value={formData.checkoutdate}
+              min={formData.checkindate}
+              onChange={handleInputChange}
+              className='border rounded-3xl px-4 py-2 w-full '
+              required
+            />
+          </div>
+          <div>
+            <button
+              type='submit'
+              className='bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-3xl w-full'
+            >
+              {loading ? 'processing...' : 'Book'}{' '}
               {/* Show 'Loading...' text when loading is true */}
             </button>
           </div>

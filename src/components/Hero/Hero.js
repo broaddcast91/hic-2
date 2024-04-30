@@ -1,4 +1,4 @@
-import SearchRoom from "../../pages/SearchRoom/SearchRoom";
+import SearchRoom from '../../pages/SearchRoom/SearchRoom';
 
 export default function Hero() {
   return (
@@ -6,7 +6,7 @@ export default function Hero() {
       class='relative overflow-hidden bg-cover bg-no-repeat'
       style={{
         backgroundPosition: '50%',
-        backgroundImage: `url('https://mdbcdn.b-cdn.net/img/new/slides/146.webp')`,
+        backgroundImage: `url('https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/2023-04-19.jpg')`,
         height: '500px',
       }}
     >

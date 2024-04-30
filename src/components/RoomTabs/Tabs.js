@@ -199,4 +199,5 @@ const AboutContet = () => {
     </>
   );
 };
+
 export default Tabs;

@@ -1,147 +1,610 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { GiFoodTruck } from 'react-icons/gi';
+import { GiVideoCamera } from 'react-icons/gi';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import './BanquetHallStyle.css';
+
+import 'react-toastify/dist/ReactToastify.css';
+import { GrLounge } from 'react-icons/gr';
+
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { GiTempleDoor } from 'react-icons/gi';
+import { MdEmail } from 'react-icons/md';
+
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import NewHeader from '../../../components/Header/NewHeader';
 import NewFooter from '../../../components/Footer/NewFooter';
-import { useState } from 'react';
-import './style.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCircleArrowLeft,
-  faCircleArrowRight,
-  faCircleXmark,
-  faLocationDot,
-} from '@fortawesome/free-solid-svg-icons';
-import Tabs from '../../../components/RoomTabs/Tabs';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// Tab components
+const Tab1 = () => (
+  <div>
+    <AboutContet />
+  </div>
+);
+const Tab2 = () => (
+  <div>
+    <PolicyContent />
+  </div>
+);
+const Tab3 = () => (
+  <div>
+    <MapContent />
+  </div>
+);
+const Tab4 = () => <div>No Add-On Services</div>;
 
 const StdSingle = () => {
   return (
     <>
       <NewHeader />
       <MainLayout />
+
       <NewFooter />
     </>
   );
 };
 
 const MainLayout = () => {
-  const [slideNumber, setSlideNumber] = useState(0);
-  const [open, setOpen] = useState(false);
-
-  const photos = [
-    {
-      src: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707778.jpg?k=56ba0babbcbbfeb3d3e911728831dcbc390ed2cb16c51d88159f82bf751d04c6&o=&hp=1',
-    },
-    {
-      src: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707367.jpg?k=cbacfdeb8404af56a1a94812575d96f6b80f6740fd491d02c6fc3912a16d8757&o=&hp=1',
-    },
-    {
-      src: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/261708745.jpg?k=1aae4678d645c63e0d90cdae8127b15f1e3232d4739bdf387a6578dc3b14bdfd&o=&hp=1',
-    },
-    {
-      src: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707776.jpg?k=054bb3e27c9e58d3bb1110349eb5e6e24dacd53fbb0316b9e2519b2bf3c520ae&o=&hp=1',
-    },
-    {
-      src: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/261708693.jpg?k=ea210b4fa329fe302eab55dd9818c0571afba2abd2225ca3a36457f9afa74e94&o=&hp=1',
-    },
-    {
-      src: 'https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707389.jpg?k=52156673f9eb6d5d99d3eed9386491a0465ce6f3b995f005ac71abc192dd5827&o=&hp=1',
-    },
-  ];
-
-  const handleOpen = (i) => {
-    setSlideNumber(i);
-    setOpen(true);
-  };
-
-  const handleMove = (direction) => {
-    let newSlideNumber;
-
-    if (direction === 'l') {
-      newSlideNumber = slideNumber === 0 ? 5 : slideNumber - 1;
-    } else {
-      newSlideNumber = slideNumber === 5 ? 0 : slideNumber + 1;
-    }
-
-    setSlideNumber(newSlideNumber);
-  };
   return (
     <>
-      <div className='mx-auto flex max-w-7xl items-center  justify-between p-6 lg:px-8 bg-orange-100 rounded-lg'>
-        <div>
-          <div className='hotelContainer'>
-            {open && (
-              <div className='slider'>
-                <FontAwesomeIcon
-                  icon={faCircleXmark}
-                  className='close'
-                  onClick={() => setOpen(false)}
+      <div className='container mx-auto bg-orange-100 p-5  rounded-xl'>
+        <div class='flex space-x-3'>
+          <div class='w-8/12  '>
+            <Swiper
+              pagination={{
+                type: 'fraction',
+              }}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              navigation={true}
+              modules={[Autoplay, Pagination, Navigation]}
+              className='mySwiper'
+            >
+              <SwiperSlide>
+                <img
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/1-ss.webp'
+                  alt=''
                 />
-                <FontAwesomeIcon
-                  icon={faCircleArrowLeft}
-                  className='arrow'
-                  onClick={() => handleMove('l')}
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/2-ss.webp'
+                  alt=''
                 />
-                <div className='sliderWrapper '>
-                  <img
-                    src={photos[slideNumber].src}
-                    alt=''
-                    className='sliderImg'
-                  />
-                </div>
-                <FontAwesomeIcon
-                  icon={faCircleArrowRight}
-                  className='arrow'
-                  onClick={() => handleMove('r')}
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/3-ss.webp'
+                  alt=''
                 />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/4-ss.webp'
+                  alt=''
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/5-ss.webp'
+                  alt=''
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/6-ss.webp'
+                  alt=''
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/7-ss.webp'
+                  alt=''
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/8-ss.webp'
+                  alt=''
+                />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+          <div class='w-4/12 rounded  bg-orange-200'>
+            <StdSingleEnroll />
+          </div>
+        </div>
+        <div className='text-left  mt-10 '>
+          <h2 className='font-semibold text-5xl text-orange-400'>
+            Standard Single Room
+          </h2>
+          <p className='mt-5'>
+            The Standard Single room at our venue offers an exquisite setting
+            for your special occasions. With its elegant decor and spacious
+            layout, it provides the perfect backdrop for weddings, receptions,
+            corporate events, and more. Our dedicated team is committed to
+            ensuring every detail is taken care of, from customized catering
+            menus to personalized decor arrangements. Whether you're hosting an
+            intimate gathering or a grand celebration, our Standard Single room
+            is the ideal choice to create unforgettable memories.
+          </p>
+        </div>
+
+        <div class='border-2 border-orange-400  rounded-lg p-6 shadow-md mt-5'>
+          <div class='flex text-orange-500'>
+            <div class=' p-6 mr-4 flex-1'>
+              <p class='text-lg font-extralight'>Room Size</p>
+              <p class='mt-2 font-normal'>600 Sq</p>
+            </div>
+            <div class=' p-6 mr-4 flex-1'>
+              <p class='text-lg font-extralight'>Rooms/Bed</p>
+              <p class='mt-2 font-normal'>1 Single Bed</p>
+            </div>
+            <div class=' p-6 mr-4 flex-1'>
+              <p class='text-lg font-extralight'>Occupancy</p>
+              <p class='mt-2 font-normal'>Three persons</p>
+            </div>
+            <div class='  p-6  flex-1'>
+              <p class='text-lg font-extralight'>View</p>
+              <p class='mt-2 font-normal'>See View</p>
+            </div>
+          </div>
+        </div>
+        <div className='text-left  mt-5 '>
+          <p className='mt-5'>
+            The Standard Single room at our venue offers an exquisite setting
+            for your special occasions. With its elegant decor and spacious
+            layout, it provides the perfect backdrop for weddings, receptions,
+            corporate events, and more. Our dedicated team is committed to
+            ensuring every detail is taken care of, from customized catering
+            menus to personalized decor arrangements. Whether you're hosting an
+            intimate gathering or a grand celebration, our Stanard Single Room
+            is the ideal choice to create unforgettable memories.
+          </p>
+          <h2 className='font-semibold text-3xl mt-10 text-orange-400'>
+            Room Facilities
+          </h2>
+          <div class=' rounded-lg p-6 mt-5'>
+            <div class='flex text-orange-500'>
+              <div class=' p-6 mr-4 flex-1'>
+                <p class='text-lg font-semibold'>
+                  <GrLounge className='text-5xl' />
+                </p>
+                <p class='mt-2'>Spacious Hall</p>
               </div>
-            )}
-            <div className='hotelWrapper '>
-              <button className='bookNow'>Check Availability</button>
-              <h1 className='hotelTitle font-bold  text-orange-400'>
-                Standard Room - Single
-              </h1>
-              <div className='hotelAddress'>
-                <FontAwesomeIcon icon={faLocationDot} />
-                <span>Somajiguda, Hyderabad</span>
+              <div class=' p-6 mr-4 flex-1'>
+                <p class='text-lg font-semibold'>
+                  <GiFoodTruck className='text-5xl' />
+                </p>
+                <p class='mt-2'>Catering Services</p>
               </div>
-              <span className='hotelDistance'>
-                Excellent location – 500m from center
-              </span>
-              <span className='hotelPriceHighlight'>
-                Book a stay over $114 at this property and get a free airport
-                taxi
-              </span>
-              <div className='hotelImages'>
-                {photos.map((photo, i) => (
-                  <div className='hotelImgWrapper' key={i}>
-                    <img
-                      onClick={() => handleOpen(i)}
-                      src={photo.src}
-                      alt=''
-                      className='hotelImg'
-                    />
-                  </div>
-                ))}
+              <div class=' p-6 mr-4 flex-1'>
+                <p class='text-lg font-semibold'>
+                  <GiTempleDoor className='text-5xl' />
+                </p>
+                <p class='mt-2'>Flexible Layout</p>
               </div>
-              <div className='hotelDetails border border-green-600'>
-                <div className='hotelDetailsTexts border border-red-600'>
-                  <Tabs />
-                </div>
-                <div className='hotelDetailsPrice'>
-                  <h1>Perfect for a 9-night stay!</h1>
-                  <span>
-                    Located in the real heart of Krakow, this property has an
-                    excellent location score of 9.8!
-                  </span>
-                  <h2>
-                    <b>$945</b> (9 nights)
-                  </h2>
-                  <button>Check Availability</button>
-                </div>
+              <div class='  p-6  flex-1'>
+                <p class='text-lg font-semibold'>
+                  <GiVideoCamera className='text-5xl' />
+                </p>
+                <p class='mt-2'>Audio-Visual Equipment</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <TabsLayout />
+      </div>
+    </>
+  );
+};
+
+const TabsLayout = () => {
+  const [activeTab, setActiveTab] = useState(1);
+
+  // Function to handle tab change
+  const handleTabChange = (tabNumber) => {
+    setActiveTab(tabNumber);
+  };
+
+  return (
+    <div className='container mx-auto'>
+      {/* Tab Navigation */}
+      <div className='flex flex-nowrap overflow-x-auto'>
+        <button
+          className={`flex-grow rounded-tl-lg bg-orange-200/50 hover:bg-orange-300 text-gray-800 font-light py-2 px-4 focus:outline-none ${
+            activeTab === 1 ? 'bg-orange-400/50' : ''
+          }`}
+          onClick={() => handleTabChange(1)}
+        >
+          About
+        </button>
+        <button
+          className={`flex-grow bg-orange-200/50 hover:bg-orange-300 text-gray-800 font-light py-2 px-4 focus:outline-none ${
+            activeTab === 2 ? 'bg-orange-400/50' : ''
+          }`}
+          onClick={() => handleTabChange(2)}
+        >
+          Policies
+        </button>
+        <button
+          className={`flex-grow bg-orange-200/50 hover:bg-orange-300 text-gray-800 font-light py-2 px-4 focus:outline-none ${
+            activeTab === 3 ? 'bg-orange-400/50' : ''
+          }`}
+          onClick={() => handleTabChange(3)}
+        >
+          Map
+        </button>
+        <button
+          className={`rounded-tr-lg flex-grow bg-orange-200/50 hover:bg-orange-300 text-gray-800 font-light py-2 px-4 focus:outline-none ${
+            activeTab === 4 ? 'bg-orange-400/50' : ''
+          }`}
+          onClick={() => handleTabChange(4)}
+        >
+          Add-On Services
+        </button>
+      </div>
+
+      {/* Tab Content */}
+      <div className='bg-orange-100 p-4'>
+        {activeTab === 1 && <Tab1 />}
+        {activeTab === 2 && <Tab2 />}
+        {activeTab === 3 && <Tab3 />}
+        {activeTab === 4 && <Tab4 />}
+      </div>
+    </div>
+  );
+};
+
+const AboutContet = () => {
+  return (
+    <>
+      <div className='max-w-4xl mx-auto '>
+        <div className='flex flex-col  m-2'>
+          {/* Row 1 */}
+          <div className='flex items-center mb-4 '>
+            <div className=' text-xl font-semibold'>HOTEL INNER CIRCLE</div>
+          </div>
+
+          {/* Row 2 */}
+          <div className='flex items-center mb-4 '>
+            <div className=''>
+              SABOO HEIGHTS, 6-3-905, RAJBHAVAN ROAD, Somajiguda, Hyderabad,
+              Telangana, India
+            </div>
+          </div>
+
+          {/* Row 3 */}
+          <div className='flex items-center mb-4 '>
+            <div className='flex items-center '>
+              <div className='mr-2'>
+                <MdEmail />
+              </div>
+              <div>
+                operations@hotelinnercircle.in, reservations@hotelinnercircle.in{' '}
               </div>
             </div>
           </div>
         </div>
       </div>
+    </>
+  );
+};
+
+const PolicyContent = () => {
+  return (
+    <>
+      <div className='max-w-4xl mx-auto p-4 md:p-8'>
+        <h2 className='text-2xl font-bold mb-4 text-orange-400'>Policies</h2>
+
+        <div className='mb-8'>
+          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+            Cancellation Policy
+          </h3>
+          <ul className='list-disc pl-4 text-gray-700'>
+            <li className='text-gray-700'>
+              Free Cancellation (100% refund) if you cancel this booking before
+              2022-04-25 13:59:59. Cancellations will be subject to a hotel fee
+              as follows: After 2022-04-25 14:00:00 (destination time) - 100% of
+              booking amount. Cancellations are only allowed before Check-In.
+            </li>
+          </ul>
+        </div>
+
+        <div className='mb-8'>
+          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+            Child Policy
+          </h3>
+          <ul className='list-disc pl-4 text-gray-700'>
+            {' '}
+            <li className='text-gray-700'>
+              Child up to 5 years can share with parents (without mattress &
+              food). Above 5 years we treat as an extra person and on chargeable
+              basis (With extra bed and food).
+            </li>
+          </ul>
+        </div>
+
+        <div className='mb-8'>
+          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+            Privacy Policy
+          </h3>
+          <ul className='list-disc pl-4 text-gray-700'>
+            <li>
+              Unmarried/Unrelated couples will not be allowed to check-in. Hotel
+              Inner Circle reserves the right of admission. Accommodation can be
+              denied to guests posing as a 'couple' if suitable proof of
+              identification is not presented at check-in. This is at the full
+              discretion of the hotel management. No refund would be applicable
+              in case the hotel denies check-in under such circumstances.
+            </li>
+          </ul>
+        </div>
+
+        <div className='mb-8'>
+          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+            Terms and Conditions
+          </h3>
+          <ul className='list-disc pl-4 text-gray-700'>
+            <li>
+              According to government regulations, a valid Photo ID has to be
+              carried by every person above the age of 18 staying at Hotel Inner
+              Circle. The identification proofs accepted are Drivers License,
+              Voters Card, Passport, Ration Card. Without valid ID the guest
+              will not be allowed to check in.
+            </li>
+            <li>
+              The primary guest checking in to the hotel must be at least 18
+              years of age.
+            </li>
+            <li>
+              The standard check-in time is 2:00 PM and the standard check-out
+              time is 12:00 PM. After booking you will be sent an email
+              confirmation with hotel phone number. You can contact the hotel
+              directly for early check-in or late check-out. Early check-in or
+              late check-out is subject to availability and may be chargeable by
+              Hotel Inner Circle.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </>
+  );
+};
+
+const MapContent = () => {
+  return (
+    <>
+      <div className='w-full h-auto max-w-8xl mx-auto'>
+        <div className='relative' style={{ paddingTop: '30%' }}>
+          {/* Adjust the percentage as needed for the desired height */}
+          <iframe
+            className='absolute top-0 left-0 w-full h-full'
+            src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15226.97231213195!2d78.4569356!3d17.4241132!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb974b6fd460cb%3A0xceb7cc091f916314!2sHotel%20Inner%20Circle!5e0!3m2!1sen!2sin!4v1712385575741!5m2!1sen!2sin'
+            style={{ border: '0' }}
+            allowFullScreen=''
+            loading='lazy'
+            title='map-location'
+            referrerPolicy='no-referrer-when-downgrade'
+          ></iframe>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export const StdSingleEnroll = () => {
+  // State to hold form data
+  const [formData, setFormData] = useState({
+    name: '',
+    roomtype: '',
+    phone: '',
+    email: '',
+    checkindate: '',
+    checkoutdate: '',
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Fetch current date to disable past dates
+    const currentDate = new Date().toISOString().split('T')[0];
+    setFormData((prevData) => ({
+      ...prevData,
+      checkindate: currentDate,
+    }));
+  }, []);
+
+  // Function to handle form submission
+  const handleBooking = async (e) => {
+    e.preventDefault();
+    // Handle booking logic
+    try {
+      setLoading(true);
+      const response = await axios.post(
+        'https://hic-backend.onrender.com/guests',
+        formData
+      );
+      console.log('Booking successful!', response.data);
+      toast.success('Enquiry submitted successfully');
+      setTimeout(() => {
+        navigate('/thankyouenroll');
+      }, 3000);
+    } catch (error) {
+      console.error('Booking error:', error);
+      toast.error('Error submitting enquiry. Please try again later.');
+      // Handle error
+    } finally {
+      setLoading(false); // Set loading back to false after submission
+    }
+  };
+
+  // Function to handle input changes
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Function to room type input changes
+  const handleRoomInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  return (
+    <>
+      <div className='container mx-auto mt-8 p-4 bg-orange-200'>
+        <h2 className='text-2xl font-semibold mb-4'>
+          Book Standard Single Room
+        </h2>
+        <form onSubmit={handleBooking} className='flex flex-col'>
+          <div className='mb-4'>
+            <label htmlFor='guestName' className='block font-semibold mb-1'>
+              Guest Name:
+            </label>
+            <input
+              type='text'
+              id='name'
+              name='name'
+              value={formData.name}
+              onChange={handleInputChange}
+              className='border rounded-3xl px-4 py-2 w-full'
+              required
+            />
+          </div>
+          <div className='mb-4'>
+            <label htmlFor='roomType' className='block font-semibold mb-1'>
+              Room Type:
+            </label>
+            <select
+              id='roomtype'
+              name='roomtype'
+              value={formData.roomtype}
+              onChange={handleRoomInputChange}
+              className='border rounded-3xl px-4 py-2 w-full'
+              required
+            >
+              <option disabled>Select room type</option>
+              <option value='Standard Room - Single'>
+                Standard Room - Single
+              </option>
+              <option value='Standard Room - Double'>
+                Standard Room - Double
+              </option>
+              <option value='Executive Room - Single'>
+                Executive Room - Single
+              </option>
+              <option value='Deluxe Room - Single'>Deluxe Room - Single</option>
+              <option value='Deluxe Room - Double'>Deluxe Room - Double</option>
+              <option value='Deluxe Suite - Single'>
+                Deluxe Suite - Single
+              </option>
+              <option value='Deluxe Suite - Double'>
+                Deluxe Suite - Double
+              </option>
+            </select>
+          </div>
+          {/* add phone and email fields here */}
+          <div className='mb-4'>
+            <label htmlFor='phoneNumber' className='block font-semibold mb-1'>
+              Phone Number:
+            </label>
+            <input
+              type='tel'
+              id='phone'
+              name='phone'
+              value={formData.phone}
+              onChange={handleInputChange}
+              className='border rounded-3xl px-4 py-2 w-full'
+              required
+            />
+          </div>
+          {/* Email Field */}
+          <div className='mb-4'>
+            <label htmlFor='email' className='block font-semibold mb-1'>
+              Email:
+            </label>
+            <input
+              type='email'
+              id='email'
+              name='email'
+              value={formData.email}
+              onChange={handleInputChange}
+              className='border rounded-3xl px-4 py-2 w-full'
+              required
+            />
+          </div>
+          <div className='mb-4'>
+            <label htmlFor='checkInDate' className='block font-semibold mb-1'>
+              Check-in Date:
+            </label>
+            <input
+              type='date'
+              id='checkindate'
+              name='checkindate'
+              value={formData.checkindate}
+              onChange={handleInputChange}
+              min={new Date().toISOString().split('T')[0]}
+              className='border rounded-3xl px-4 py-2 w-full'
+              required
+            />
+          </div>
+          <div className='mb-4'>
+            <label htmlFor='checkOutDate' className='block font-semibold mb-1'>
+              Check-out Date:
+            </label>
+            <input
+              type='date'
+              id='checkoutdate'
+              name='checkoutdate'
+              value={formData.checkoutdate}
+              min={formData.checkindate}
+              onChange={handleInputChange}
+              className='border rounded-3xl px-4 py-2 w-full '
+              required
+            />
+          </div>
+          <div>
+            <button
+              type='submit'
+              className='bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-3xl w-full'
+            >
+              {loading ? 'processing...' : 'Book'}{' '}
+              {/* Show 'Loading...' text when loading is true */}
+            </button>
+          </div>
+        </form>
+      </div>
+      <ToastContainer
+        position='bottom-center'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='light'
+      />
     </>
   );
 };

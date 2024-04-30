@@ -25,7 +25,7 @@ const AboutUsSection = () => {
       {/* Image Section (Right) */}
       <div className='md:w-1/2'>
         <img
-          src='https://images.unsplash.com/photo-1578898886225-c7c894047899?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80' // Replace with the path to your image
+          src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/IMG20220917164052.jpg' // Replace with the path to your image
           alt='About Us'
           className='object-cover w-full h-auto rounded-lg max-h-80'
         />

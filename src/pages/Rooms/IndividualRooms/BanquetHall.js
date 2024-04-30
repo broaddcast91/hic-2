@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import NewHeader from '../../../components/Header/NewHeader';
+import NewFooter from '../../../components/Footer/NewFooter';
+import React, { useState } from 'react';
 import { GiFoodTruck } from 'react-icons/gi';
 import { GiVideoCamera } from 'react-icons/gi';
 
@@ -13,16 +15,9 @@ import { GrLounge } from 'react-icons/gr';
 
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { BanquetEnroll } from '../../EnrollAsGuest/EnrollAsGuest';
 import { GiTempleDoor } from 'react-icons/gi';
 import { MdEmail } from 'react-icons/md';
-
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import NewHeader from '../../../components/Header/NewHeader';
-import NewFooter from '../../../components/Footer/NewFooter';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 // Tab components
 const Tab1 = () => (
@@ -42,7 +37,7 @@ const Tab3 = () => (
 );
 const Tab4 = () => <div>No Add-On Services</div>;
 
-const DelSuitSingle = () => {
+const BanquetHall = () => {
   return (
     <>
       <NewHeader />
@@ -56,7 +51,7 @@ const DelSuitSingle = () => {
 const MainLayout = () => {
   return (
     <>
-      <div className='container mx-auto  p-5  rounded-xl'>
+      <div className='container mx-auto bg-orange-100 p-5  rounded-xl'>
         <div class='flex space-x-3'>
           <div class='w-8/12  '>
             <Swiper
@@ -73,35 +68,47 @@ const MainLayout = () => {
             >
               <SwiperSlide>
                 <img
-                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/suite/22.Inner%2BCircle+Delux+Suit+Room+sit-out.jpg'
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/banquet-hall-images/1-bb.webp'
                   alt=''
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
-                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/hic-images/suite/23.Iner%2BCircle+Deluxe++suit.Room.jpg'
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/banquet-hall-images/2.webp'
+                  alt=''
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/banquet-hall-images/3.webp'
+                  alt=''
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/banquet-hall-images/4.webp'
                   alt=''
                 />
               </SwiperSlide>
             </Swiper>
           </div>
           <div class='w-4/12 rounded  bg-orange-200'>
-            <StdDoubleEnroll />
+            <BanquetEnroll />
           </div>
         </div>
         <div className='text-left  mt-10 '>
           <h2 className='font-semibold text-5xl text-orange-400'>
-            Deluxe Single Room
+            Banquet Hall
           </h2>
           <p className='mt-5'>
-            The Deluxe Single room at our venue offers an exquisite setting for
-            your special occasions. With its elegant decor and spacious layout,
-            it provides the perfect backdrop for weddings, receptions, corporate
+            The banquet hall at our venue offers an exquisite setting for your
+            special occasions. With its elegant decor and spacious layout, it
+            provides the perfect backdrop for weddings, receptions, corporate
             events, and more. Our dedicated team is committed to ensuring every
             detail is taken care of, from customized catering menus to
             personalized decor arrangements. Whether you're hosting an intimate
-            gathering or a grand celebration, our Deluxe Single room is the
-            ideal choice to create unforgettable memories.
+            gathering or a grand celebration, our banquet hall is the ideal
+            choice to create unforgettable memories.
           </p>
         </div>
 
@@ -127,17 +134,17 @@ const MainLayout = () => {
         </div>
         <div className='text-left  mt-5 '>
           <p className='mt-5'>
-            The Deluxe Single room at our venue offers an exquisite setting for
-            your special occasions. With its elegant decor and spacious layout,
-            it provides the perfect backdrop for weddings, receptions, corporate
+            The banquet hall at our venue offers an exquisite setting for your
+            special occasions. With its elegant decor and spacious layout, it
+            provides the perfect backdrop for weddings, receptions, corporate
             events, and more. Our dedicated team is committed to ensuring every
             detail is taken care of, from customized catering menus to
             personalized decor arrangements. Whether you're hosting an intimate
-            gathering or a grand celebration, our Deluxe Single Room is the
-            ideal choice to create unforgettable memories.
+            gathering or a grand celebration, our banquet hall is the ideal
+            choice to create unforgettable memories.
           </p>
           <h2 className='font-semibold text-3xl mt-10 text-orange-400'>
-            Room Facilities
+            Hall Facilities
           </h2>
           <div class=' rounded-lg p-6 mt-5'>
             <div class='flex text-orange-500'>
@@ -368,207 +375,4 @@ const MapContent = () => {
   );
 };
 
-export const StdDoubleEnroll = () => {
-  // State to hold form data
-  const [formData, setFormData] = useState({
-    name: '',
-    roomtype: '',
-    phone: '',
-    email: '',
-    checkindate: '',
-    checkoutdate: '',
-  });
-
-  const [loading, setLoading] = useState(false);
-
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    // Fetch current date to disable past dates
-    const currentDate = new Date().toISOString().split('T')[0];
-    setFormData((prevData) => ({
-      ...prevData,
-      checkindate: currentDate,
-    }));
-  }, []);
-
-  // Function to handle form submission
-  const handleBooking = async (e) => {
-    e.preventDefault();
-    // Handle booking logic
-    try {
-      setLoading(true);
-      const response = await axios.post(
-        'https://hic-backend.onrender.com/guests',
-        formData
-      );
-      console.log('Booking successful!', response.data);
-      toast.success('Enquiry submitted successfully');
-      setTimeout(() => {
-        navigate('/thankyouenroll');
-      }, 3000);
-    } catch (error) {
-      console.error('Booking error:', error);
-      toast.error('Error submitting enquiry. Please try again later.');
-      // Handle error
-    } finally {
-      setLoading(false); // Set loading back to false after submission
-    }
-  };
-
-  // Function to handle input changes
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  // Function to room type input changes
-  const handleRoomInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  return (
-    <>
-      <div className='container mx-auto mt-8 p-4 bg-orange-200'>
-        <h2 className='text-2xl font-semibold mb-4'>Book Deluxe Single Room</h2>
-        <form onSubmit={handleBooking} className='flex flex-col'>
-          <div className='mb-4'>
-            <label htmlFor='guestName' className='block font-semibold mb-1'>
-              Guest Name:
-            </label>
-            <input
-              type='text'
-              id='name'
-              name='name'
-              value={formData.name}
-              onChange={handleInputChange}
-              className='border rounded-3xl px-4 py-2 w-full'
-              required
-            />
-          </div>
-          <div className='mb-4'>
-            <label htmlFor='roomType' className='block font-semibold mb-1'>
-              Room Type:
-            </label>
-            <select
-              id='roomtype'
-              name='roomtype'
-              value={formData.roomtype}
-              onChange={handleRoomInputChange}
-              className='border rounded-3xl px-4 py-2 w-full'
-              required
-            >
-              <option disabled>Select room type</option>
-              <option value='Standard Room - Single'>
-                Standard Room - Single
-              </option>
-              <option value='Standard Room - Double'>
-                Standard Room - Double
-              </option>
-              <option value='Executive Room - Single'>
-                Executive Room - Single
-              </option>
-              <option value='Deluxe Room - Single'>Deluxe Room - Single</option>
-              <option value='Deluxe Room - Double'>Deluxe Room - Double</option>
-              <option value='Deluxe Suite - Single'>
-                Deluxe Suite - Single
-              </option>
-              <option value='Deluxe Suite - Double'>
-                Deluxe Suite - Double
-              </option>
-            </select>
-          </div>
-          {/* add phone and email fields here */}
-          <div className='mb-4'>
-            <label htmlFor='phoneNumber' className='block font-semibold mb-1'>
-              Phone Number:
-            </label>
-            <input
-              type='tel'
-              id='phone'
-              name='phone'
-              value={formData.phone}
-              onChange={handleInputChange}
-              className='border rounded-3xl px-4 py-2 w-full'
-              required
-            />
-          </div>
-          {/* Email Field */}
-          <div className='mb-4'>
-            <label htmlFor='email' className='block font-semibold mb-1'>
-              Email:
-            </label>
-            <input
-              type='email'
-              id='email'
-              name='email'
-              value={formData.email}
-              onChange={handleInputChange}
-              className='border rounded-3xl px-4 py-2 w-full'
-              required
-            />
-          </div>
-          <div className='mb-4'>
-            <label htmlFor='checkInDate' className='block font-semibold mb-1'>
-              Check-in Date:
-            </label>
-            <input
-              type='date'
-              id='checkindate'
-              name='checkindate'
-              value={formData.checkindate}
-              onChange={handleInputChange}
-              min={new Date().toISOString().split('T')[0]}
-              className='border rounded-3xl px-4 py-2 w-full'
-              required
-            />
-          </div>
-          <div className='mb-4'>
-            <label htmlFor='checkOutDate' className='block font-semibold mb-1'>
-              Check-out Date:
-            </label>
-            <input
-              type='date'
-              id='checkoutdate'
-              name='checkoutdate'
-              value={formData.checkoutdate}
-              min={formData.checkindate}
-              onChange={handleInputChange}
-              className='border rounded-3xl px-4 py-2 w-full '
-              required
-            />
-          </div>
-          <div>
-            <button
-              type='submit'
-              className='bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-3xl w-full'
-            >
-              {loading ? 'processing...' : 'Book'}{' '}
-              {/* Show 'Loading...' text when loading is true */}
-            </button>
-          </div>
-        </form>
-      </div>
-      <ToastContainer
-        position='bottom-center'
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme='light'
-      />
-    </>
-  );
-};
-
-export default DelSuitSingle;
+export default BanquetHall;

@@ -4,7 +4,7 @@ import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { MdBed } from 'react-icons/md';
-import { IoBedSharp } from 'react-icons/io5';
+// import { IoBedSharp } from 'react-icons/io5';
 import { MdOutlineBed, MdPrivacyTip, MdEmail } from 'react-icons/md';
 import { IoBedOutline } from 'react-icons/io5';
 import { LuPartyPopper } from 'react-icons/lu';
@@ -39,13 +39,13 @@ const products = [
     href: '/suite',
     icon: LuPartyPopper,
   },
-  {
-    name: 'Banquet Hall',
-    description:
-      'The perfect venue for celebrations, meetings, and events, offering elegance and versatility',
-    href: '/rooms',
-    icon: IoBedSharp,
-  },
+  // {
+  //   name: 'Banquet Hall',
+  //   description:
+  //     'The perfect venue for celebrations, meetings, and events, offering elegance and versatility',
+  //   href: '/rooms',
+  //   icon: IoBedSharp,
+  // },
 
   {
     name: 'Refund Policy',
@@ -165,7 +165,7 @@ export default function NewHeader() {
             Ice n' Spice
           </Link>
           <Link
-            to='/banquet'
+            to='/banquethall'
             className='text-md font-semibold leading-6 text-gray-900'
           >
             Banquet
