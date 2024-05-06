@@ -9,7 +9,7 @@ const Services = () => {
     <>
       <div class='container  mx-auto md:px-6 '>
         <section class='mb-32'>
-          <h2 class='mb-12 text-center text-3xl font-bold text-orange-400'>
+          <h2 class='mb-12 text-center text-3xl font-bold text-[#F86F03]'>
             Our Awesome Services
           </h2>
 
@@ -53,7 +53,7 @@ const Services = () => {
             <div class='w-full shrink-0 grow-0 basis-auto md:px-6 lg:w-7/12'>
               <div class='mb-12 flex'>
                 <div class='shrink-0'>
-                  <div class='rounded-md bg-orange-400 p-4 shadow-lg '>
+                  <div class='rounded-md bg-[#F86F03] p-4 shadow-lg '>
                     <MdFastfood class='h-5 w-5 text-white' />
                   </div>
                 </div>
@@ -70,7 +70,7 @@ const Services = () => {
 
               <div class='mb-12 flex'>
                 <div class='shrink-0'>
-                  <div class='rounded-md bg-orange-400 p-4 shadow-lg '>
+                  <div class='rounded-md bg-[#F86F03] p-4 shadow-lg '>
                     <GiGlassCelebration class='h-5 w-5 text-white' />
                   </div>
                 </div>
@@ -87,7 +87,7 @@ const Services = () => {
 
               <div class='mb-12 flex'>
                 <div class='shrink-0'>
-                  <div class='rounded-md bg-orange-400 p-4 shadow-lg '>
+                  <div class='rounded-md bg-[#F86F03] p-4 shadow-lg '>
                     <GiVideoConference class='h-5 w-5 text-white' />
                   </div>
                 </div>
@@ -104,7 +104,7 @@ const Services = () => {
 
               <div class='flex'>
                 <div class='shrink-0'>
-                  <div class='rounded-md bg-orange-400 p-4 shadow-lg '>
+                  <div class='rounded-md bg-[#F86F03] p-4 shadow-lg '>
                     <GiFoodTruck class='h-5 w-5 text-white' />
                   </div>
                 </div>

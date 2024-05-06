@@ -83,7 +83,7 @@ const FAQSection = ({ faqs }) => {
                 <li>
                   <Link
                     to='#'
-                    class='motion-reduce:transition-none-none text-orange-400 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80'
+                    class='motion-reduce:transition-none-none text-[#F86F03] transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80'
                   >
                     FAQ
                   </Link>
@@ -141,7 +141,7 @@ const FaqItem = ({ question, answer }) => {
         className='flex items-center justify-between w-full px-4 py-5 sm:p-6'
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className='flex text-lg font-semibold text-orange-400'>
+        <span className='flex text-lg font-semibold text-[#F86F03]'>
           {question}
         </span>
         <svg

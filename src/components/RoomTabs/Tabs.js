@@ -88,10 +88,10 @@ const PolicyContent = () => {
   return (
     <>
       <div className='max-w-4xl mx-auto p-4 md:p-8'>
-        <h2 className='text-2xl font-bold mb-4 text-orange-400'>Policies</h2>
+        <h2 className='text-2xl font-bold mb-4 text-[#F86F03]'>Policies</h2>
 
         <div className='mb-8'>
-          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+          <h3 className='text-lg font-semibold mb-2 text-[#F86F03]'>
             Cancellation Policy
           </h3>
           <ul className='list-disc pl-4 text-gray-700'>
@@ -105,7 +105,7 @@ const PolicyContent = () => {
         </div>
 
         <div className='mb-8'>
-          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+          <h3 className='text-lg font-semibold mb-2 text-[#F86F03]'>
             Child Policy
           </h3>
           <ul className='list-disc pl-4 text-gray-700'>
@@ -119,7 +119,7 @@ const PolicyContent = () => {
         </div>
 
         <div className='mb-8'>
-          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+          <h3 className='text-lg font-semibold mb-2 text-[#F86F03]'>
             Privacy Policy
           </h3>
           <ul className='list-disc pl-4 text-gray-700'>
@@ -135,7 +135,7 @@ const PolicyContent = () => {
         </div>
 
         <div className='mb-8'>
-          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+          <h3 className='text-lg font-semibold mb-2 text-[#F86F03]'>
             Terms and Conditions
           </h3>
           <ul className='list-disc pl-4 text-gray-700'>

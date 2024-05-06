@@ -18,7 +18,7 @@ const TariffLayout = () => {
       <div className='container mx-auto '>
         <div className='flex justify-center'>
           <div className='text-center'>
-            <h1 className='text-4xl font-extrabold text-orange-400'> Tariff</h1>
+            <h1 className='text-4xl font-extrabold text-[#F86F03]'> Tariff</h1>
             <p className='mt-4 text-lg text-gray-700'>
               Inner Circle, a centrally air conditioned & centrally located
               hotel, provides smart hospitality solutions for corporate and
@@ -42,7 +42,7 @@ const TariffLayout = () => {
                 <div class='relative overflow-x-auto shadow-md sm:rounded-2xl'>
                   <table class='w-full text-lg text-left rtl:text-right text-gray-500 dark:text-gray-400'>
                     <thead class='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
-                      <tr className='bg-orange-400 text-white'>
+                      <tr className='bg-[#F86F03] text-white'>
                         <th scope='col' class='px-10 py-5'>
                           Types of Rooms
                         </th>
@@ -107,12 +107,12 @@ const TariffLayout = () => {
                     </tbody>
                   </table>
                 </div>
-                <ul className='list-disc ml-6 text-left mt-10 text-orange-400'>
+                <ul className='list-disc ml-6 text-left mt-10 text-[#F86F03]'>
                   <li>Tariff is INR</li>
                   <li>GST as applicable shall be levied extra</li>
                 </ul>
                 <br />
-                <div className='ml-4 text-left text-lg mt-2 text-orange-400 mb-10'>
+                <div className='ml-4 text-left text-lg mt-2 text-[#F86F03] mb-10'>
                   <span className='font-bold'>Facilities:</span>
                   <ul className='list-disc ml-6 text-left'>
                     <li>Check in time 12:00 Noon, Check out time: 10:00 AM</li>

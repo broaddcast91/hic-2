@@ -5,7 +5,7 @@ const Testimonials = () => {
     <>
       <div className='container   mx-auto md:px-6 mt-10'>
         <section className='mb-32 text-center'>
-          <h2 className='mb-12 text-3xl text-orange-400 font-bold'>Reviews</h2>
+          <h2 className='mb-12 text-3xl text-[#F86F03] font-bold'>Reviews</h2>
 
           <div className='grid gap-x-6 md:grid-cols-3 lg:gap-x-12'>
             <div className='mb-12 md:mb-0'>
@@ -20,7 +20,7 @@ const Testimonials = () => {
               <h6 className='mb-4 font-light text-primary dark:text-primary-400'>
                 Doctor
               </h6>
-              <p className='mb-4 text-sm italic text-orange-400'>
+              <p className='mb-4 text-sm italic text-[#F86F03]'>
                 "Absolutely outstanding! My stay at this hotel was a much-needed
                 respite from my busy life as a doctor. The comfort, hospitality,
                 and attention to detail were exceptional.
@@ -50,7 +50,7 @@ const Testimonials = () => {
               <h6 className='mb-4 font-light text-primary dark:text-primary-400'>
                 Home Maker
               </h6>
-              <p className='mb-4 text-sm italic text-orange-400'>
+              <p className='mb-4 text-sm italic text-[#F86F03]'>
                 "We had the most comfortable and enjoyable stay at this hotel
                 with my family. The rooms were cozy, and the service was
                 impeccable. But what truly stood out was the delicious food.
@@ -82,7 +82,7 @@ const Testimonials = () => {
               <h6 className='mb-4 font-light text-primary dark:text-primary-400'>
                 Student
               </h6>
-              <p className='mb-4 text-sm italic text-orange-400'>
+              <p className='mb-4 text-sm italic text-[#F86F03]'>
                 "My stay at this hotel made my interview experience stress-free
                 and comfortable. The peaceful ambiance allowed me to prepare and
                 focus, and the staff's warmth and assistance were truly

@@ -264,7 +264,7 @@ const StandardDouble = ({ title, img, price }) => {
                 <div className='bg-white px-4 pt-2  sm:p-6 sm:pb-4 lg:p-10'>
                   <Dialog.Title
                     as='h3'
-                    className='text-3xl leading-6 mb-10 font-medium text-orange-400 text-center'
+                    className='text-3xl leading-6 mb-10 font-medium text-[#F86F03] text-center'
                   >
                     Check Room Availability
                   </Dialog.Title>
@@ -336,11 +336,11 @@ const StandardDouble = ({ title, img, price }) => {
                 <div className='bg-white sm:px-6 sm:flex sm:flex-row-reverse flex flex-col items-center justify-center'>
                   <button
                     type='submit'
-                    className={`bg-orange-400 h-10 inline-flex m-4 justify-center w-full sm:w-auto my-2 sm:my-0 py-2 px-4 mt-4 mb-2 border border-transparent shadow-sm text-sm font-medium rounded-full text-white 
+                    className={`bg-[#F86F03] h-10 inline-flex m-4 justify-center w-full sm:w-auto my-2 sm:my-0 py-2 px-4 mt-4 mb-2 border border-transparent shadow-sm text-sm font-medium rounded-full text-white 
       ${
         loading
           ? 'cursor-not-allowed bg-white'
-          : 'bg-orange-400 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'
+          : 'bg-[#F86F03] hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'
       }`}
                     onClick={(e) => {
                       e.preventDefault();
@@ -388,7 +388,7 @@ const StandardDouble = ({ title, img, price }) => {
                       </p>
                       {roomStatus.status && (
                         <button
-                          className='bg-orange-400 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-3xl mt-4'
+                          className='bg-[#F86F03] hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-3xl mt-4'
                           onClick={handleBookAsGuest}
                         >
                           Book as Guest

@@ -55,7 +55,7 @@ const products = [
   },
 ];
 const callsToAction = [
-  { name: 'All Rooms', href: '/rooms', icon: BiSolidDoorOpen },
+  { name: 'All Rooms', href: '/newrooms', icon: BiSolidDoorOpen },
   { name: 'Contact Us', href: '/contact', icon: MdEmail },
 ];
 
@@ -77,7 +77,7 @@ export default function NewHeader() {
             <span className='sr-only'>Your Company</span>
             <img
               className='h-10 w-auto sm:h-16'
-              src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/new/images/inner-circle-logo.webp'
+              src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/logos/new-hic-logo-2024-webp.webp'
               alt=''
             />
           </Link>
@@ -186,7 +186,7 @@ export default function NewHeader() {
         <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
           <Link
             to='/enroll'
-            class='uppercase inline-flex items-center justify-center w-full px-10 py-3 text-base font-light leading-0 text-white bg-gradient-to-br bg-orange-400 border border-transparent rounded-full md:w-auto hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 shadow-lg'
+            class='uppercase inline-flex items-center justify-center w-full px-10 py-3 text-base leading-0 text-white bg-gradient-to-br bg-[#F86F03] border border-transparent rounded-full md:w-auto hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 shadow-lg font-bold'
           >
             Book
           </Link>

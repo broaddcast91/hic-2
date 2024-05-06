@@ -10,7 +10,7 @@ const SocialTileTab = () => {
             alt='Placeholder 1'
             className='w-full h-auto rounded-xl transition-transform duration-300 transform hover:scale-105'
           />
-          <button className='absolute bottom-4 left-4 bg-orange-400 text-white py-1 px-2 rounded-md text-sm'>
+          <button className='absolute bottom-4 left-4 bg-[#F86F03] text-white py-1 px-2 rounded-md text-sm'>
             Youtube
           </button>
         </div>
@@ -20,7 +20,7 @@ const SocialTileTab = () => {
             alt='Placeholder 2'
             className='w-full h-auto rounded-xl '
           />
-          <button className='absolute bottom-4 left-4 bg-orange-400 text-white py-1 px-2 rounded-md text-sm'>
+          <button className='absolute bottom-4 left-4 bg-[#F86F03] text-white py-1 px-2 rounded-md text-sm'>
             facebook
           </button>
         </div>
@@ -30,7 +30,7 @@ const SocialTileTab = () => {
             alt='Placeholder 3'
             className='w-full h-auto rounded-xl '
           />
-          <button className='absolute bottom-4 left-4 bg-orange-400 text-white py-1 px-2 rounded-md text-sm'>
+          <button className='absolute bottom-4 left-4 bg-[#F86F03] text-white py-1 px-2 rounded-md text-sm'>
             twitter
           </button>
         </div>
@@ -40,7 +40,7 @@ const SocialTileTab = () => {
             alt='Placeholder 3'
             className='w-full h-auto rounded-xl '
           />
-          <button className='absolute bottom-4 left-4 bg-orange-400 text-white py-1 px-2 rounded-md text-sm'>
+          <button className='absolute bottom-4 left-4 bg-[#F86F03] text-white py-1 px-2 rounded-md text-sm'>
             instagram
           </button>
         </div>

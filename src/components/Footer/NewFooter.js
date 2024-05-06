@@ -8,7 +8,7 @@ const NewFooter = () => {
   return (
     <>
       <div className='relative text-white  footer'>
-        <div className='absolute top-0 left-0 w-full overflow-hidden  bg-orange-400'>
+        <div className='absolute top-0 left-0 w-full overflow-hidden  bg-[#F86F03]'>
           {' '}
           <svg
             data-name='Layer 1'
@@ -30,7 +30,7 @@ const NewFooter = () => {
                       <span className='sr-only'>Workflow</span>
                       <img
                         className='h-10 w-auto sm:h-16'
-                        src='https://www.hotelinnercircle.in/img/HIC-white-logo.png'
+                        src='https://images-saboomaruti-in.s3.ap-south-1.amazonaws.com/innercircle/logos/new-hic-white-logo-2024-webp.png'
                         alt=''
                       />
                     </Link>

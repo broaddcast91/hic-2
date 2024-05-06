@@ -123,10 +123,10 @@ const SearchRoom = () => {
 
           <div>
             <div
-              className='bg-orange-400 text-white py-2 px-12 hover:bg-orange-600 rounded-3xl '
+              className='bg-[#F86F03] text-white py-2 px-12 hover:bg-orange-600 rounded-3xl '
               onClick={handleSearch}
             >
-            Book
+              Book
             </div>
           </div>
         </div>

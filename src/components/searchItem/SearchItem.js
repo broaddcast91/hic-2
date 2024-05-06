@@ -257,7 +257,7 @@ const SearchItem = ({ title, img, price }) => {
                     <div className='bg-gray-100 p-3 pd-8 sm:px-6 sm:flex sm:flex-row-reverse flex flex-col items-center justify-center'>
                       <button
                         type='submit'
-                        className={`bg-orange-400 h-10 inline-flex m-4 justify-center w-full sm:w-auto my-2 sm:my-0 py-2 px-4 mt-4 mb-2 border border-transparent shadow-sm text-sm font-medium rounded-full text-white 
+                        className={`bg-[#F86F03] h-10 inline-flex m-4 justify-center w-full sm:w-auto my-2 sm:my-0 py-2 px-4 mt-4 mb-2 border border-transparent shadow-sm text-sm font-medium rounded-full text-white 
                             ? 'bg-gray-400 cursor-not-allowed'
                             : 'bg-red-800 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500'
                         }`}

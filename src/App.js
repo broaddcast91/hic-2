@@ -39,6 +39,7 @@ import OnlyDeluxeRoom from './pages/Rooms/OnlyDeluxeRoom';
 import OnlySuite from './pages/Rooms/OnlySuite';
 import Tariff from './pages/Tariff/Tariff';
 import BanquetHall from './pages/Rooms/IndividualRooms/BanquetHall';
+import NewRooms from './pages/NewRooms';
 
 const ScrollToTopOnLocationChange = () => {
   const location = useLocation();
@@ -64,6 +65,7 @@ function App() {
           <Route path='/feedback' element={<FeedbackForm />} />
           <Route path='/events' element={<Events />} />
           <Route path='/rooms' element={<Rooms />} />
+          <Route path='/newrooms' element={<NewRooms />} />
           <Route path='/privacypolicy' element={<PrivacyPolicy />} />
           <Route path='/faqs' element={<FAQSection />} />
           <Route path='/textanm' element={<TextAnimation />} />

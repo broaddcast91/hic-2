@@ -59,7 +59,7 @@ const EventsBanner = () => {
                 <li>
                   <Link
                     to='#'
-                    class='motion-reduce:transition-none-none text-orange-400 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80'
+                    class='motion-reduce:transition-none-none text-[#F86F03] transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80'
                   >
                     Events
                   </Link>
@@ -90,7 +90,7 @@ const EventDetails = () => {
             </div>
 
             <div class='w-full shrink-0 grow-0 basis-auto lg:w-7/12'>
-              <div class='flex h-full items-center rounded-lg bg-orange-400 p-6 text-center text-white lg:pl-12 lg:text-left'>
+              <div class='flex h-full items-center rounded-lg bg-[#F86F03]p-6 text-center text-white lg:pl-12 lg:text-left'>
                 <div class='lg:pl-12'>
                   <h2 class='mb-8 text-3xl font-bold'>Grand Gala Wedding</h2>
                   <p class='mb-8 pb-2 lg:pb-0'>
@@ -176,7 +176,7 @@ const EventDetails = () => {
             <div className='grid items-center lg:grid-cols-2'>
               <div className='mb-12 lg:mb-0 lg:w-7/1'>
                 {/* Increase the width by changing lg:w-5/12 to lg:w-7/12 */}
-                <div className='relative z-[3] block rounded-lg bg-orange-400 px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] text-white md:px-12 lg:-mr-20'>
+                <div className='relative z-[3] block rounded-lg bg-[#F86F03] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] text-white md:px-12 lg:-mr-20'>
                   <h2 className='mb-8 text-3xl font-bold'>
                     Business Conference - Industry Insights 2023
                   </h2>
@@ -281,7 +281,7 @@ const EventDetails = () => {
             </div>
 
             <div class='w-full shrink-0 grow-0 basis-auto lg:w-7/12'>
-              <div class='flex h-full items-center rounded-lg bg-orange-400 p-6 text-center text-white lg:pl-12 lg:text-left'>
+              <div class='flex h-full items-center rounded-lg bg-[#F86F03] p-6 text-center text-white lg:pl-12 lg:text-left'>
                 <div class='lg:pl-12'>
                   <h2 class='mb-8 text-3xl font-bold'>
                     Birthday Parties & Much More...

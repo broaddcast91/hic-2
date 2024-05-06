@@ -247,7 +247,7 @@ export const Enroll = () => {
           <div className='w-full'>
             <button
               type='submit'
-              className='bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-3xl'
+              className='bg-[#F86F03] hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-3xl'
             >
               {loading ? 'processing...' : 'Book Room'}{' '}
               {/* Show 'Loading...' text when loading is true */}
@@ -450,7 +450,7 @@ export const BanquetEnroll = () => {
           <div>
             <button
               type='submit'
-              className='bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-3xl w-full'
+              className='bg-[#F86F03] hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-3xl w-full'
             >
               {loading ? 'processing...' : 'Book'}{' '}
               {/* Show 'Loading...' text when loading is true */}
@@ -477,7 +477,7 @@ export const BanquetEnroll = () => {
 const EnrollFAQ = () => {
   return (
     <div className='p-4'>
-      <h2 className='text-6xl font-semibold mb-4 text-center mt-20 text-orange-400'>
+      <h2 className='text-6xl font-semibold mb-4 text-center mt-20 text-[#F86F03]'>
         Have questions regarding room booking?
       </h2>
       <section className='py-10 bg-white sm:py-16 lg:py-24'>
@@ -527,7 +527,7 @@ const FaqItem = ({ question, answer }) => {
         className='flex items-center justify-between w-full px-4 py-5 sm:p-6'
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className='flex text-lg font-semibold text-orange-400'>
+        <span className='flex text-lg font-semibold text-[#F86F03]'>
           {question}
         </span>
         <svg

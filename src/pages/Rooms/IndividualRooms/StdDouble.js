@@ -18,7 +18,7 @@ import { GiTempleDoor } from 'react-icons/gi';
 import { MdEmail } from 'react-icons/md';
 
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import NewHeader from '../../../components/Header/NewHeader';
 import NewFooter from '../../../components/Footer/NewFooter';
 import { ToastContainer, toast } from 'react-toastify';
@@ -47,16 +47,27 @@ const StdDouble = () => {
     <>
       <NewHeader />
       <MainLayout />
-
       <NewFooter />
     </>
   );
 };
 
 const MainLayout = () => {
+  const items = [
+    { name: 'Book with ₹0 Payment', price: '₹0' },
+    { name: 'GST & Taxes', price: '₹0' },
+    { name: 'Double Bed', price: '5299' },
+  ];
+
+  // Calculate total price
+  const totalPrice = items.reduce(
+    (acc, item) => acc + parseFloat(item.price.slice(1)),
+    0
+  );
+
   return (
     <>
-      <div className='container mx-auto  p-5  rounded-xl'>
+      <div className='container mx-auto p-5 rounded-xl'>
         <div class='flex space-x-3'>
           <div class='w-8/12  '>
             <Swiper
@@ -121,58 +132,60 @@ const MainLayout = () => {
               </SwiperSlide>
             </Swiper>
           </div>
-          <div class='w-4/12 rounded  bg-orange-200'>
-            <StdDoubleEnroll />
+          <div class='w-4/12   bg-orange-200 rounded-t-3xl shadow-xl'>
+            <StdSingleEnroll />
           </div>
         </div>
-        <div className='text-left  mt-10 '>
-          <h2 className='font-semibold text-5xl text-orange-400'>
-            Standard Double Room
-          </h2>
-          <p className='mt-5'>
-            The Standard Double room at our venue offers an exquisite setting
-            for your special occasions. With its elegant decor and spacious
-            layout, it provides the perfect backdrop for weddings, receptions,
-            corporate events, and more. Our dedicated team is committed to
-            ensuring every detail is taken care of, from customized catering
-            menus to personalized decor arrangements. Whether you're hosting an
-            intimate gathering or a grand celebration, our Standard Double room
-            is the ideal choice to create unforgettable memories.
-          </p>
-        </div>
+        <div className='flex space-x-9 '>
+          <div className='w-8/12'>
+            <div className='text-left  mt-10 '>
+              <h2 className='font-semibold text-5xl text-[#F86F03]'>
+                Standard Double Room
+              </h2>
+              <p className='mt-5'>
+                The Standard Double room at our venue offers an exquisite
+                setting for your special occasions. With its elegant decor and
+                spacious layout, it provides the perfect backdrop for weddings,
+                receptions, corporate events, and more. Our dedicated team is
+                committed to ensuring every detail is taken care of, from
+                customized catering menus to personalized decor arrangements.
+                Whether you're hosting an intimate gathering or a grand
+                celebration, our Standard Double room is the ideal choice to
+                create unforgettable memories.
+              </p>
+            </div>
+          </div>
+          <div className='w-4/12 bg-orange-200 p-4 text-xl shadow-xl rounded-b-3xl'>
+            <h2 className='text-left mb-2'>Estimated Billing</h2>
+            <p className='font-light text-xs text-red-600'>
+              Room prices may change unexpectedly. Please verify current prices
+              during booking for accuracy. Check{' '}
+              <Link to='/tariff' className='underline text-orange-900'>
+                Tariff
+              </Link>
+              &nbsp;for more information.
+            </p>
+            <div className='mt-5'>
+              <ul>
+                {items.map((item, index) => (
+                  <li key={index} className='flex justify-between mb-1 text-sm'>
+                    <span>{item.name}</span>
+                    <span>{item.price}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-        <div class='border-2 border-orange-400  rounded-lg p-6 shadow-md mt-5'>
-          <div class='flex text-orange-500'>
-            <div class=' p-6 mr-4 flex-1'>
-              <p class='text-lg font-extralight'>Room Size</p>
-              <p class='mt-2 font-normal'>600 Sq</p>
-            </div>
-            <div class=' p-6 mr-4 flex-1'>
-              <p class='text-lg font-extralight'>Rooms/Bed</p>
-              <p class='mt-2 font-normal'>1 Double Bed</p>
-            </div>
-            <div class=' p-6 mr-4 flex-1'>
-              <p class='text-lg font-extralight'>Occupancy</p>
-              <p class='mt-2 font-normal'>Three persons</p>
-            </div>
-            <div class='  p-6  flex-1'>
-              <p class='text-lg font-extralight'>View</p>
-              <p class='mt-2 font-normal'>See View</p>
-            </div>
+            <p className='text-right  text-3xl font-bold mt-5'>
+              <span className='font-light'>Total:</span> ₹&nbsp;
+              {totalPrice.toFixed(2)}
+            </p>
           </div>
         </div>
+        <div class='border-b border-orange-400 mt-10'></div>
+
         <div className='text-left  mt-5 '>
-          <p className='mt-5'>
-            The Standard double room at our venue offers an exquisite setting
-            for your special occasions. With its elegant decor and spacious
-            layout, it provides the perfect backdrop for weddings, receptions,
-            corporate events, and more. Our dedicated team is committed to
-            ensuring every detail is taken care of, from customized catering
-            menus to personalized decor arrangements. Whether you're hosting an
-            intimate gathering or a grand celebration, our Stanard Double Room
-            is the ideal choice to create unforgettable memories.
-          </p>
-          <h2 className='font-semibold text-3xl mt-10 text-orange-400'>
+          <h2 className='font-semibold text-3xl mt-10 text-[#F86F03]'>
             Room Facilities
           </h2>
           <div class=' rounded-lg p-6 mt-5'>
@@ -306,10 +319,10 @@ const PolicyContent = () => {
   return (
     <>
       <div className='max-w-4xl mx-auto p-4 md:p-8'>
-        <h2 className='text-2xl font-bold mb-4 text-orange-400'>Policies</h2>
+        <h2 className='text-2xl font-bold mb-4 text-[#F86F03]'>Policies</h2>
 
         <div className='mb-8'>
-          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+          <h3 className='text-lg font-semibold mb-2 text-[#F86F03]'>
             Cancellation Policy
           </h3>
           <ul className='list-disc pl-4 text-gray-700'>
@@ -323,7 +336,7 @@ const PolicyContent = () => {
         </div>
 
         <div className='mb-8'>
-          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+          <h3 className='text-lg font-semibold mb-2 text-[#F86F03]'>
             Child Policy
           </h3>
           <ul className='list-disc pl-4 text-gray-700'>
@@ -337,7 +350,7 @@ const PolicyContent = () => {
         </div>
 
         <div className='mb-8'>
-          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+          <h3 className='text-lg font-semibold mb-2 text-[#F86F03]'>
             Privacy Policy
           </h3>
           <ul className='list-disc pl-4 text-gray-700'>
@@ -353,7 +366,7 @@ const PolicyContent = () => {
         </div>
 
         <div className='mb-8'>
-          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+          <h3 className='text-lg font-semibold mb-2 text-[#F86F03]'>
             Terms and Conditions
           </h3>
           <ul className='list-disc pl-4 text-gray-700'>
@@ -404,7 +417,7 @@ const MapContent = () => {
   );
 };
 
-export const StdDoubleEnroll = () => {
+export const StdSingleEnroll = () => {
   // State to hold form data
   const [formData, setFormData] = useState({
     name: '',
@@ -585,7 +598,7 @@ export const StdDoubleEnroll = () => {
           <div>
             <button
               type='submit'
-              className='bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-3xl w-full'
+              className='bg-[#F86F03] hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-3xl w-full'
             >
               {loading ? 'processing...' : 'Book'}{' '}
               {/* Show 'Loading...' text when loading is true */}

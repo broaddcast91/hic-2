@@ -32,7 +32,7 @@ const ThankYou = () => {
               We will get back to you shortly.
             </p>
             <Link
-              class='inline-flex items-center px-6 py-3 text-white bg-orange-400 border border-orange-400 rounded-3xl  hover:bg-orange-600 focus:outline-none focus:ring'
+              class='inline-flex items-center px-6 py-3 text-white bg-[#F86F03] border border-orange-400 rounded-3xl  hover:bg-orange-600 focus:outline-none focus:ring'
               to='/'
             >
               <svg

@@ -74,7 +74,7 @@ const ImageSlider = () => {
               </p>
               <Link
                 to={slide.link}
-                className='bg-white text-black px-4 py-2 absolute bottom-0 right-0 m-4 hover:bg-orange-400 rounded-3xl'
+                className='bg-white text-black px-4 py-2 absolute bottom-0 right-0 m-4 hover:bg-[#F86F03] rounded-3xl'
               >
                 {slide.buttonLabel}
               </Link>

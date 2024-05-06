@@ -51,7 +51,7 @@ const BanquetHall = () => {
 const MainLayout = () => {
   return (
     <>
-      <div className='container mx-auto bg-orange-100 p-5  rounded-xl'>
+      <div className='container mx-auto  p-5  rounded-xl'>
         <div class='flex space-x-3'>
           <div class='w-8/12  '>
             <Swiper
@@ -97,7 +97,7 @@ const MainLayout = () => {
           </div>
         </div>
         <div className='text-left  mt-10 '>
-          <h2 className='font-semibold text-5xl text-orange-400'>
+          <h2 className='font-semibold text-5xl text-[#F86F03]'>
             Banquet Hall
           </h2>
           <p className='mt-5'>
@@ -115,20 +115,20 @@ const MainLayout = () => {
         <div class='border-2 border-orange-400  rounded-lg p-6 shadow-md mt-5'>
           <div class='flex text-orange-500'>
             <div class=' p-6 mr-4 flex-1'>
-              <p class='text-lg font-extralight'>Room Size</p>
-              <p class='mt-2 font-normal'>600 Sq</p>
+              <p class='text-lg font-extralight'>Cuisine</p>
+              <p class='mt-2 font-normal'>Vegeterian</p>
             </div>
             <div class=' p-6 mr-4 flex-1'>
               <p class='text-lg font-extralight'>Rooms/Bed</p>
-              <p class='mt-2 font-normal'>1 Single Bed</p>
+              <p class='mt-2 font-normal'>-</p>
             </div>
             <div class=' p-6 mr-4 flex-1'>
               <p class='text-lg font-extralight'>Occupancy</p>
-              <p class='mt-2 font-normal'>Three persons</p>
+              <p class='mt-2 font-normal'>150 - 350</p>
             </div>
             <div class='  p-6  flex-1'>
               <p class='text-lg font-extralight'>View</p>
-              <p class='mt-2 font-normal'>See View</p>
+              <p class='mt-2 font-normal'>City View</p>
             </div>
           </div>
         </div>
@@ -143,7 +143,7 @@ const MainLayout = () => {
             gathering or a grand celebration, our banquet hall is the ideal
             choice to create unforgettable memories.
           </p>
-          <h2 className='font-semibold text-3xl mt-10 text-orange-400'>
+          <h2 className='font-semibold text-3xl mt-10 text-[#F86F03]'>
             Hall Facilities
           </h2>
           <div class=' rounded-lg p-6 mt-5'>
@@ -195,7 +195,7 @@ const TabsLayout = () => {
       <div className='flex flex-nowrap overflow-x-auto'>
         <button
           className={`flex-grow rounded-tl-lg bg-orange-200/50 hover:bg-orange-300 text-gray-800 font-light py-2 px-4 focus:outline-none ${
-            activeTab === 1 ? 'bg-orange-400/50' : ''
+            activeTab === 1 ? 'bg-[#F86F03]/50' : ''
           }`}
           onClick={() => handleTabChange(1)}
         >
@@ -203,7 +203,7 @@ const TabsLayout = () => {
         </button>
         <button
           className={`flex-grow bg-orange-200/50 hover:bg-orange-300 text-gray-800 font-light py-2 px-4 focus:outline-none ${
-            activeTab === 2 ? 'bg-orange-400/50' : ''
+            activeTab === 2 ? 'bg-[#F86F03]/50' : ''
           }`}
           onClick={() => handleTabChange(2)}
         >
@@ -211,7 +211,7 @@ const TabsLayout = () => {
         </button>
         <button
           className={`flex-grow bg-orange-200/50 hover:bg-orange-300 text-gray-800 font-light py-2 px-4 focus:outline-none ${
-            activeTab === 3 ? 'bg-orange-400/50' : ''
+            activeTab === 3 ? 'bg-[#F86F03]/50' : ''
           }`}
           onClick={() => handleTabChange(3)}
         >
@@ -219,7 +219,7 @@ const TabsLayout = () => {
         </button>
         <button
           className={`rounded-tr-lg flex-grow bg-orange-200/50 hover:bg-orange-300 text-gray-800 font-light py-2 px-4 focus:outline-none ${
-            activeTab === 4 ? 'bg-orange-400/50' : ''
+            activeTab === 4 ? 'bg-[#F86F03]/50' : ''
           }`}
           onClick={() => handleTabChange(4)}
         >
@@ -277,10 +277,10 @@ const PolicyContent = () => {
   return (
     <>
       <div className='max-w-4xl mx-auto p-4 md:p-8'>
-        <h2 className='text-2xl font-bold mb-4 text-orange-400'>Policies</h2>
+        <h2 className='text-2xl font-bold mb-4 text-[#F86F03]'>Policies</h2>
 
         <div className='mb-8'>
-          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+          <h3 className='text-lg font-semibold mb-2 text-[#F86F03]'>
             Cancellation Policy
           </h3>
           <ul className='list-disc pl-4 text-gray-700'>
@@ -294,7 +294,7 @@ const PolicyContent = () => {
         </div>
 
         <div className='mb-8'>
-          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+          <h3 className='text-lg font-semibold mb-2 text-[#F86F03]'>
             Child Policy
           </h3>
           <ul className='list-disc pl-4 text-gray-700'>
@@ -308,7 +308,7 @@ const PolicyContent = () => {
         </div>
 
         <div className='mb-8'>
-          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+          <h3 className='text-lg font-semibold mb-2 text-[#F86F03]'>
             Privacy Policy
           </h3>
           <ul className='list-disc pl-4 text-gray-700'>
@@ -324,7 +324,7 @@ const PolicyContent = () => {
         </div>
 
         <div className='mb-8'>
-          <h3 className='text-lg font-semibold mb-2 text-orange-400'>
+          <h3 className='text-lg font-semibold mb-2 text-[#F86F03]'>
             Terms and Conditions
           </h3>
           <ul className='list-disc pl-4 text-gray-700'>

@@ -131,7 +131,7 @@ const ContactForm = () => {
                 <li>
                   <Link
                     to='#'
-                    class='motion-reduce:transition-none-none text-orange-400 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80'
+                    class='motion-reduce:transition-none-none text-[#F86F03] transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition motion-reduce:transition-none dark:text-white/60 dark:hover:text-white/80 dark:focus:text-white/80 dark:active:text-white/80'
                   >
                     Contact
                   </Link>
@@ -146,7 +146,7 @@ const ContactForm = () => {
           {/* <h2 class='mb-4 text-4xl tracking-tight font-extrabold text-center text-orange-400 dark:text-white'>
             Contact Us
           </h2> */}
-          <p class='mb-8 lg:mb-16 font-light text-center text-orange-400 dark:text-gray-400 sm:text-xl'>
+          <p class='mb-8 lg:mb-16 font-light text-center text-[#F86F03] dark:text-gray-400 sm:text-xl'>
             Need assistance with your hotel reservations? Have questions about
             availability, rates, or amenities? Contact our dedicated team for
             personalized support and expert guidance throughout your booking
@@ -226,7 +226,7 @@ const ContactForm = () => {
             </div>
             <button
               type='submit'
-              className='uppercase inline-flex items-center justify-center w-full px-10 py-3 text-base font-light leading-0 text-white bg-gradient-to-br bg-orange-400 border border-transparent rounded-full md:w-auto hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 shadow-lg'
+              className='uppercase inline-flex items-center justify-center w-full px-10 py-3 text-base font-light leading-0 text-white bg-gradient-to-br bg-[#F86F03] border border-transparent rounded-full md:w-auto hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 shadow-lg'
             >
               Send message
             </button>
@@ -235,7 +235,7 @@ const ContactForm = () => {
         <div className='flex justify-center items-center italic mb-10'>
           <p className='text-center'>
             have queries? please share your{' '}
-            <span className='text-orange-400 hover:font-extrabold'>
+            <span className='text-[#F86F03] hover:font-extrabold'>
               <Link to='/feedback'>feedback</Link>
             </span>{' '}
             here
